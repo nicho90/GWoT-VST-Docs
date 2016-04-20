@@ -1,0 +1,32 @@
+site_name: Documentation
+site_url: http://giv-gwot-vst.uni-muenster.de:3000/docs
+site_description: Project documentation about the smart and mobile water gauge system of the Virtual Smart Things Group
+site_author: Nicholas Schiestel
+# site_favicon: img/favicon.ico
+# Local
+#site_dir: site
+# Server
+site_dir: /home/n_schi16/GWoT-VST/server/public/docs
+
+repo_url: https://github.com/nicho90/GWoT-VST-Docs
+
+pages:
+- Home: index.md
+#- Installations:
+#    - Nodejs: installations/nodejs.md
+#    - Bower: installations/bower.md
+#    - MkDocs: installations/mkdocs.md
+- About:
+    - Repositories: about/repositories.md
+    - Contributors: about/contributors.md
+# - NewSection
+    #- newPage: newSection/newPage.md
+# - newSinlePage: newSinlePage.md
+
+theme: readthedocs
+
+markdown_extensions:
+    - toc:
+        permalink: true
+
+copyright: Copyright &copy; 2016 <a href="https://www.uni-muenster.de/Geoinformatics/">Institute for Geoinformatics, Münster</a>.
