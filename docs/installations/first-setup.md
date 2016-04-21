@@ -34,7 +34,7 @@ git clone https://github.com/nicho90/GWoT-VST-Docs.git
 
 5) Installation of **nodejs**
 
-	Please follow the steps of this [installation guide](/installations/nodejs).
+Please follow the steps of this [installation guide](/installations/nodejs).
 	
 6) Installation of all dependecies (node-packages or node-modules)
 
