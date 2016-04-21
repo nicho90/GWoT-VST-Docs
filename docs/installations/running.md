@@ -1,5 +1,5 @@
 ## Running Nodejs
 
-### Local vs in production
+### Local vs. In-Production
 
 ### Foreverjs

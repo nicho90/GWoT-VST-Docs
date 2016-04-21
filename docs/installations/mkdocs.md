@@ -9,7 +9,7 @@
 
 * You need Python (2.7.2) and the Python Package Index (1.5.2) to install and build the documentation. Please make sure that your operating-system provides it, otherwise please install Python before continuing:
 
-```
+```bash
 python --version
 pip --version
 ```
@@ -20,7 +20,7 @@ pip --version
 
 * Install MkDocs with the following command:
 
-```
+```bash
 pip install mkdocs
 ```
 
@@ -29,14 +29,14 @@ pip install mkdocs
 * If you want to add new content to this documentation, you can use a local repository on your system or edit the pages directly on GitHub.
 * First clone this repository to your local-repository
 
-```
-git clone https://github.com/geo-c/Dev-Corner.git
+```bash
+git clone https://github.com/nicho90/GWoT-VST-Docs.git
 ```
 * MkDocs comes with a build-in-server, which means that all `.md`-files inside the `/docs`-folder will be generated into `.html`-files on-the-fly.
 * This is very useful to see your edited files live in your browser
-* To start the build-in-server enter the `Dev-Corner/`-folder of your local repository and run the following command:
+* To start the build-in-server enter the `GWoT-VST-Docs/`-folder of your local repository and run the following command:
 
-```
+```bash
 mkdocs serve
 ```
 
@@ -49,7 +49,7 @@ mkdocs serve
 
 * Before building, don't forget to add your new page(s) and sections in the `mkdocs.yml`-file. Please find an example at the end of this page: `NewSection` and `newSinglePage.md`
 
-```
+```yaml
 - Home: index.md
 - Installations:
     - Nodejs: installations/nodejs.md
@@ -66,7 +66,7 @@ mkdocs serve
 * If you are not familiar with Markdown, please find some **Cheat Cheets** above.
 * It is also possible to use HTML-tags inside the Markdown-file, for example a embedded video from Youtube:
 
-```
+```html
 ## Video from Youtube
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LRLQE2N0DKc" frameborder="0" allowfullscreen></iframe>
@@ -82,30 +82,33 @@ mkdocs serve
 * It is also possible to build the HTML-files from your local repository. Before you build it, change the destination inside the `mkdocs.yml`-File:
 
 **Old:**
-```
+
+```yaml
 # Local
 #site_dir: site
 # Server
-site_dir: /var/www/html/dev-corner
+site_dir: /home/n_schi16/GWoT-VST/server/public/docs
 ```
 
 **New:**
-```
+
+```yaml
 # Local
 site_dir: site
 # Server
-#site_dir: /var/www/html/dev-corner
+#site_dir: /home/n_schi16/GWoT-VST/server/public/docs
 ```
+
 * **Attention**: Please undo this before you commit your `mkdocs.yml`-file to GitHub!!
 * Build documentation with the following command:
 
-```
+```bash
 mkdocs build
 ```
 
 * **Attention**: If some problems occur during the build-process, you can also try to re-build the documentation with the following command:
 
-```
+```bash
 mkdocs build --clean
 ```
 
