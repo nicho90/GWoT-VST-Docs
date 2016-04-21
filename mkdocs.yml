@@ -15,7 +15,7 @@ pages:
 - Installations:
     - Nodejs: installations/nodejs.md
 #    - Bower: installations/bower.md
-#    - MkDocs: installations/mkdocs.md
+    - MkDocs: installations/mkdocs.md
 - About:
     - Repositories: about/repositories.md
     - Contributors: about/contributors.md
