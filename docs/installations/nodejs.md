@@ -6,13 +6,17 @@
 ##### Linux
 
 * For **Ubuntu** add the following link to you package-list:
+
 ```bash
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 ```
+
 * Install nodejs with the following command:
-```
+
+```bash
 sudo apt-get install -y nodejs
 ```
+
 * For **other distributions** go to [https://nodejs.org/en/download/package-manager/](https://nodejs.org/en/download/package-manager/) and install the latest stable version (LTS-verion is recommend))
 * Open the commandline and update the node-package-manager:
 
@@ -29,7 +33,6 @@ sudo npm install npm -g
 ```bash
 sudo npm install npm -g
 ```
-
 
 ##### Windows
 
