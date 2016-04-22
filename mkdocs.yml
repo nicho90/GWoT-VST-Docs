@@ -18,6 +18,7 @@ pages:
     - Running Nodejs: installations/running.md
     - Bower: installations/bower.md
     - MkDocs: installations/mkdocs.md
+- Linux-Commands: linux-commands.md
 - About:
     - Repositories: about/repositories.md
     - Contributors: about/contributors.md
