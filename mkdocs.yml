@@ -12,10 +12,11 @@ repo_url: https://github.com/nicho90/GWoT-VST-Docs
 
 pages:
 - Home: index.md
-- Installations:
+- Installation guides:
     - First-Setup: installations/first-setup.md
     - Nodejs: installations/nodejs.md
-#    - Bower: installations/bower.md
+    - Running Nodejs: installations/running.md
+    - Bower: installations/bower.md
     - MkDocs: installations/mkdocs.md
 - About:
     - Repositories: about/repositories.md
