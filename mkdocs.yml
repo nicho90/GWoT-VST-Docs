@@ -20,6 +20,7 @@ pages:
     - MkDocs: installations/mkdocs.md
     - Redis: installations/redis.md
     - PostgreSQL: installations/postgresql.md
+    - PostGIS: installations/postgis.md
 - Linux-Commands: linux-commands.md
 - About:
     - Repositories: about/repositories.md
