@@ -3,7 +3,7 @@
 >A package manager for the web
 >(Source: [http://bower.io](http://bower.io), 2016-04-20)
 
-##### Linux/MacOS
+##### Linux/macOS
 
 * You need [Nodejs](nodejs.md#nodejs) to install Bower.
 * Install Bower globally with the following command:

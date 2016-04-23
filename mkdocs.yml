@@ -18,6 +18,7 @@ pages:
     - Running Nodejs: installations/running.md
     - Bower: installations/bower.md
     - MkDocs: installations/mkdocs.md
+    - Redis: installations/redis.md
 - Linux-Commands: linux-commands.md
 - About:
     - Repositories: about/repositories.md

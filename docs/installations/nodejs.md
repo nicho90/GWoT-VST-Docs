@@ -1,6 +1,6 @@
 ## What is Nodejs?
 
->Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world. 
+>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 >(Source: [https://nodejs.org/en/](https://nodejs.org/en/), 2016-04-20)
 
 ##### Linux
@@ -24,19 +24,19 @@ sudo apt-get install -y nodejs
 sudo npm install npm -g
 ```
 
-##### MacOS
+##### macOS
 
 * Go to [https://nodejs.org/en/](https://nodejs.org/en/) and download the latest stable version (LTS-verion is recommend)
 * Install the package
 * Open the terminal and update the node-package-manager:
- 
+
 ```bash
 sudo npm install npm -g
 ```
 
 ##### Windows
 
-* Go to [https://nodejs.org/en/](https://nodejs.org/en/) and install 
+* Go to [https://nodejs.org/en/](https://nodejs.org/en/) and install
 * Open the Windows-Shell (cmd) and update the node-package-manager:
 
 ```bash
