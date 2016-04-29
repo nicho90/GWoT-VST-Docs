@@ -25,6 +25,5 @@ For the purpose of the course the sensor is used as a water gauge. It will be ph
 The HC - SR04 has four pins. The VCC pin is for the power supply and is connected to the 5V pin of the Pi. The GND pin is connected to the GND pin of the Pi. The other two pins are for triggering the signal and receiving the echo.
 Please connect the HC - SR04 and the Pi as shown in the graphics below.
 
-![scheme](img/hc-sr04-tut-2.png)
-
-![model](img/PI3_HC-SR04_bb.png)
+<img src="img/hc-sr04-tut-2.png" height="500">
+<img src="img/PI3_HC-SR04_bb.png" height="500">
