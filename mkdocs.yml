@@ -25,6 +25,7 @@ pages:
 - Raspberry Pi:
     - Setup: rpi/setup.md
     - Wifi connection: rpi/wifi.md
+    - Ultrasonic sensor: rpi/sensor.md
 - About:
     - Repositories: about/repositories.md
     - Contributors: about/contributors.md
