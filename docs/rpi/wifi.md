@@ -1,4 +1,4 @@
-## How to connect the Raspberry PI 3 to the Wifi network?
+## Wifi connection of the PI 3
 
 The Raspberry Pi 3 Model B comes with an integrated 802.11n Wireless LAN module. In order to get the Pi connected to the Wifi network the `/etc/wpa_supplicant/wpa_supplicant` file has to be configured.
 
@@ -14,8 +14,8 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant
 
 ```
 network{
-  ssid="your ssid"
-  psk="your password"
+  ssid="SSID"
+  psk="PASSWORD"
 }
 ```
 
@@ -49,9 +49,8 @@ network{
   pairwise=CCMP
   auth_alg=OPEN
   eap=PEAP
-  #Uni-Kennung with @uni-muenster.de
-  identity="BENUTZERNAME@uni-muenster.de"
-  password="PASSWORT"
+  identity="USERNAME@uni-muenster.de"
+  password="PASSWORD"
   ca_cert="/etc/wpa_supplicant/rootca.der"
   phase2="auth=MSCHAPV2"
   disabled=0
