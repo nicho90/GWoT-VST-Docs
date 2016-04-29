@@ -22,6 +22,8 @@ pages:
     - PostgreSQL: installations/postgresql.md
     - PostGIS: installations/postgis.md
 - Linux-Commands: linux-commands.md
+- Raspberry Pi:
+    - Setup: rpi/setup.md
 - About:
     - Repositories: about/repositories.md
     - Contributors: about/contributors.md
