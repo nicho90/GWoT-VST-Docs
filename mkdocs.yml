@@ -24,6 +24,7 @@ pages:
 - Linux-Commands: linux-commands.md
 - Raspberry Pi:
     - Setup: rpi/setup.md
+    - Wifi connection: rpi/wifi.md
 - About:
     - Repositories: about/repositories.md
     - Contributors: about/contributors.md
