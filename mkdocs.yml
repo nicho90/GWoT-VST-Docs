@@ -22,6 +22,9 @@ pages:
     - PostgreSQL: installations/postgresql.md
     - PostGIS: installations/postgis.md
 - Linux-Commands: linux-commands.md
+- Architecture:
+    - REST-API: architecture/rest-api.md
+    - Views: architecture/views.md
 - Raspberry Pi:
     - Setup: rpi/setup.md
     - Wifi connection: rpi/wifi.md
