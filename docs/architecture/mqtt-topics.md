@@ -18,5 +18,5 @@ The following messages will be send from the **Sensor** to the **Server**. The s
 
 | Topic | Message | Function |
 |----------|--------|----------|
-| `sensor/realtime/measurement` | ```{"sensor_id": 1, "value": 120 }``` | Publishes realtime data from the sensor to the server, which will be forwarded then to the WebClient |
-| `sensor/default/measurement` | ```{"sensor_id": 1, "value": 120 }``` | Publishes default measurement form the sensor to the server, which will be saved in the Database for time-series |
+| `sensor/realtime/measurement` | ```{"sensor_id": 1, "value": 120, "timestamp": 1462449511 }``` | Publishes realtime data from the sensor to the server, which will be forwarded then to the WebClient |
+| `sensor/default/measurement` | ```{"sensor_id": 1, "value": 120, "timestamp": 1462449512 }``` | Publishes default measurement form the sensor to the server, which will be saved in the Database for time-series |
