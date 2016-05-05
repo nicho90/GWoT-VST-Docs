@@ -24,6 +24,7 @@ pages:
 - Linux-Commands: linux-commands.md
 - Architecture:
     - REST-API: architecture/rest-api.md
+    - MQTT-Topics: architecture/mqtt-topics.md
     - Views: architecture/views.md
 - Raspberry Pi:
     - Setup: rpi/setup.md
