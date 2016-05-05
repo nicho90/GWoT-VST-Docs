@@ -8,9 +8,9 @@ The following messages will be send from the **Server** to the **Sensor**. All s
 
 | Topic | Message | Function |
 |----------|--------|----------|
-| `data/realtime` | `{"sensor_id": 1, "value" : 1 }` | Request a sensor by its `sensor_id` to start realtime measuring and publish the results back to the server |
-| `data/realtime` | `{"sensor_id": 1, "value" : 0 }` | Request a sensor by its `sensor_id` to stop realtime measuring (this message will be send from the Server, when all Websocket-Connections are closed for this sensor) |
-| `settings` | `{"sensor_id": 1, "interval": 1000 }` | Publish new settings to a sensor by its `sensor_id` to change for example the measuring-frequency |
+| `data/realtime` | `{"id": "rpi-1", "status" : true }` | Request a sensor by its `id` to start realtime measuring and publish the results back to the server |
+| `data/realtime` | `{"id": "rpi-1", "status" : false }` | Request a sensor by its `id` to stop realtime measuring (this message will be send from the Server, when all Websocket-Connections are closed for this sensor) |
+| `settings` | `{"id": "rpi-1", "interval": 1000 }` | Publish new settings to a sensor by its `sensor_id` to change for example the measuring-frequency |
 
 #### Sensor -> Server
 
