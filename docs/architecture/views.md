@@ -1,7 +1,6 @@
-## Views
+## Overview
 
 Overview of the WebClient-Views:
-
 
 | Endpoint | Function |
 |----------|----------|
