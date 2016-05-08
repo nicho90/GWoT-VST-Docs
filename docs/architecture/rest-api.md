@@ -1,7 +1,5 @@
 ## Overview
 
-Overview of all REST-API-Endpoints:
-
 | Endpoint | Method | Headers | Query | Function |
 |----------|--------|---------|-------|----------|
 | `/api/users` | **POST** | | | Create a new user (User-Registration) |
@@ -37,9 +35,26 @@ Overview of all REST-API-Endpoints:
 | `/api/admin/:admin_name/vehicles/:vehicle_id` | **DELETE** | Token | | | |
 
 
-### 1. Users
+## Status-Codes
 
-#### 1.1 GET Users
+| Code | Meaning |
+|------|---------|
+| `200` | Request successful |
+| `201` | Created |
+| `204` | No Content |
+| `400` | Bad Request |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `404` | Not found |
+| `500` | Internal Server Error |
+| `501` | Not implemented |
+
+(Source: [https://en.wikipedia.org/wiki/List_of_HTTP_status_codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), 2016-05-08)
+
+
+## 1. Users
+
+### 1.1 GET Users
 
 Endpoint: `/api/admin/:admin_name/users`<br>
 Parameter: `admin_name` (String)<br>
@@ -103,7 +118,7 @@ Response (`200`):
 ]
 ```
 
-#### 1.2 POST User
+### 1.2 POST User
 
 Endpoint: `/api/users`<br>
 Body:
@@ -133,7 +148,7 @@ Response (`201`):
 }
 ```
 
-#### 1.3 GET User by his username
+### 1.3 GET User by his username
 
 Endpoint: `/api/users/:username`<br>
 Parameter: `username` (String)<br>
@@ -160,7 +175,7 @@ Response (`200`):
 }
 ```
 
-#### 1.4 PUT User by his username
+### 1.4 PUT User by his username
 
 Endpoint: `/api/users/:username`<br>
 Parameter: `username` (String)<br>
@@ -198,7 +213,7 @@ Response (`200`):
 }
 ```
 
-#### 1.5 DELETE User by his username
+### 1.5 DELETE User by his username
 
 Endpoint: `/api/users/:username`<br>
 Parameter: `username` (String)<br>
@@ -218,6 +233,6 @@ null
 
 * * *
 
-### 2. Sensors
+## 2. Sensors
 
 TO-DO
