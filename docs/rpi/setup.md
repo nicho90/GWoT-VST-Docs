@@ -35,7 +35,7 @@ Raspbian is the Foundation’s official supported operating system. It can be in
 
 4) Use the `dd` command with `if=` for the input file and `of=` for the output file. The `bs=` command specifies the block size and is optional.
 
-```
+```bash
 sudo dd bs=4M if=2016-03-18-raspbian-jessie.img of=/dev/mmcblk0
 ```
 5) To see the progress run `sudo pkill -USR1 -n -x dd` in another terminal.

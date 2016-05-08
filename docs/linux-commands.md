@@ -59,5 +59,3 @@ It is also possible to change to the root-user by the following command `sudo su
 
 * [https://wiki.ubuntuusers.de/Shell](https://wiki.ubuntuusers.de/Shell) (only German)
 * [http://linuxcommand.org/learning_the_shell.php](http://linuxcommand.org/learning_the_shell.php) (English)
-
-
