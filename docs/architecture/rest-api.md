@@ -1,4 +1,4 @@
-## REST-API
+## Overview
 
 Overview of all REST-API-Endpoints:
 
@@ -37,15 +37,12 @@ Overview of all REST-API-Endpoints:
 | `/api/admin/:admin_name/vehicles/:vehicle_id` | **DELETE** | Token | | | |
 
 
-
 ### 1. Users
 
-##### 1.1 GET Users
+#### 1.1 GET Users
 
-Endpoint:
-
-`/api/admin/:admin_name/users`
-
+Endpoint: `/api/admin/:admin_name/users`<br>
+Parameter: `admin_name` (String)<br>
 Query (optional):
 
 * Sort usernames in alphabetic order (default): `?sort:DESC`
@@ -59,7 +56,7 @@ Header:
 }
 ```
 
-Response:
+Response (`200`):
 
 ```javascript
 [
@@ -103,14 +100,12 @@ Response:
         "last_name": "C.",
         "role": "user"
     }
+]
 ```
 
-##### 1.2 POST User
+#### 1.2 POST User
 
-Endpoint:
-
-`/api/users`
-
+Endpoint: `/api/users`<br>
 Body:
 
 ```javascript
@@ -123,7 +118,7 @@ Body:
 }
 ```
 
-Response:
+Response (`201`):
 
 ```javascript
 {
@@ -137,3 +132,92 @@ Response:
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
 }
 ```
+
+#### 1.3 GET User by his username
+
+Endpoint: `/api/users/:username`<br>
+Parameter: `username` (String)<br>
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response (`200`):
+
+```javascript
+{
+  "created": "2016-05-08T11:43:31.397Z",
+  "updated": "2016-05-08T15:03:05.637Z",
+  "username": "nicho90",
+  "password": "abc",
+  "email_address": "n.schiestel@uni-muenster.de",
+  "first_name": "Nicho",
+  "last_name": "S.",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+#### 1.4 PUT User by his username
+
+Endpoint: `/api/users/:username`<br>
+Parameter: `username` (String)<br>
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Body:
+```javascript
+{
+  "username": "nicho_90",
+  "password": "123456",
+  "email_address": "n.schiestel@uni-muenster.de",
+  "first_name": "Nicho",
+  "last_name": "S."
+}
+```
+
+Response (`200`):
+
+```javascript
+{
+  "created": "2016-05-08T11:43:31.397Z",
+  "updated": "2016-05-09T13:12:34.124Z",
+  "username": "nicho_90",
+  "password": "123456",
+  "email_address": "n.schiestel@uni-muenster.de",
+  "first_name": "Nicho",
+  "last_name": "S.",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+#### 1.5 DELETE User by his username
+
+Endpoint: `/api/users/:username`<br>
+Parameter: `username` (String)<br>
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response (`204`):
+
+```javascript
+null
+```
+
+* * *
+
+### 2. Sensors
+
+TO-DO
