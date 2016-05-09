@@ -2,7 +2,8 @@
 
 | Endpoint | Method | Headers | Query | Function |
 |----------|--------|---------|-------|----------|
-| `/api/users` | **POST** | | | Create a new user (User-Registration) |
+| `/api/login` | **POST** | | | Create a new Token |
+| `/api/users` | **POST** | | | Create a new User (Registration) |
 | `/api/users/:username` | **GET** | Token | | | 
 | `/api/users/:username` | **PUT** | Token | | |
 | `/api/users/:username` | **DELETE** | Token | | |
@@ -52,10 +53,36 @@
 
 (Source: [https://en.wikipedia.org/wiki/List_of_HTTP_status_codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), 2016-05-08)
 
+## 1. Login
 
-## 1. Users
+Endpoint: `/api/login`<br>
+Body:
 
-### 1.1 GET Users
+```javascript
+{
+    "username": "nicho90",
+    "password": "abc"
+}
+```
+
+Response `200`:
+
+```javascript
+{
+  "created": "2016-05-08T11:43:31.397Z",
+  "updated": "2016-05-08T15:03:05.637Z",
+  "username": "nicho90",
+  "password": "abc",
+  "email_address": "n.schiestel@uni-muenster.de",
+  "first_name": "Nicho",
+  "last_name": "S.",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+## 2. Users
+
+### 2.1 GET Users
 
 Endpoint: `/api/admin/:admin_name/users`<br>
 Parameter: `admin_name` (String)<br>
@@ -72,7 +99,7 @@ Header:
 }
 ```
 
-Response (`200`):
+Response `200`:
 
 ```javascript
 [
@@ -119,7 +146,7 @@ Response (`200`):
 ]
 ```
 
-### 1.2 POST User
+### 2.2 POST User
 
 Endpoint: `/api/users`<br>
 Body:
@@ -134,7 +161,7 @@ Body:
 }
 ```
 
-Response (`201`):
+Response `201`:
 
 ```javascript
 {
@@ -149,7 +176,7 @@ Response (`201`):
 }
 ```
 
-### 1.3 GET User by his username
+### 2.3 GET User by his username
 
 Endpoint: `/api/users/:username`<br>
 Parameter: `username` (String)<br>
@@ -161,7 +188,7 @@ Header:
 }
 ```
 
-Response (`200`):
+Response `200`:
 
 ```javascript
 {
@@ -176,7 +203,7 @@ Response (`200`):
 }
 ```
 
-### 1.4 PUT User by his username
+### 2.4 PUT User by his username
 
 Endpoint: `/api/users/:username`<br>
 Parameter: `username` (String)<br>
@@ -199,7 +226,7 @@ Body:
 }
 ```
 
-Response (`200`):
+Response `200`:
 
 ```javascript
 {
@@ -214,7 +241,7 @@ Response (`200`):
 }
 ```
 
-### 1.5 DELETE User by his username
+### 2.5 DELETE User by his username
 
 Endpoint: `/api/users/:username`<br>
 Parameter: `username` (String)<br>
@@ -226,7 +253,7 @@ Header:
 }
 ```
 
-Response (`204`):
+Response `204`:
 
 ```javascript
 null
@@ -234,6 +261,6 @@ null
 
 * * *
 
-## 2. Sensors
+## 3. Sensors
 
 TO-DO
