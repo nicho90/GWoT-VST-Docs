@@ -24,10 +24,10 @@ pages:
 - Linux-Commands: linux-commands.md
 - Architecture:
     - Components: architecture/components.md
-    - Database-Schema: architecture/database.md
+    - Database: architecture/database.md
     - REST-API: architecture/rest-api.md
     - MQTT-Topics: architecture/mqtt-topics.md
-    - Views: architecture/views.md
+    - Websocket-Messages: architecture/websockets.md
 - Schemas:
     - Users: schemas/users.md
     - Sensors: schemas/sensors.md
@@ -35,6 +35,8 @@ pages:
     - Thresholds: schemas/thresholds.md
     - Subscriptions: schemas/subscriptions.md
     - Vehicles: schemas/vehicles.md
+- WebClient:
+    - Views: webclient/views.md
 - Raspberry Pi:
     - Setup: rpi/setup.md
     - Wifi connection: rpi/wifi.md
