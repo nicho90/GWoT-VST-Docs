@@ -6,13 +6,11 @@
 | `/api/users/:username` | **GET** | Token | | | 
 | `/api/users/:username` | **PUT** | Token | | |
 | `/api/users/:username` | **DELETE** | Token | | |
-| `/api/users/:username/sensors` | **GET** | Token | | |
+| `/api/users/:username/sensors` | **GET** | Token | `?public=true` (optional)| List all private sensors and with the optional flag also all public sensors |
 | `/api/users/:username/sensors` | **POST** | Token | | |
 | `/api/users/:username/sensors/:sensor_id` | **GET** | Token | | |
 | `/api/users/:username/sensors/:sensor_id` | **PUT** | Token | | |
 | `/api/users/:username/sensors/:sensor_id` | **DELETE** | Token | | |
-| `/api/users/:username/sensors/:sensor_id/measurements/measurement_id`| **PUT** | Token | | |
-| `/api/users/:username/sensors/:sensor_id/measurements/measurement_id`| **DELETE** | Token | | |
 | `/api/users/:username/thresholds`| **GET** | Token | | |
 | `/api/users/:username/thresholds`| **POST** | Token | | |
 | `/api/users/:username/thresholds/:threshold_id` | **GET** | Token | | |
@@ -23,17 +21,20 @@
 | `/api/users/:username/subscriptions/:subscription_id` | **GET** | Token | | |
 | `/api/users/:username/subscriptions/:subscription_id` | **PUT** | Token | | |
 | `/api/users/:username/subscriptions/:subscription_id` | **DELETE** | Token | | |
-| `/api/sensors` | **GET** | Token (optional) | `?bbox=[(0.0, 0.0), (0.0, 1.0), (1.0, 1.0), (1.0, 0.0)]` | |
-| `/api/sensors/:sensor_id` | **GET** | Token (optional) | | |
-| `/api/sensors/:sensor_id/measurements` | **GET** | Token (optional) | | |
-| `/api/sensors/:sensor_id/measurements/measurement_id` | **GET** | Token (optional) | | |
-| `/api/vehicles` | **GET** | | `?type=bike`, `?type=car`, etc. | List of all vehicles (bikes, cars, scooters, motorbikes, wheelchairs) or by category |
-| `/api/admin/:admin_name/users` | **GET** | Token | `?sort=DESC`, `?sort=ASC` | List all users, only available for admins |
-| `/api/admin/:admin_name/vehicles` | **POST** | Token | | List of all vehicles (bikes, cars, scooters, motorbikes, wheelchairs) |
+| `/api/sensors` | **GET** | (Token only for admin) | `?bbox=[(0.0, 0.0), (0.0, 1.0), (1.0, 1.0), (1.0, 0.0)]` | |
+| `/api/sensors/:sensor_id` | **GET** | (Token only for admin) | | |
+| `/api/sensors/:sensor_id/measurements` | **GET** | (Token only for admin) | | |
+| `/api/sensors/:sensor_id/measurements/measurement_id` | **GET** | (Token only for admin) | | |
+| `/api/sensors/:sensor_id/timeseries` | **GET** | (Token only for admin) | `?hours=24`, <br> `?days=7`, <br> `?weeks=2`, <br> `?months=1`, <br> `?months=3`, <br> `?months=6`, <br> `?years=1`, <br> `?years=3` | |
+| `/api/vehicles` | **GET** | | `?category=bike`, <br> `?category=car`, <br> etc. | List of all vehicles (bikes, cars, trucks, scooters, motorbikes, wheelchairs) or by category |
+| `/api/admin/:admin_name/users` | **GET** | Token | `?sort=DESC`, <br> `?sort=ASC` | List all users, only available for admins |
+| `/api/admin/:admin_name/vehicles` | **POST**  | Token | | List of all vehicles (bikes, cars, scooters, motorbikes, wheelchairs) |
 | `/api/admin/:admin_name/vehicles/:vehicle_id` | **GET** | Token | | |
 | `/api/admin/:admin_name/vehicles/:vehicle_id` | **PUT** | Token | | |
 | `/api/admin/:admin_name/vehicles/:vehicle_id` | **DELETE** | Token | | | |
 
+<!-- | `/api/users/:username/sensors/:sensor_id/measurements/measurement_id`| **PUT** | Token | | | -->
+<!-- | `/api/users/:username/sensors/:sensor_id/measurements/measurement_id`| **DELETE** | Token | | | -->
 
 ## Status-Codes
 
