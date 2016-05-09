@@ -21,7 +21,7 @@
 | `/api/users/:username/subscriptions/:subscription_id` | **GET** | Token | | |
 | `/api/users/:username/subscriptions/:subscription_id` | **PUT** | Token | | |
 | `/api/users/:username/subscriptions/:subscription_id` | **DELETE** | Token | | |
-| `/api/sensors` | **GET** | (Token only for admin) | `?bbox=[(0.0, 0.0), (0.0, 1.0), (1.0, 1.0), (1.0, 0.0)]` | |
+| `/api/sensors` | **GET** | (Token only for admin) | `?bbox=[(0.0, 0.0),` <br> `(0.0, 1.0),` <br> `(1.0, 1.0),` <br> `(1.0, 0.0)]` | |
 | `/api/sensors/:sensor_id` | **GET** | (Token only for admin) | | |
 | `/api/sensors/:sensor_id/measurements` | **GET** | (Token only for admin) | | |
 | `/api/sensors/:sensor_id/measurements/measurement_id` | **GET** | (Token only for admin) | | |
