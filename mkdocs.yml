@@ -23,6 +23,8 @@ pages:
     - PostGIS: installations/postgis.md
 - Linux-Commands: linux-commands.md
 - Architecture:
+    - Components: architecture/components.md
+    - Database-Schema: architecture/database.md
     - REST-API: architecture/rest-api.md
     - MQTT-Topics: architecture/mqtt-topics.md
     - Views: architecture/views.md
