@@ -28,6 +28,11 @@ pages:
     - Views: architecture/views.md
 - Schemas:
     - Users: schemas/users.md
+    - Sensors: schemas/sensors.md
+    - Measurements: schemas/measurements.md
+    - Thresholds: schemas/thresholds.md
+    - Subscriptions: schemas/subscriptions.md
+    - Vehicles: schemas/vehicles.md
 - Raspberry Pi:
     - Setup: rpi/setup.md
     - Wifi connection: rpi/wifi.md
