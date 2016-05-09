@@ -16,7 +16,7 @@ CREATE TABLE Sensors (
     description CHARACTER VARYING(255) NOT NULL,
     private BOOLEAN NOT NULL,
     coordinates GEOMETRY NOT NULL,
-    sensor_height DECIMAL NOT NULL
+    sensor_height DECIMAL NOT NULL CONSTRAINT positive_value CHECK (sensor_height > 0)
 );
 ```
 

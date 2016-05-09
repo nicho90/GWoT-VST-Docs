@@ -12,7 +12,7 @@ CREATE TABLE Measurements (
 
     -- Attributes
     sensor_id CHARACTER VARYING(255) UNIQUE NOT NULL,
-    distance DECIMAL NOT NULL,
+    distance DECIMAL NOT NULL CONSTRAINT positive_value CHECK (distance > 0),
     measured TIMESTAMP WITH TIME ZONE NOT NULL
 );
 ```
@@ -21,12 +21,12 @@ CREATE TABLE Measurements (
 
 ```sql
 -- EXAMPLE-DATA
-INSERT INTO Vehicles (created, updated, sensor_id, distance, measured)
-VALUES (now(), now(), 1, 120, now());
+INSERT INTO Measurements (created, updated, sensor_id, distance, measured)
+VALUES (now(), now(), 1, 120, '2016-05-08T11:43:01.010Z');
 
-INSERT INTO Vehicles (created, updated, sensor_id, distance, measured)
-VALUES (now(), now(), 1, 121, now());
+INSERT INTO Measurements (created, updated, sensor_id, distance, measured)
+VALUES (now(), now(), 1, 121, '2016-05-08T11:44:01.123Z');
 
-INSERT INTO Vehicles (created, updated, sensor_id, distance, measured)
-VALUES (now(), now(), 1, 119, now());
+INSERT INTO Measurements (created, updated, sensor_id, distance, measured)
+VALUES (now(), now(), 1, 119, '2016-05-08T11:45:01.005Z');
 ```
