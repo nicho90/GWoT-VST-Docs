@@ -2,12 +2,12 @@
 
 | Endpoint | Method | Headers | Query | Function |
 |----------|--------|---------|-------|----------|
-| `/api/login` | **POST** | | | Create a new Token |
-| `/api/users` | **POST** | | | Create a new User (Registration) |
+| `/api/login` | **POST** | | | |
+| `/api/users` | **POST** | | | |
 | `/api/users/:username` | **GET** | Token | | | 
 | `/api/users/:username` | **PUT** | Token | | |
 | `/api/users/:username` | **DELETE** | Token | | |
-| `/api/users/:username/sensors` | **GET** | Token | `?public=true` (optional)| List all private sensors and with the optional flag also all public sensors |
+| `/api/users/:username/sensors` | **GET** | Token | `?public=true` (optional)| |
 | `/api/users/:username/sensors` | **POST** | Token | | |
 | `/api/users/:username/sensors/:sensor_id` | **GET** | Token | | |
 | `/api/users/:username/sensors/:sensor_id` | **PUT** | Token | | |
@@ -55,6 +55,8 @@
 
 ## 1. Login
 
+Create a new Token
+
 Endpoint: `/api/login`<br>
 Body:
 
@@ -85,7 +87,7 @@ Response `200`:
 ### 2.1 GET Users
 
 Endpoint: `/api/admin/:admin_name/users`<br>
-Parameter: `admin_name` (String)<br>
+Parameter: `admin_name` *String*<br>
 Query (optional):
 
 * Sort usernames in alphabetic order (default): `?sort:DESC`
@@ -148,6 +150,8 @@ Response `200`:
 
 ### 2.2 POST User
 
+Create a new User (Registration)
+
 Endpoint: `/api/users`<br>
 Body:
 
@@ -179,7 +183,7 @@ Response `201`:
 ### 2.3 GET User by his username
 
 Endpoint: `/api/users/:username`<br>
-Parameter: `username` (String)<br>
+Parameter: `username` *String*<br>
 Header:
 
 ```javascript
@@ -192,21 +196,21 @@ Response `200`:
 
 ```javascript
 {
-  "created": "2016-05-08T11:43:31.397Z",
-  "updated": "2016-05-08T15:03:05.637Z",
-  "username": "nicho90",
-  "password": "abc",
-  "email_address": "n.schiestel@uni-muenster.de",
-  "first_name": "Nicho",
-  "last_name": "S.",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+    "created": "2016-05-08T11:43:31.397Z",
+    "updated": "2016-05-08T15:03:05.637Z",
+    "username": "nicho90",
+    "password": "abc",
+    "email_address": "n.schiestel@uni-muenster.de",
+    "first_name": "Nicho",
+    "last_name": "S.",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
 }
 ```
 
 ### 2.4 PUT User by his username
 
 Endpoint: `/api/users/:username`<br>
-Parameter: `username` (String)<br>
+Parameter: `username` *String*<br>
 Header:
 
 ```javascript
@@ -218,11 +222,11 @@ Header:
 Body:
 ```javascript
 {
-  "username": "nicho_90",
-  "password": "123456",
-  "email_address": "n.schiestel@uni-muenster.de",
-  "first_name": "Nicho",
-  "last_name": "S."
+    "username": "nicho_90",
+    "password": "123456",
+    "email_address": "n.schiestel@uni-muenster.de",
+    "first_name": "Nicho",
+    "last_name": "S."
 }
 ```
 
@@ -230,21 +234,21 @@ Response `200`:
 
 ```javascript
 {
-  "created": "2016-05-08T11:43:31.397Z",
-  "updated": "2016-05-09T13:12:34.124Z",
-  "username": "nicho_90",
-  "password": "123456",
-  "email_address": "n.schiestel@uni-muenster.de",
-  "first_name": "Nicho",
-  "last_name": "S.",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+    "created": "2016-05-08T11:43:31.397Z",
+    "updated": "2016-05-09T13:12:34.124Z",
+    "username": "nicho_90",
+    "password": "123456",
+    "email_address": "n.schiestel@uni-muenster.de",
+    "first_name": "Nicho",
+    "last_name": "S.",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
 }
 ```
 
 ### 2.5 DELETE User by his username
 
 Endpoint: `/api/users/:username`<br>
-Parameter: `username` (String)<br>
+Parameter: `username` *String*<br>
 Header:
 
 ```javascript
@@ -263,4 +267,149 @@ null
 
 ## 3. Sensors
 
+### 3.1 GET all public Sensors
+
+List all public sensors
+
+Endpoint: `/api/sensors`<br>
+
+Response `200`:
+
+```javascript
+[
+    {
+        "sensor_id": 1,
+        "device_id": "RPi-1",
+        "description": "Raspberry Pi at Wersehause",
+        "private": false,
+        "sensor_height": 320,
+        "lng": 51.973314,
+        "lat": 7.70013,
+        "created": "2016-05-10T08:52:42.174Z",
+        "updated": "2016-05-10T08:52:42.174Z"
+    },
+    {
+        "sensor_id": 2,
+        "device_id": "RPi-2",
+        "description": "2nd Raspberry Pi at Wersehause",
+        "private": false,
+        "sensor_height": 300,
+        "lng": 51.973544,
+        "lat": 7.699556,
+        "created": "2016-05-10T08:52:42.174Z",
+        "updated": "2016-05-10T08:52:42.174Z"
+    }
+]
+```
+
+
+### 3.2 GET private Sensors by username
+
+List all private sensors of a user. With the optional query, the results can be merged with all public sensors
+
+Endpoint: `/api/users/:username/sensors`<br>
+Parameter: `username` *String*<br>
+Query: `?public=true` *Boolean*<br>
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response `200`:
+
+```javascript
+[
+    {
+        "created_by": "nicho90",
+        "sensor_id": 2,
+        "device_id": "RPi-2",
+        "description": "2nd Raspberry Pi at Wersehause",
+        "private": false,
+        "sensor_height": 300,
+        "lng": 51.973544,
+        "lat": 7.699556,
+        "created": "2016-05-10T08:52:42.174Z",
+        "updated": "2016-05-10T08:52:42.174Z"
+    },
+    {
+        "created_by": "nicho90",
+        "sensor_id": 3,
+        "device_id": "RPi-3",
+        "description": "3rd private Sensor",
+        "private": true,
+        "sensor_height": 300,
+        "lng": 51.973934,
+        "lat": 7.69888,
+        "created": "2016-05-10T08:52:42.174Z",
+        "updated": "2016-05-10T08:52:42.174Z"
+    }
+]
+```
+
+### 3.3 POST Sensor
+
+Endpoint: `/api/users/:username/sensors`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Body:
+
+```javascript
+{
+    "device_id": "RPi-4",
+    "description": "4th Raspberry Pi at Wersehause",
+    "private": false,
+    "sensor_height": 280,
+    "lng": 51.974454,
+    "lat": 7.699119
+}
+```
+
+Response `201`:
+
+```javascript
+{
+    "sensor_id": 4,
+    "device_id": "RPi-4",
+    "created_by": "nicho90",
+    "description": "4th Raspberry Pi at Wersehause",
+    "private": false,
+    "sensor_height": 280,
+    "lng": 51.974454,
+    "lat": 7.699119,
+    "created": "2016-05-10T08:52:42.174Z",
+    "updated": "2016-05-10T08:52:42.174Z"
+}
+```
+
+### 3.4 GET a public sensor by its id
+
 TO-DO
+
+### 3.5 GET a private sensor by its id
+
+TO-DO
+
+### 3.6 PUT Sensor by its id
+
+TO-DO
+
+### 3.7 DELETE Sensor by its id
+
+TO-DO
+
+* * *
+
+4. Thresholds
+
+To-DO

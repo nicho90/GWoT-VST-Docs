@@ -28,5 +28,8 @@ INSERT INTO Sensors (created, updated, created_by, device_id, description, priva
 VALUES (now(), now(), 'vst-admin', 'RPi-1', 'Raspberry Pi at Wersehause', 'false', ST_GeomFromText('POINT(51.973314 7.700130)', 4326), 320);
 
 INSERT INTO Sensors (created, updated, created_by, device_id, description, private, coordinates, sensor_height)
-VALUES (now(), now(), 'vst-admin', 'RPi-2', '2nd Raspberry Pi at Wersehause', 'true', ST_GeomFromText('POINT(51.973544 7.699556)', 4326), 300);
+VALUES (now(), now(), 'nicho90', 'RPi-2', '2nd Raspberry Pi at Wersehause', 'false', ST_GeomFromText('POINT(51.973544 7.699556)', 4326), 300);
+
+INSERT INTO Sensors (created, updated, created_by, device_id, description, private, coordinates, sensor_height)
+VALUES (now(), now(), 'nicho90', 'RPi-3', '3rd private Sensor', 'true', ST_GeomFromText('POINT(51.973934 7.698880)', 4326), 300);
 ```
