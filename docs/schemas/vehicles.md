@@ -18,7 +18,7 @@ CREATE TABLE Vehicles (
     -- Attributes
     brand CHARACTER VARYING(255) NOT NULL,
     name CHARACTER VARYING(255) NOT NULL,
-    year CHARACTER VARYING(255)
+    year CHARACTER VARYING(255),
 
     -- Category
     category vehicle_types

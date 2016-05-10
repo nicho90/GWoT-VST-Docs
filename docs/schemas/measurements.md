@@ -11,7 +11,7 @@ CREATE TABLE Measurements (
     updated TIMESTAMP WITH TIME ZONE,
 
     -- Attributes
-    sensor_id CHARACTER VARYING(255) UNIQUE NOT NULL,
+    sensor_id INTEGER NOT NULL REFERENCES Sensors (sensor_id) ON UPDATE CASCADE ON DELETE CASCADE,
     distance DECIMAL NOT NULL CONSTRAINT positive_value CHECK (distance > 0),
     measured TIMESTAMP WITH TIME ZONE NOT NULL
 );
