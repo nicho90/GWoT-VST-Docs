@@ -419,7 +419,7 @@ Response `204`
 
 * * *
 
-4. Thresholds
+## 4. Thresholds
 
 ### 4.1 GET all Thresholds by username
 
@@ -530,7 +530,7 @@ Header:
 Response `204`
 
 
-5. Subscriptions
+## 5. Subscriptions
 
 ### 5.1 GET all Subscriptions by username
 
@@ -635,12 +635,12 @@ Header:
 
 Response `204`
 
-6. Measurements
+## 6. Measurements
 
 TODO
 
-7. Time-Series
+## 7. Time-Series
 
 TODO
 
-8. Vehicles
+## 8. Vehicles
