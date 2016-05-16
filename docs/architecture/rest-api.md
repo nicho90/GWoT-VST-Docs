@@ -14,11 +14,13 @@
 | `/api/users/:username/sensors/:sensor_id` | **DELETE** | Token | | |
 | `/api/users/:username/thresholds`| **GET** | Token | | |
 | `/api/users/:username/thresholds`| **POST** | Token | | |
+| `/api/users/:username/thresholds` | **DELETE** | Token | | |
 | `/api/users/:username/thresholds/:threshold_id` | **GET** | Token | | |
 | `/api/users/:username/thresholds/:threshold_id` | **PUT** | Token | | |
 | `/api/users/:username/thresholds/:threshold_id` | **DELETE** | Token | | |
 | `/api/users/:username/subscriptions` | **GET** | Token | | |
 | `/api/users/:username/subscriptions` | **POST** | Token | | |
+| `/api/users/:username/subscriptions` | **DELETE** | Token | | |
 | `/api/users/:username/subscriptions/:subscription_id` | **GET** | Token | | |
 | `/api/users/:username/subscriptions/:subscription_id` | **PUT** | Token | | |
 | `/api/users/:username/subscriptions/:subscription_id` | **DELETE** | Token | | |
@@ -257,11 +259,7 @@ Header:
 }
 ```
 
-Response `204`:
-
-```javascript
-null
-```
+Response `204`
 
 * * *
 
@@ -394,22 +392,255 @@ Response `201`:
 
 ### 3.4 GET a public sensor by its id
 
-TO-DO
+TODO
 
 ### 3.5 GET a private sensor by its id
 
-TO-DO
+TTODO
 
 ### 3.6 PUT Sensor by its id
 
-TO-DO
+TODO
 
 ### 3.7 DELETE Sensor by its id
 
-TO-DO
+Endpoint: `/api/users/:username/sensors/:sensor_id`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response `204`
 
 * * *
 
 4. Thresholds
 
-To-DO
+### 4.1 GET all Thresholds by username
+
+List all thresholds of a user
+
+Endpoint: `/api/users/:username/thresholds`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response `200`:
+
+```javascript
+[
+    {
+        "threshold_id": 1,
+        "created": "2016-05-16T22:20:36.756Z",
+        "updated": "2016-05-16T22:20:36.756Z",
+        "username": "nicho90",
+        "description": "Myself",
+        "value": 50,
+        "category": "PEDESTRIAN"
+    },
+    {
+        "threshold_id": 2,
+        "created": "2016-05-16T22:20:36.756Z",
+        "updated": "2016-05-16T22:20:36.756Z",
+        "username": "nicho90",
+        "description": "VW Golf (2015)",
+        "value": 20,
+        "category": "CAR"
+    },
+    {
+        "threshold_id": 3,
+        "created": "2016-05-16T22:20:36.756Z",
+        "updated": "2016-05-16T22:20:36.756Z",
+        "username": "nicho90",
+        "description": "Yamaha MT-03 (2015)",
+        "value": 13,
+        "category": "CAR"
+    }
+]
+```
+
+### 4.2 POST Threshold by username
+
+Endpoint: `/api/users/:username/thresholds`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Body:
+
+```javascript
+{
+    "username": "nicho90",
+    "description": "MyDog",
+    "value": 20,
+    "category": "OTHER"
+}
+```
+
+Response `200`:
+
+```javascript
+{
+    "threshold_id": 6,
+    "created": "2016-05-16T22:39:50.168Z",
+    "updated": "2016-05-16T22:39:50.168Z",
+    "username": "nicho90",
+    "description": "MyDog",
+    "value": 20,
+    "category": "OTHER"
+}
+```
+
+### 4.3 GET Threshold by username and its id
+
+### 4.4 PUT Threshold by username and its id
+
+### 4.5 DELETE Threshold by username and its id
+
+### 4.6 DELETE all Thresholds by username
+
+Endpoint: `/api/users/:username/thresholds`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response `204`
+
+
+5. Subscriptions
+
+### 5.1 GET all Subscriptions by username
+
+List all subscriptions of a user
+
+Endpoint: `/api/users/:username/subscriptions`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response `200`:
+
+```javascript
+[
+    {
+        "subscription_id": 1,
+        "created": "2016-05-16T22:20:44.110Z",
+        "updated": "2016-05-16T22:20:44.110Z",
+        "username": "nicho90",
+        "sensor_id": 1,
+        "threshold_id": 1
+    },
+    {
+        "subscription_id": 2,
+        "created": "2016-05-16T22:20:44.110Z",
+        "updated": "2016-05-16T22:20:44.110Z",
+        "username": "nicho90",
+        "sensor_id": 1,
+        "threshold_id": 2
+    },
+    {
+        "subscription_id": 3,
+        "created": "2016-05-16T22:20:44.110Z",
+        "updated": "2016-05-16T22:20:44.110Z",
+        "username": "nicho90",
+        "sensor_id": 1,
+        "threshold_id": 3
+    }
+]
+```
+
+### 5.2 POST Subscription by username
+
+Endpoint: `/api/users/:username/subscriptions`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Body:
+
+```javascript
+{
+    "username": "nicho90",
+    "sensor_id": 2,
+    "threshold_id": 1
+}
+```
+
+Response `200`:
+
+```javascript
+{
+    "subscription_id": 4,
+    "created": "2016-05-16T22:37:35.561Z",
+    "updated": "2016-05-16T22:37:35.561Z",
+    "username": "nicho90",
+    "sensor_id": 2,
+    "threshold_id": 1
+}
+```
+
+### 5.3 GET Subscription by username and its id
+
+### 5.4 PUT Subscription by username and its id
+
+### 5.5 DELETE Subscription by username and its id
+
+### 5.6 DELETE all Subscriptions by username
+
+Endpoint: `/api/users/:username/subscriptions`<br>
+Parameter: `username` *String*<br>
+
+Header:
+
+```javascript
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
+}
+```
+
+Response `204`
+
+6. Measurements
+
+TODO
+
+7. Time-Series
+
+TODO
+
+8. Vehicles
