@@ -55,6 +55,8 @@
 
 (Source: [https://en.wikipedia.org/wiki/List_of_HTTP_status_codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), 2016-05-08)
 
+* * *
+
 ## 1. Login
 
 Create a new Token
@@ -83,6 +85,8 @@ Response `200`:
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0"
 }
 ```
+
+* * *
 
 ## 2. Users
 
@@ -299,7 +303,6 @@ Response `200`:
     }
 ]
 ```
-
 
 ### 3.2 GET private Sensors by username
 
@@ -529,6 +532,7 @@ Header:
 
 Response `204`
 
+* * *
 
 ## 5. Subscriptions
 
@@ -635,12 +639,18 @@ Header:
 
 Response `204`
 
+* * *
+
 ## 6. Measurements
 
 TODO
 
+* * *
+
 ## 7. Time-Series
 
 TODO
+
+* * *
 
 ## 8. Vehicles
