@@ -1,5 +1,3 @@
-## Schema
-
 ```sql
 DROP TABLE IF EXISTS Users CASCADE;
 DROP TYPE IF EXISTS roles CASCADE;
@@ -23,11 +21,8 @@ CREATE TABLE Users (
     -- Role
     role roles
 );
-```
 
-## Example-Entries
 
-```sql
 -- EXAMPLE-DATA
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, role)
 VALUES (now(), now(), 'vst-admin', '123456789', 'sitcomlab245@gmail.com', 'VST', 'ADMIN', 'admin');

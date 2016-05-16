@@ -1,5 +1,3 @@
-## Schema
-
 ```sql
 DROP TABLE IF EXISTS Sensors CASCADE;
 
@@ -18,11 +16,8 @@ CREATE TABLE Sensors (
     coordinates GEOMETRY NOT NULL,
     sensor_height DECIMAL NOT NULL CONSTRAINT positive_value CHECK (sensor_height > 0)
 );
-```
 
-## Example-Entries
 
-```sql
 -- EXAMPLE-DATA
 INSERT INTO Sensors (created, updated, created_by, device_id, description, private, coordinates, sensor_height)
 VALUES (now(), now(), 'vst-admin', 'RPi-1', 'Raspberry Pi at Wersehause', 'false', ST_GeomFromText('POINT(51.973314 7.700130)', 4326), 320);

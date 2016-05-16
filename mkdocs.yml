@@ -24,11 +24,11 @@ pages:
 - Linux-Commands: linux-commands.md
 - Architecture:
     - Components: architecture/components.md
-    - Database: architecture/database.md
+    - Data: architecture/data.md
     - REST-API: architecture/rest-api.md
     - MQTT-Topics: architecture/mqtt-topics.md
     - Websocket-Messages: architecture/websockets.md
-- Schemas:
+- Database-Schemas:
     - Users: schemas/users.md
     - Sensors: schemas/sensors.md
     - Measurements: schemas/measurements.md

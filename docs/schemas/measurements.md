@@ -1,5 +1,3 @@
-## Schema
-
 ```sql
 DROP TABLE IF EXISTS Measurements CASCADE;
 
@@ -15,11 +13,8 @@ CREATE TABLE Measurements (
     distance DECIMAL NOT NULL CONSTRAINT positive_value CHECK (distance > 0),
     measured TIMESTAMP WITH TIME ZONE NOT NULL
 );
-```
 
-## Example-Entries
 
-```sql
 -- EXAMPLE-DATA
 INSERT INTO Measurements (created, updated, sensor_id, distance, measured)
 VALUES (now(), now(), 1, 120, '2016-05-08T11:43:01.010Z');

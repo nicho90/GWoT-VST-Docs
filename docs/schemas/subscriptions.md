@@ -1,5 +1,3 @@
-## Schema
-
 ```sql
 DROP TABLE IF EXISTS Subscriptions CASCADE;
 
@@ -15,11 +13,8 @@ CREATE TABLE Subscriptions (
     sensor_id INTEGER NOT NULL REFERENCES Sensors (sensor_id) ON UPDATE CASCADE ON DELETE CASCADE,
     threshold_id INTEGER NOT NULL REFERENCES Thresholds (threshold_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
-```
 
-## Example-Entries
 
-```sql
 -- EXAMPLE-DATA
 INSERT INTO Subscriptions (created, updated, username, sensor_id, threshold_id)
 VALUES (now(), now(), 'nicho90', 1, 1);

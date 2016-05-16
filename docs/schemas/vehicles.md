@@ -1,5 +1,3 @@
-## Schema
-
 ```sql
 DROP TABLE IF EXISTS Vehicles CASCADE;
 DROP TYPE IF EXISTS vehicle_types CASCADE;
@@ -23,11 +21,8 @@ CREATE TABLE Vehicles (
     -- Category
     category vehicle_types
 );
-```
 
-## Example-Entries
 
-```sql
 -- EXAMPLE-DATA
 INSERT INTO Vehicles (created, updated, brand, name, year, category)
 VALUES (now(), now(), 'Yamaha', 'Aerox R', '2015', 'SCOOTER');

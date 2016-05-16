@@ -1,5 +1,3 @@
-## Schema
-
 ```sql
 DROP TABLE IF EXISTS Thresholds CASCADE;
 DROP TYPE IF EXISTS thresholds_types CASCADE;
@@ -22,11 +20,8 @@ CREATE TABLE Thresholds (
     -- Category
     category thresholds_types NOT NULL
 );
-```
 
-## Example-Entries
 
-```sql
 -- EXAMPLE-DATA
 INSERT INTO Thresholds (created, updated, username, category, description, value)
 VALUES (now(), now(), 'nicho90', 'PEDESTRIAN', 'Myself', 50);
