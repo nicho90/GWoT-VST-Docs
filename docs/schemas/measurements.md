@@ -17,10 +17,10 @@ CREATE TABLE Measurements (
 
 -- EXAMPLE-DATA
 INSERT INTO Measurements (created, updated, sensor_id, distance, measured)
-VALUES (now(), now(), 1, 120, '2016-05-08T11:43:01.010Z');
+VALUES (now(), now(), 1, 120, '2016-05-08T09:43:01.010Z');
 
 INSERT INTO Measurements (created, updated, sensor_id, distance, measured)
-VALUES (now(), now(), 1, 121, '2016-05-08T11:44:01.123Z');
+VALUES (now(), now(), 1, 121, '2016-05-08T10:44:01.123Z');
 
 INSERT INTO Measurements (created, updated, sensor_id, distance, measured)
 VALUES (now(), now(), 1, 119, '2016-05-08T11:45:01.005Z');
