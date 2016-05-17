@@ -35,7 +35,7 @@ pages:
     - Thresholds: schemas/thresholds.md
     - Subscriptions: schemas/subscriptions.md
     - Measurements: schemas/measurements.md
-    #- Timeseries: schemas/timeseries.md
+    - Timeseries: schemas/timeseries.md
     - Vehicles: schemas/vehicles.md
 - WebClient:
     - Views: webclient/views.md
