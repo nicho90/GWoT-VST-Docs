@@ -7,8 +7,8 @@
 | 5 | [Measurements](../schemas/measurements) |
 | 6 | [Timeseries](../schemas/timeseries) |
 | 7 | [Vehicles](../schemas/vehicles) |
-| 8 | Emergency Stations |
-| 9 | Service Stations |
+| 8 | [Service Stations](../schemas/service_stations) |
+| 9 | [Emergency Stations](../schemas/emergency_stations) |
 
 The following figure shows the database-schema:
 

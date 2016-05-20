@@ -37,6 +37,8 @@ pages:
     - Measurements: schemas/measurements.md
     - Timeseries: schemas/timeseries.md
     - Vehicles: schemas/vehicles.md
+    - Service Stations: schemas/service_stations.md
+    - Emergency Stations: schemas/emergency_stations.md
 - WebClient:
     - Views: webclient/views.md
 - Raspberry Pi:
