@@ -49,11 +49,11 @@ VALUES (now(), now(), 1, 120, '2016-05-17T00:00:00.000Z');
 INSERT INTO Timeseries (created, updated, sensor_id, distance, date)
 VALUES (now(), now(), 1, 119, '2016-05-18T00:00:00.000Z');
 
--- INSERT INTO Timeseries (created, updated, sensor_id, distance, date)
--- VALUES (now(), now(), 1, 118, '2016-05-19T00:00:00.000Z');
+INSERT INTO Timeseries (created, updated, sensor_id, distance, date)
+VALUES (now(), now(), 1, 118, '2016-05-19T00:00:00.000Z');
 
--- INSERT INTO Timeseries (created, updated, sensor_id, distance, date)
--- VALUES (now(), now(), 1, 119, '2016-05-20T00:00:00.000Z');
+INSERT INTO Timeseries (created, updated, sensor_id, distance, date)
+VALUES (now(), now(), 1, 119, '2016-05-20T00:00:00.000Z');
 
 -- INSERT INTO Timeseries (created, updated, sensor_id, distance, date)
 -- VALUES (now(), now(), 1, 120, '2016-05-21T00:00:00.000Z');

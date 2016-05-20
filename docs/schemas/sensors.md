@@ -15,9 +15,9 @@ CREATE TABLE Sensors (
     description CHARACTER VARYING(255) NOT NULL,
     private BOOLEAN NOT NULL,
     sensor_height DECIMAL NOT NULL CONSTRAINT positive_value CHECK (sensor_height > 0),
-    default_frequency DECIMAL NOT NULL CONSTRAINT positive_value CHECK (default_frequency >= 1000),
-    threshold_frequency DECIMAL NOT NULL CONSTRAINT positive_value CHECK (threshold_frequency >= 1000),
-    threshold_value DECIMAL NOT NULL CONSTRAINT positive_value CHECK (threshold_value > 0),
+    default_frequency DECIMAL NOT NULL CONSTRAINT valid_frequency CHECK (default_frequency >= 1000),
+    threshold_frequency DECIMAL NOT NULL CONSTRAINT valid_frequency_ CHECK (threshold_frequency >= 1000),
+    threshold_value DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (threshold_value > 0),
 
     -- Coordinates
     coordinates GEOGRAPHY (POINT) NOT NULL
