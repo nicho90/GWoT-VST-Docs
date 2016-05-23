@@ -26,7 +26,7 @@ CREATE TABLE Vehicles (
 
 
 -- EXAMPLE-DATA
-INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height) 
+INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height)
 VALUES (now(), now(), 'Yamaha', 'Aerox R', '2015', 'SCOOTER', 5, 10);
 
 INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height)
