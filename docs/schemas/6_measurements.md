@@ -22,7 +22,7 @@ INSERT INTO Measurements (created, updated, sensor_id, distance, water_level, me
 VALUES (now(), now(), 1, 120, 130, '2016-05-08T09:43:01.010Z');
 
 INSERT INTO Measurements (created, updated, sensor_id, distance, water_level, measured)
-VALUES (now(), now(), 1, 121, 129'2016-05-08T10:44:01.123Z');
+VALUES (now(), now(), 1, 121, 129, '2016-05-08T10:44:01.123Z');
 
 INSERT INTO Measurements (created, updated, sensor_id, distance, water_level, measured)
 VALUES (now(), now(), 1, 119, 131, '2016-05-08T11:45:01.005Z');

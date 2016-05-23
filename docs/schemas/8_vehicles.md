@@ -26,7 +26,7 @@ CREATE TABLE Vehicles (
 
 
 -- EXAMPLE-DATA
-INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height)
+INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height) 
 VALUES (now(), now(), 'Yamaha', 'Aerox R', '2015', 'SCOOTER', 5, 10);
 
 INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height)
@@ -38,6 +38,6 @@ VALUES (now(), now(), 'VW', 'Golf', '2015', 'CAR', 10, 20);
 INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height)
 VALUES (now(), now(), 'Audi', 'A1', '2014', 'CAR', 10, 15);
 
-INSERT INTO Vehicles (created, updated, brand, name, year, category)
+INSERT INTO Vehicles (created, updated, brand, name, year, category, warning_height, danger_height)
 VALUES (now(), now(), 'Toyota', 'Tundra SR5', '2016', 'CAR', 20, 30);
 ```
