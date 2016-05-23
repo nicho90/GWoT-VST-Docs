@@ -1,4 +1,5 @@
 ```sql
+DROP TABLE IF EXISTS Water_Bodies CASCADE;
 DROP TABLE IF EXISTS Timeseries CASCADE;
 DROP TABLE IF EXISTS Measurements CASCADE;
 DROP TABLE IF EXISTS Subscriptions CASCADE;
@@ -12,6 +13,7 @@ CREATE TYPE roles AS ENUM ('admin', 'user');
 
 -- SCHEMA
 CREATE TABLE Users (
+
     -- General
     created TIMESTAMP WITH TIME ZONE NOT NULL,
     updated TIMESTAMP WITH TIME ZONE,
