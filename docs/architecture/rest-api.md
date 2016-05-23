@@ -12,6 +12,7 @@
 | `/api/users/:username/sensors/:sensor_id` | **GET** | Token | | |
 | `/api/users/:username/sensors/:sensor_id` | **PUT** | Token | | |
 | `/api/users/:username/sensors/:sensor_id` | **DELETE** | Token | | |
+| `/api/users/:username/sensors/:sensor_id/related_sensors` | **GET** | | | |
 | `/api/users/:username/thresholds`| **GET** | Token | | |
 | `/api/users/:username/thresholds`| **POST** | Token | | |
 | `/api/users/:username/thresholds` | **DELETE** | Token | | |
