@@ -30,15 +30,16 @@ pages:
     - MQTT-Topics: architecture/mqtt-topics.md
     - Websocket-Messages: architecture/websockets.md
 - Database-Schemas:
-    - Users: schemas/users.md
-    - Sensors: schemas/sensors.md
-    - Thresholds: schemas/thresholds.md
-    - Subscriptions: schemas/subscriptions.md
-    - Measurements: schemas/measurements.md
-    - Timeseries: schemas/timeseries.md
-    - Vehicles: schemas/vehicles.md
-    - Service Stations: schemas/service_stations.md
-    - Emergency Stations: schemas/emergency_stations.md
+    - 1. Users: schemas/1_users.md
+    - 2. Water Bodies: schemas/2_water_bodies.md
+    - 3. Sensors: schemas/3_sensors.md
+    - 4. Thresholds: schemas/4_thresholds.md
+    - 5. Subscriptions: schemas/5_subscriptions.md
+    - 6. Measurements: schemas/6_measurements.md
+    - 7. Timeseries: schemas/7_timeseries.md
+    - 8. Vehicles: schemas/8_vehicles.md
+    - 9. Emergency Stations: schemas/9_emergency_stations.md
+    - 10. Service Stations: schemas/10_service_stations.md
 - WebClient:
     - Views: webclient/views.md
 - Raspberry Pi:
