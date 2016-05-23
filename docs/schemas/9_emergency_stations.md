@@ -20,7 +20,7 @@ CREATE TABLE Emergency_Stations (
     country CHARACTER VARYING(255) NOT NULL,
 
     -- Coordinates
-    coordinates GEOGRAPHY (POINT) NOT NULL
+    coordinates GEOGRAPHY(POINT) NOT NULL
 );
 
 

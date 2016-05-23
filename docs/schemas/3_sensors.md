@@ -1,4 +1,8 @@
 ```sql
+DROP TABLE IF EXISTS Measurements CASCADE;
+DROP TABLE IF EXISTS Timeseries CASCADE;
+DROP TABLE IF EXISTS Subscriptions CASCADE;
+DROP TABLE IF EXISTS Thresholds CASCADE;
 DROP TABLE IF EXISTS Sensors CASCADE;
 
 -- SCHEMA
@@ -24,7 +28,7 @@ CREATE TABLE Sensors (
     online_status BOOLEAN NOT NULL DEFAULT 'false',
 
     -- Coordinates
-    coordinates GEOGRAPHY (POINT) NOT NULL
+    coordinates GEOGRAPHY(POINT) NOT NULL
 );
 
 
@@ -36,7 +40,7 @@ INSERT INTO Sensors (
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
-    now(), now(), 'vst-admin', 'RPi-1', 'Raspberry Pi at Wersehause', 'false', 1,
+    now(), now(), 'vst-admin', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
     320, 200,
     120, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
@@ -49,7 +53,7 @@ INSERT INTO Sensors (
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
-    now(), now(), 'nicho90', 'RPi-2', '2nd Raspberry Pi at Wersehause', 'true', 1,
+    now(), now(), 'nicho90', 'rpi-2', '2nd Raspberry Pi at Wersehause', 'true', 1,
     300, 220,
     120, 'false', 'true',
     600000, 60000, -- 600000 = 10min, 60000 = 1min
@@ -62,7 +66,7 @@ INSERT INTO Sensors (
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
-    now(), now(), 'nicho90', 'RPi-3', '3rd private Sensor', 'false', 1,
+    now(), now(), 'nicho90', 'rpi-3', '3rd private Sensor', 'false', 1,
     300, 0,
     120, 'false', 'false',
     6000000, 300000, -- 6000000 = 1h, 300000 = 5min
