@@ -19,9 +19,9 @@ CREATE TABLE Sensors (
     crossing_height DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (crossing_height >= 0), -- example: height of a bridge / floodway to the Gauge-Zero of the river
     threshold_value DECIMAL NOT NULL CONSTRAINT positive_value__ CHECK (threshold_value > 0),
     default_frequency INTEGER NOT NULL CONSTRAINT valid_frequency CHECK (default_frequency >= 1000),
-    threshold_frequency INTEGER NOT NULL CONSTRAINT valid_frequency_ CHECK (threshold_frequency >= 1000),
-    frequency_increased BOOLEAN NOT NULL,
-    online BOOLEAN NOT NULL DEFAULT 'false',
+    danger_frequency INTEGER NOT NULL CONSTRAINT valid_frequency_ CHECK (danger_frequency >= 1000),
+    increased_frequency BOOLEAN NOT NULL DEFAULT 'false',
+    online_status BOOLEAN NOT NULL DEFAULT 'false',
 
     -- Coordinates
     coordinates GEOGRAPHY (POINT) NOT NULL
@@ -32,8 +32,8 @@ CREATE TABLE Sensors (
 INSERT INTO Sensors (
     created, updated, created_by, device_id, description, private, water_body_id,
     sensor_height, crossing_height,
-    threshold_value, frequency_increased, online,
-    default_frequency, threshold_frequency,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
     coordinates)
 VALUES (
     now(), now(), 'vst-admin', 'RPi-1', 'Raspberry Pi at Wersehause', 'false', 1,
@@ -45,8 +45,8 @@ VALUES (
 INSERT INTO Sensors (
     created, updated, created_by, device_id, description, private, water_body_id,
     sensor_height, crossing_height,
-    threshold_value, frequency_increased, online,
-    default_frequency, threshold_frequency,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'RPi-2', '2nd Raspberry Pi at Wersehause', 'true', 1,
@@ -58,8 +58,8 @@ VALUES (
 INSERT INTO Sensors (
     created, updated, created_by, device_id, description, private, water_body_id,
     sensor_height, crossing_height,
-    threshold_value, frequency_increased, online,
-    default_frequency, threshold_frequency,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'RPi-3', '3rd private Sensor', 'false', 1,
