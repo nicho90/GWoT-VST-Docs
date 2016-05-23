@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS Vehicles CASCADE;
 DROP TYPE IF EXISTS vehicle_types CASCADE;
 
 -- ENUM
-CREATE TYPE vehicle_types AS ENUM ('BIKE', 'WHEELCHAIR', 'SCOOTER', 'MOTORBIKE', 'CAR', 'TRUCK');
+CREATE TYPE vehicle_types AS ENUM ('BIKE', 'WHEELCHAIR', 'SCOOTER', 'MOTORBIKE', 'CAR', 'BUS', 'TRUCK');
 
 -- SCHEMA
 CREATE TABLE Vehicles (
@@ -16,9 +16,9 @@ CREATE TABLE Vehicles (
     -- Attributes
     brand CHARACTER VARYING(255) NOT NULL,
     name CHARACTER VARYING(255) NOT NULL,
-    year CHARACTER VARYING(255),
-    warning_height DECIMAL NOT NULL CONSTRAINT positive_value CHECK (warning_height > 0), -- example: wheel height
-    danger_height DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (danger_height > 0 AND danger_height > warning_height), -- example: door height
+    year INTEGER CONSTRAINT positive_value CHECK (year > 0),
+    warning_height DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (warning_height > 0), -- example: wheel height
+    danger_height DECIMAL NOT NULL CONSTRAINT positive_value__ CHECK (danger_height > 0 AND danger_height > warning_height), -- example: door height
 
     -- Category
     category vehicle_types

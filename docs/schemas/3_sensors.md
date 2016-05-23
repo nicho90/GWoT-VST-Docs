@@ -21,6 +21,7 @@ CREATE TABLE Sensors (
     default_frequency INTEGER NOT NULL CONSTRAINT valid_frequency CHECK (default_frequency >= 1000),
     threshold_frequency INTEGER NOT NULL CONSTRAINT valid_frequency_ CHECK (threshold_frequency >= 1000),
     frequency_increased BOOLEAN NOT NULL,
+    online BOOLEAN NOT NULL DEFAULT 'false',
 
     -- Coordinates
     coordinates GEOGRAPHY (POINT) NOT NULL
@@ -31,39 +32,39 @@ CREATE TABLE Sensors (
 INSERT INTO Sensors (
     created, updated, created_by, device_id, description, private, water_body_id,
     sensor_height, crossing_height,
-    threshold_value, frequency_increased,
+    threshold_value, frequency_increased, online,
     default_frequency, threshold_frequency,
     coordinates)
 VALUES (
     now(), now(), 'vst-admin', 'RPi-1', 'Raspberry Pi at Wersehause', 'false', 1,
     320, 200,
-    120, 'false',
+    120, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
     'POINT(7.700130 51.973314)');
 
 INSERT INTO Sensors (
     created, updated, created_by, device_id, description, private, water_body_id,
     sensor_height, crossing_height,
-    threshold_value, frequency_increased,
+    threshold_value, frequency_increased, online,
     default_frequency, threshold_frequency,
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'RPi-2', '2nd Raspberry Pi at Wersehause', 'true', 1,
     300, 220,
-    120, 'false',
+    120, 'false', 'true',
     600000, 60000, -- 600000 = 10min, 60000 = 1min
     'POINT(7.699556 51.973544)');
 
 INSERT INTO Sensors (
     created, updated, created_by, device_id, description, private, water_body_id,
     sensor_height, crossing_height,
-    threshold_value, frequency_increased,
+    threshold_value, frequency_increased, online,
     default_frequency, threshold_frequency,
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'RPi-3', '3rd private Sensor', 'false', 1,
     300, 0,
-    120, 'false',
+    120, 'false', 'false',
     6000000, 300000, -- 6000000 = 1h, 300000 = 5min
     'POINT(7.698880 51.973934)');
 ```
