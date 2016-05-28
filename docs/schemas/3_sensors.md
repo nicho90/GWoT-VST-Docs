@@ -22,8 +22,8 @@ CREATE TABLE Sensors (
     sensor_height DECIMAL NOT NULL CONSTRAINT positive_value CHECK (sensor_height > 0), -- example: height of the sensor to the Gauge-Zero of the river
     crossing_height DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (crossing_height >= 0), -- example: height of a bridge / floodway to the Gauge-Zero of the river
     threshold_value DECIMAL NOT NULL CONSTRAINT positive_value__ CHECK (threshold_value > 0),
-    default_frequency INTEGER NOT NULL CONSTRAINT valid_frequency CHECK (default_frequency >= 1000),
-    danger_frequency INTEGER NOT NULL CONSTRAINT valid_frequency_ CHECK (danger_frequency >= 1000),
+    default_frequency INTEGER NOT NULL CONSTRAINT valid_frequency CHECK (default_frequency >= 5000),  -- is on the sensor devided by 5, so that it actually is 1000
+    danger_frequency INTEGER NOT NULL CONSTRAINT valid_frequency_ CHECK (danger_frequency >= 5000), -- see default_frequency
     increased_frequency BOOLEAN NOT NULL DEFAULT 'false',
     online_status BOOLEAN NOT NULL DEFAULT 'false',
 
