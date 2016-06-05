@@ -233,7 +233,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Sensors [/sensors]
 
-### List all public - and private - Sensors [GET]
+### List all public & private Sensors [GET]
 
 Request all public Sensors without a Token
 Request all public and private Sensors of a User with a Token
@@ -304,7 +304,7 @@ Request all public and private Sensors of a User with a Token
 
 + Parameters
 
-    + username: `test-user` (string, required) - Username
+    + username: `test-user` (string, required) - Username of a User
 
 ### List all private Sensors of a User [GET]
 
@@ -316,7 +316,57 @@ Request all public and private Sensors of a User with a Token
 
 
 + Response 200 (application/json)
-
+    
+        [
+            {
+                "sensor_id": 1,
+                "device_id": "rpi-1",
+                "description": "Raspberry Pi at Wersehause",
+                "private": false,
+                "online_status": true,
+                "water_body_id": 1,
+                "water_body_name": "Werse",
+                "sensor_height": 320,
+                "sensor_height_unit": "CENTIMETER",
+                "crossing_height": 200,
+                "crossing_height_unit": "CENTIMETER",
+                "default_frequency": 60000,
+                "default_frequency_unit": "MILLISECONDS",
+                "danger_frequency": 5000,
+                "danger_frequency_unit": "MILLISECONDS",
+                "increased_frequency": false,
+                "threshold_value": 120,
+                "threshold_value_unit": "CENTIMETER",
+                "lng": 7.70013,
+                "lat": 51.973314,
+                "created": "2016-06-02T17:57:02.183Z",
+                "updated": "2016-06-02T17:57:02.183Z"
+            },
+            {
+                "sensor_id": 2,
+                "device_id": "rpi-2",
+                "description": "2nd Raspberry Pi at Wersehause",
+                "private": true,
+                "online_status": true,
+                "water_body_id": 1,
+                "water_body_name": "Weser",
+                "sensor_height": 300,
+                "sensor_height_unit": "CENTIMETER",
+                "crossing_height": 220,
+                "crossing_height_unit": "CENTIMETER",
+                "default_frequency": 600000,
+                "default_frequency_unit": "MILLISECONDS",
+                "danger_frequency": 60000,
+                "danger_frequency_unit": "MILLISECONDS",
+                "increased_frequency": false,
+                "threshold_value": 120,
+                "threshold_value_unit": "CENTIMETER",
+                "lng": 7.699556,
+                "lat": 51.973544,
+                "created": "2016-06-02T17:57:02.183Z",
+                "updated": "2016-06-02T17:57:02.183Z"
+            }
+        ]
 
 ### Create a Sensor [POST]
 
@@ -358,7 +408,7 @@ Request all public and private Sensors of a User with a Token
 
 
         
-## Sensor [/sensors/{sensorId}]
+## Sensor & Sensor of a User [/sensors/{sensorId}]
 
 + Parameters
 
