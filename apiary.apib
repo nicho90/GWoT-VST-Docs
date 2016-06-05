@@ -191,7 +191,6 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
     + username: `test-user` (string, required) - Username
 
-
 ### RETRIEVE a User [GET]
 
 + Request
@@ -252,6 +251,148 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + Response 204
 
 
+
+## Thresholds [/thresholds]
+
+### LIST all Thresholds ADMIN [GET]
+
++ Request
+    
+    + Headers
+
+                Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+    
+        [
+            {
+                "threshold_id": 1,
+                "created": "2016-06-02T17:57:39.757Z",
+                "updated": "2016-06-02T17:57:39.757Z",
+                "username": "nicho90",
+                "description": "VW Golf (2015)",
+                "warning_threshold": 10,
+                "critical_threshold": 20,
+                "category": "CAR"
+            },
+            {
+                "threshold_id": 2,
+                "created": "2016-06-02T17:57:39.757Z",
+                "updated": "2016-06-02T17:57:39.757Z",
+                "username": "nicho90",
+                "description": "Myself",
+                "warning_threshold": 5,
+                "critical_threshold": 50,
+                "category": "PEDESTRIAN"
+            },
+            {
+                "threshold_id": 3,
+                "created": "2016-06-02T17:57:39.757Z",
+                "updated": "2016-06-02T17:57:39.757Z",
+                "username": "nicho90",
+                "description": "Yamaha MT-03 (2015)",
+                "warning_threshold": 5,
+                "critical_threshold": 10,
+                "category": "MOTORBIKE"
+            }
+        ]
+        
+### CREATE a Threshold ADMIN [POST]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            
++ Attributes (Threshold)
+
++ Response 200 (application/json)
+
+        {
+            "threshold_id": 1,
+            "created": "2016-06-02T17:57:39.757Z",
+            "updated": "2016-06-02T17:57:39.757Z",
+            "username": "nicho90",
+            "description": "VW Golf (2015)",
+            "warning_threshold": 10,
+            "critical_threshold": 20,
+            "category": "CAR"
+        }
+
+
+## Threshold [/threshold/{thresholdId}]
+
++ Parameters
+
+    + thresholdId: `1` (string, required) - Id of a Threshold
+
+### RETRIEVE a Thresholds ADMIN [GET]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+            "threshold_id": 1,
+            "created": "2016-06-02T17:57:39.757Z",
+            "updated": "2016-06-02T17:57:39.757Z",
+            "username": "nicho90",
+            "description": "VW Golf (2015)",
+            "warning_threshold": 10,
+            "critical_threshold": 20,
+            "category": "CAR"
+        }
+
+        
+
+## Thresholds of a User [/users/{username}/thresholds]
+
+### LIST all Thresholds ADMIN [GET]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+    
+        [
+            {
+                "threshold_id": 1,
+                "created": "2016-06-02T17:57:39.757Z",
+                "updated": "2016-06-02T17:57:39.757Z",
+                "description": "VW Golf (2015)",
+                "warning_threshold": 10,
+                "critical_threshold": 20,
+                "category": "CAR"
+            },
+            {
+                "threshold_id": 2,
+                "created": "2016-06-02T17:57:39.757Z",
+                "updated": "2016-06-02T17:57:39.757Z",
+                "description": "Myself",
+                "warning_threshold": 5,
+                "critical_threshold": 50,
+                "category": "PEDESTRIAN"
+            },
+            {
+                "threshold_id": 3,
+                "created": "2016-06-02T17:57:39.757Z",
+                "updated": "2016-06-02T17:57:39.757Z",
+                "description": "Yamaha MT-03 (2015)",
+                "warning_threshold": 5,
+                "critical_threshold": 10,
+                "category": "MOTORBIKE"
+            }
+        ]
+        
+        
 
 ## Sensors [/sensors]
 
@@ -523,160 +664,72 @@ Request all public and private Sensors of a User with a Token
 
 
 
-## Vehilces [/vehicles{?category}]
-
-### LIST all Vehicles [GET]
+## Nearby Sensors - related Sensors [/sensors/{sensorId}/related_sensors]
 
 + Parameters
 
-    + category: `car` (optional) - Category: `bike`, `wheelchair`, `scooter`, `motorbike`, `car`, `bus`, `truck`
-    
-+ Response 200 (application/json)
+    + sensorId: `1` (required) - Id of a Sensor
 
+### LIST all nearby Emergency-Stations [GET]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+    
         [
             {
-                "vehicle_id": 1,
-                "created": "2016-06-02T17:58:21.431Z",
-                "updated": "2016-06-02T17:58:21.431Z",
-                "brand": "Yamaha",
-                "name": "Aerox R",
-                "year": 2015,
-                "warning_height": 5,
-                "critical_height": 10,
-                "category": "SCOOTER"
+                "sensor_id": 2,
+                "distance": 47.019021491,
+                "distance_unit": "METER",
+                "device_id": "rpi-2",
+                "description": "2nd Raspberry Pi at Wersehause",
+                "private": true,
+                "online_status": true,
+                "water_body_id": 1,
+                "water_body_name": "Weser",
+                "sensor_height": 300,
+                "sensor_height_unit": "CENTIMETER",
+                "crossing_height": 220,
+                "crossing_height_unit": "CENTIMETER",
+                "default_frequency": 600000,
+                "default_frequency_unit": "MILLISECONDS",
+                "danger_frequency": 60000,
+                "danger_frequency_unit": "MILLISECONDS",
+                "increased_frequency": false,
+                "threshold_value": 120,
+                "threshold_value_unit": "CENTIMETER",
+                "lng": 7.699556,
+                "lat": 51.973544
             },
             {
-                "vehicle_id": 2,
-                "created": "2016-06-02T17:58:21.431Z",
-                "updated": "2016-06-02T17:58:21.431Z",
-                "brand": "Yamaha",
-                "name": "MT-03",
-                "year": 2015,
-                "warning_height": 5,
-                "critical_height": 10,
-                "category": "MOTORBIKE"
-            },
-            {
-                "vehicle_id": 3,
-                "created": "2016-06-02T17:58:21.431Z",
-                "updated": "2016-06-02T17:58:21.431Z",
-                "brand": "VW",
-                "name": "Golf",
-                "year": 2015,
-                "warning_height": 10,
-                "critical_height": 20,
-                "category": "CAR"
-            },
-            {
-                "vehicle_id": 4,
-                "created": "2016-06-02T17:58:21.431Z",
-                "updated": "2016-06-02T17:58:21.431Z",
-                "brand": "Audi",
-                "name": "A1",
-                "year": 2014,
-                "warning_height": 10,
-                "critical_height": 15,
-                "category": "CAR"
-            },
-            {
-                "vehicle_id": 5,
-                "created": "2016-06-02T17:58:21.431Z",
-                "updated": "2016-06-02T17:58:21.431Z",
-                "brand": "Toyota",
-                "name": "Tundra SR5",
-                "year": 2016,
-                "warning_height": 20,
-                "critical_height": 30,
-                "category": "CAR"
+                "sensor_id": 3,
+                "distance": 110.170106942,
+                "distance_unit": "METER",
+                "device_id": "rpi-3",
+                "description": "3rd private Sensor",
+                "private": false,
+                "online_status": false,
+                "water_body_id": 1,
+                "water_body_name": "Weser",
+                "sensor_height": 300,
+                "sensor_height_unit": "CENTIMETER",
+                "crossing_height": 0,
+                "crossing_height_unit": "CENTIMETER",
+                "default_frequency": 6000000,
+                "default_frequency_unit": "MILLISECONDS",
+                "danger_frequency": 300000,
+                "danger_frequency_unit": "MILLISECONDS",
+                "increased_frequency": false,
+                "threshold_value": 120,
+                "threshold_value_unit": "CENTIMETER",
+                "lng": 7.69888,
+                "lat": 51.973934
             }
         ]
-
-
-### CREATE a Vehicle ADMIN [POST]
-
-+ Request
-
-    + Headers
-
-            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
-            Content-Type : application/json
-
-+ Attributes (Vehicle)
-
-+ Response 201 (application/json)
-
-        {
-            "vehicle_id": 1,
-            "created": "2016-06-02T17:58:21.431Z",
-            "updated": "2016-06-02T17:58:21.431Z",
-            "brand": "Yamaha",
-            "name": "Aerox R",
-            "year": 2015,
-            "warning_height": 5,
-            "critical_height": 10,
-            "category": "SCOOTER"
-        }
-
-
-
-## Vehilce [/vehicles/{vehicleId}]
-
-+ Parameters
-
-    + vehicleId: `1` (required) - Id of a Vehicle
-
-### RETRIEVE a Vehicle [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "vehicle_id": 1,
-            "created": "2016-06-02T17:58:21.431Z",
-            "updated": "2016-06-02T17:58:21.431Z",
-            "brand": "Yamaha",
-            "name": "Aerox R",
-            "year": 2015,
-            "warning_height": 5,
-            "critical_height": 10,
-            "category": "SCOOTER"
-        }
-
-
-### EDIT a Vehicle ADMIN [PUT]
-
-+ Request
-
-    + Headers
-
-            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
-            Content-Type : application/json
-
-+ Attributes (Vehicle)
-
-+ Response 200 (application/json)
-
-        {
-            "vehicle_id": 1,
-            "created": "2016-06-02T17:58:21.431Z",
-            "updated": "2016-06-02T17:58:21.431Z",
-            "brand": "Yamaha",
-            "name": "Aerox R",
-            "year": 2015,
-            "warning_height": 5,
-            "critical_height": 10,
-            "category": "SCOOTER"
-        }
-        
-        
-### DELETE a Vehicle ADMIN [DELETE]
-
-+ Request
-
-    + Headers
-
-            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
-
-+ Response 204
 
 
 
@@ -1203,6 +1256,163 @@ Request all public and private Sensors of a User with a Token
         
         
 ### DELETE a Water-Body ADMIN [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
+
+## Vehilces [/vehicles{?category}]
+
+### LIST all Vehicles [GET]
+
++ Parameters
+
+    + category: `car` (optional) - Category: `bike`, `wheelchair`, `scooter`, `motorbike`, `car`, `bus`, `truck`
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "vehicle_id": 1,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Yamaha",
+                "name": "Aerox R",
+                "year": 2015,
+                "warning_height": 5,
+                "critical_height": 10,
+                "category": "SCOOTER"
+            },
+            {
+                "vehicle_id": 2,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Yamaha",
+                "name": "MT-03",
+                "year": 2015,
+                "warning_height": 5,
+                "critical_height": 10,
+                "category": "MOTORBIKE"
+            },
+            {
+                "vehicle_id": 3,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "VW",
+                "name": "Golf",
+                "year": 2015,
+                "warning_height": 10,
+                "critical_height": 20,
+                "category": "CAR"
+            },
+            {
+                "vehicle_id": 4,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Audi",
+                "name": "A1",
+                "year": 2014,
+                "warning_height": 10,
+                "critical_height": 15,
+                "category": "CAR"
+            },
+            {
+                "vehicle_id": 5,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Toyota",
+                "name": "Tundra SR5",
+                "year": 2016,
+                "warning_height": 20,
+                "critical_height": 30,
+                "category": "CAR"
+            }
+        ]
+
+
+### CREATE a Vehicle ADMIN [POST]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (Vehicle)
+
++ Response 201 (application/json)
+
+        {
+            "vehicle_id": 1,
+            "created": "2016-06-02T17:58:21.431Z",
+            "updated": "2016-06-02T17:58:21.431Z",
+            "brand": "Yamaha",
+            "name": "Aerox R",
+            "year": 2015,
+            "warning_height": 5,
+            "critical_height": 10,
+            "category": "SCOOTER"
+        }
+
+
+
+## Vehilce [/vehicles/{vehicleId}]
+
++ Parameters
+
+    + vehicleId: `1` (required) - Id of a Vehicle
+
+### RETRIEVE a Vehicle [GET]
+
++ Response 200 (application/json)
+
+        {
+            "vehicle_id": 1,
+            "created": "2016-06-02T17:58:21.431Z",
+            "updated": "2016-06-02T17:58:21.431Z",
+            "brand": "Yamaha",
+            "name": "Aerox R",
+            "year": 2015,
+            "warning_height": 5,
+            "critical_height": 10,
+            "category": "SCOOTER"
+        }
+
+
+### EDIT a Vehicle ADMIN [PUT]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (Vehicle)
+
++ Response 200 (application/json)
+
+        {
+            "vehicle_id": 1,
+            "created": "2016-06-02T17:58:21.431Z",
+            "updated": "2016-06-02T17:58:21.431Z",
+            "brand": "Yamaha",
+            "name": "Aerox R",
+            "year": 2015,
+            "warning_height": 5,
+            "critical_height": 10,
+            "category": "SCOOTER"
+        }
+        
+        
+### DELETE a Vehicle ADMIN [DELETE]
 
 + Request
 
