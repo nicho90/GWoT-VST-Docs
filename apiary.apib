@@ -75,7 +75,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + lng: `7.704319` (number, required) - Longitude-value of the location
 + lat: `51.979838` (number, required) - Latitude-value of the location
 
-===
+
 
 ## Authentication [/login]
 
@@ -110,6 +110,8 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "code" : "401",
                 "message": "ERROR-MESSAGE"
             }
+
+
 
 ## Users [/users]
 
@@ -658,6 +660,61 @@ Request all public and private Sensors of a User with a Token
 
 
 
+## Nearby Emergency Stations [/sensors/{sensorId}/emergency_stations]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+
+### LIST all nearby Emergency Stations [GET]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+    
+        [
+            {
+                "emergency_station_id": 2,
+                "distance": 6096.640249547,
+                "distance_unit": "METER",
+                "name": "Freiwillige Feuerwehr Telgte",
+                "phone_number": "+4925048806790",
+                "lng": 7.788771,
+                "lat": 51.975639,
+                "street": "Alverskirchener Straße",
+                "house_number": "27",
+                "addition": "",
+                "zip_code": "48291",
+                "city": "Telgte",
+                "country": "GERMANY",
+                "lng": 7.611165,
+                "lat": 51.974492
+            },
+            {
+                "emergency_station_id": 1,
+                "distance": 6114.896536307,
+                "distance_unit": "METER",
+                "name": "Berufsfeuerwehr",
+                "phone_number": "+4925120250",
+                "lng": 7.611165,
+                "lat": 51.974492,
+                "street": "York-Ring",
+                "house_number": "25",
+                "addition": "",
+                "zip_code": "48159",
+                "city": "Münster",
+                "country": "GERMANY",
+                "lng": 7.788771,
+                "lat": 51.975639
+            }
+        ]
+        
+
+
 ## Emergency Stations [/emergency_stations{?lng,lat}]
 
 ### LIST all Emergency Stations [GET] 
@@ -803,12 +860,67 @@ Request all public and private Sensors of a User with a Token
 
 
 
+## Nearby Service Stations [/sensors/{sensorId}/service_stations]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+
+### LIST all nearby Service Stations [GET]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        [
+            {
+                "service_station_id": 1,
+                "distance": 780.891626026,
+                "distance_unit": "METER",
+                "name": "Autoservice Hermann Nientiedt",
+                "phone_number": "+492512842937",
+                "lng": 7.704319,
+                "lat": 51.979838,
+                "street": "Gildenstraße",
+                "house_number": "2 Q",
+                "addition": "",
+                "zip_code": "48157",
+                "city": "Münster",
+                "country": "GERMANY",
+                "lng": 7.704319,
+                "lat": 51.979838
+            },
+            {
+                "service_station_id": 2,
+                "distance": 3256.062312382,
+                "distance_unit": "METER",
+                "name": "Auto-Service Andres GmbH",
+                "phone_number": "+49251324201",
+                "lng": 7.664011,
+                "lat": 51.99226,
+                "street": "Virnkamp",
+                "house_number": "20",
+                "addition": "",
+                "zip_code": "48157",
+                "city": "Münster",
+                "country": "GERMANY",
+                "lng": 7.664011,
+                "lat": 51.992260
+            }
+        ]
+
+
+
 ## Service Stations [/service_stations{?lng,lat}]
 
 ### LIST all Service Stations [GET]
 
-<li>Request a list with all Servcice stations without a Longitude- and Latitude-value</li>
-<li>Request the nearest service stations with a Longitude- and Latitude-value. result will be extended with and sorted by distance-value in Meters</li>
+<li>Request a list with all Servcice Stations without a Longitude- and Latitude-value</li>
+<li>Request the **nearest Service Stations** with a Longitude- and Latitude-value. result will be extended with and sorted by distance-value in Meters, for example: see </li>
 
 + Parameters
 
