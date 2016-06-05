@@ -36,6 +36,45 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + last_name: `User` (string, required) - Last name (min-length 1 character)
 + language: `en_US` (string, required) - Language setting for application: `en_US` (Default), `de_DE`
 
+
+## Vehicle (object)
++ vehicle_id: `1` (number, optional) - `null` (Default)
++ brand: `Yamaha` (string, required) - Brandname
++ name: `Aerox R` (string, required) - Name or model
++ year: `2015` (string, required) - Publishing or manufacturing year
++ warning_height: `5` (number, required) - Threshold-value for warnings, for example: height of the wheel(s)
++ critical_height: `10` (number, required) - Critical threshold-value for alerts, for example: height of the door(s) or the engine
++ category: `SCOOTER` (string, required) - Category: `BIKE`, `WHEELCHAIR`, `SCOOTER`, `MOTORBIKE`, `CAR`, `BUS`, `TRUCK`
+
+
+
+## EmergencyStation (object)
++ emergency_station_id: `1` (number, optional) - `null` (Default)
++ name: `Berufsfeuerwehr` (string, required) - Name
++ phone_number: `+4925120250` (string, required) - Phone number
++ street: `York-Ring` (string, required) - Street name
++ house_number: `25` (string, required) - House number
++ addition: `` (string, nullable, otional) - Addition to house number, for example: `2nd level`
++ zip_code: `48159` (string, required) - ZIP-Code of the city
++ city: `Münster` (string, required) - City name
++ country: `GERMANY` (string, required) - Country name: `US`, `GERMANY`, `FRANCE`, `UK`, etc.
++ lng: `7.611165` (number, required) - Longitude-value of the location
++ lat: `51.974492` (number, required) - Latitude-value of the location
+
+
+## ServiceStation (object)
++ service_station_id: `1` (number, optional) - `null` (Default)
++ name: `Autoservice Hermann Nientiedt` (string, required) - Name
++ phone_number: `+492512842937` (string, required) - Phone number
++ street: `Gildenstraße` (string, required) - Street name
++ house_number: `2 Q` (string, required) - House number
++ addition: `` (string, nullable, otional) - Addition to house number, for example: `2nd level`
++ zip_code: `48157` (string, required) - ZIP-Code of the city
++ city: `Münster` (string, required) - City name
++ country: `GERMANY` (string, required) - Country name: `US`, `GERMANY`, `FRANCE`, `UK`, etc.
++ lng: `7.704319` (number, required) - Longitude-value of the location
++ lat: `51.979838` (number, required) - Latitude-value of the location
+
 ===
 
 ## Authentication [/login]
@@ -56,7 +95,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             {
                 "created": "2016-05-08T11:43:31.397Z",
                 "updated": "2016-05-08T15:03:05.637Z",
-                "username": "testuser",
+                "username": "test-user",
                 "password": "abcdef",
                 "email_address": "test.user@uni-muenster.de",
                 "first_name": "Test",
@@ -88,7 +127,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             {
                 "created": "2016-05-08T11:43:31.397Z",
                 "updated": "2016-05-08T15:03:05.637Z",
-                "username": "testuser",
+                "username": "test-user",
                 "password": "abcdef",
                 "email_address": "test.user@uni-muenster.de",
                 "first_name": "Test",
@@ -113,7 +152,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         {
             "created": "2016-05-08T11:43:31.397Z",
             "updated": "2016-05-08T15:03:05.637Z",
-            "username": "testuser",
+            "username": "test-user",
             "password": "abcdef",
             "email_address": "test.user@uni-muenster.de",
             "first_name": "Test",
@@ -144,7 +183,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         {
             "created": "2016-05-08T11:43:31.397Z",
             "updated": "2016-05-08T15:03:05.637Z",
-            "username": "testuser",
+            "username": "test-user",
             "password": "abcdef",
             "email_address": "test.user@uni-muenster.de",
             "first_name": "Test",
@@ -335,14 +374,30 @@ Request all public and private Sensors of a User with a Token
 
 + Response 200 (application/json)
 
-        {
-            "sensor_id" : "1" ,
-            "created" : "",
-            "updated": "",
-            "sensor_description": "RPi Water gauge sensor",
-            "lng": 7.59572,
-            "lat": 51.969415
-        }
+            {
+                "sensor_id": 1,
+                "device_id": "rpi-1",
+                "description": "Raspberry Pi at Wersehause",
+                "private": false,
+                "online_status": true,
+                "water_body_id": 1,
+                "water_body_name": "Werse",
+                "sensor_height": 300,
+                "sensor_height_unit": "CENTIMETER",
+                "crossing_height": 100,
+                "crossing_height_unit": "CENTIMETER",
+                "default_frequency": 60000,
+                "default_frequency_unit": "MILLISECONDS",
+                "danger_frequency": 6000,
+                "danger_frequency_unit": "MILLISECONDS",
+                "increased_frequency": false,
+                "threshold_value": 50,
+                "threshold_value_unit": "CENTIMETER",
+                "lng": 7.70013,
+                "lat": 51.973314,
+                "created": "2016-06-02T17:57:02.183Z",
+                "updated": "2016-06-02T17:57:02.183Z"
+            }
 
     
 ### Edit a Sensor [PUT]
@@ -358,14 +413,30 @@ Request all public and private Sensors of a User with a Token
             
 + Response 200 (application/json)
 
-        {
-            "sensor_id" : "1" ,
-            "created" : "",
-            "updated": "",
-            "sensor_description": "RPi Water gauge sensor",
-            "lng": 7.59572,
-            "lat": 51.969415
-        }
+            {
+                "sensor_id": 1,
+                "device_id": "rpi-1",
+                "description": "Raspberry Pi at Wersehause",
+                "private": false,
+                "online_status": true,
+                "water_body_id": 1,
+                "water_body_name": "Werse",
+                "sensor_height": 300,
+                "sensor_height_unit": "CENTIMETER",
+                "crossing_height": 100,
+                "crossing_height_unit": "CENTIMETER",
+                "default_frequency": 60000,
+                "default_frequency_unit": "MILLISECONDS",
+                "danger_frequency": 6000,
+                "danger_frequency_unit": "MILLISECONDS",
+                "increased_frequency": false,
+                "threshold_value": 50,
+                "threshold_value_unit": "CENTIMETER",
+                "lng": 7.70013,
+                "lat": 51.973314,
+                "created": "2016-06-02T17:57:02.183Z",
+                "updated": "2016-06-02T17:57:02.183Z"
+            }
 
 
 ### Delete a Sensor [DELETE]
@@ -377,6 +448,102 @@ Request all public and private Sensors of a User with a Token
             Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
 
 + Response 204
+
+
+
+## Vehilces [/vehicles{?category}]
+
+### List all Vehicles [GET] 
+
++ Parameters
+
+    + category: `car` (optional) - Category: `bike`, `wheelchair`, `scooter`, `motorbike`, `car`, `bus`, `truck`
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "vehicle_id": 1,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Yamaha",
+                "name": "Aerox R",
+                "year": 2015,
+                "warning_height": 5,
+                "critical_height": 10,
+                "category": "SCOOTER"
+            },
+            {
+                "vehicle_id": 2,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Yamaha",
+                "name": "MT-03",
+                "year": 2015,
+                "warning_height": 5,
+                "critical_height": 10,
+                "category": "MOTORBIKE"
+            },
+            {
+                "vehicle_id": 3,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "VW",
+                "name": "Golf",
+                "year": 2015,
+                "warning_height": 10,
+                "critical_height": 20,
+                "category": "CAR"
+            },
+            {
+                "vehicle_id": 4,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Audi",
+                "name": "A1",
+                "year": 2014,
+                "warning_height": 10,
+                "critical_height": 15,
+                "category": "CAR"
+            },
+            {
+                "vehicle_id": 5,
+                "created": "2016-06-02T17:58:21.431Z",
+                "updated": "2016-06-02T17:58:21.431Z",
+                "brand": "Toyota",
+                "name": "Tundra SR5",
+                "year": 2016,
+                "warning_height": 20,
+                "critical_height": 30,
+                "category": "CAR"
+            }
+        ]
+
+
+### Create a vehicle ADMIN [POST]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (Vehicle)
+
++ Response 201 (application/json)
+
+        {
+            "vehicle_id": 1,
+            "created": "2016-06-02T17:58:21.431Z",
+            "updated": "2016-06-02T17:58:21.431Z",
+            "brand": "Yamaha",
+            "name": "Aerox R",
+            "year": 2015,
+            "warning_height": 5,
+            "critical_height": 10,
+            "category": "SCOOTER"
+        }
 
 
 
