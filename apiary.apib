@@ -13,6 +13,15 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + password: `abcdef` (string, required) - Password
 
 
+## User (object)
++ username: `test-user` (string, required) - Username (unique)
++ password: `abcdef` (string, required) - Password (min-length 6 characters)
++ email_address: `test.user@uni-muenster.de` (string, required) - Email-address (valid email-address)
++ first_name: `Test` (string, required) - First name (min-length 1 character)
++ last_name: `User` (string, required) - Last name (min-length 1 character)
++ language: `en_US` (string, required) - Language setting for application: `en_US` (Default), `de_DE`
+
+
 ## Sensor (object)
 + sensor_id: `1` (number, optional) - `null` (Default)
 + device_id: `rpi-1` (string, required) - deviceId of a Sensor
@@ -28,24 +37,35 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + lat: `51.973314` (number, required) - Latitude-value of the location
 
 
-## User (object)
-+ username: `test-user` (string, required) - Username (unique)
-+ password: `abcdef` (string, required) - Password (min-length 6 characters)
-+ email_address: `test.user@uni-muenster.de` (string, required) - Email-address (valid email-address)
-+ first_name: `Test` (string, required) - First name (min-length 1 character)
-+ last_name: `User` (string, required) - Last name (min-length 1 character)
-+ language: `en_US` (string, required) - Language setting for application: `en_US` (Default), `de_DE`
+## Threshold (object)
++ threshold_id: `1` (number, optional) - `null` (Default)
++ description: `VW Golf (2015)` (string, required) - Description of the Threshold
++ warning_threshold: `10`(number, required) - Threshold-value for warnings, for example: height of the wheel(s)
++ critical_threshold: `20` (number, required) - Critical threshold-value for alerts, for example: height of the door(s) or the engine
++ category: `CAR` (string, required) - Category: `PEDESTRIAN`, `BIKE`, `WHEELCHAIR`, `SCOOTER`, `MOTORBIKE`, `CAR`, `BUS`, `TRUCK`, `OTHER`
+
+
+## Subscription (object)
++ subscription_id: `1` (number, optional) - `null` (Default)
++ sensor_id: `1` (number, required) - Id of a Sensor
++ threshold_id: `1` (number, required) - Id of a Threshold
++ active: `true` (string, required) - Notifications enabled or turned off: `true` (Default), `false`
+
+
+## WaterBody (object)
++ water_body_id: `1` (number, optional) - `null` (Default)
++ name: `Werse` (string, required) - Name of the Water-Body, for example: a river
++ category: `RIVER` (string, required) - Category: `STREAM`, `RIVER`, `CHANNEL`, `LAKE`, `POND`, `POOL`
 
 
 ## Vehicle (object)
 + vehicle_id: `1` (number, optional) - `null` (Default)
 + brand: `Yamaha` (string, required) - Brandname
 + name: `Aerox R` (string, required) - Name or model
-+ year: `2015` (string, required) - Publishing or manufacturing year
++ year: `2015` (string, nullable, optional) - Publishing or manufacturing year
 + warning_height: `5` (number, required) - Threshold-value for warnings, for example: height of the wheel(s)
 + critical_height: `10` (number, required) - Critical threshold-value for alerts, for example: height of the door(s) or the engine
 + category: `SCOOTER` (string, required) - Category: `BIKE`, `WHEELCHAIR`, `SCOOTER`, `MOTORBIKE`, `CAR`, `BUS`, `TRUCK`
-
 
 
 ## EmergencyStation (object)
@@ -54,7 +74,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + phone_number: `+4925120250` (string, required) - Phone number
 + street: `York-Ring` (string, required) - Street name
 + house_number: `25` (string, required) - House number
-+ addition: `` (string, nullable, otional) - Addition to house number, for example: `2nd level`
++ addition: `null` (string, nullable, optional) - Addition to house number, for example: `2nd level`
 + zip_code: `48159` (string, required) - ZIP-Code of the city
 + city: `Münster` (string, required) - City name
 + country: `GERMANY` (string, required) - Country name: `US`, `GERMANY`, `FRANCE`, `UK`, etc.
@@ -68,7 +88,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + phone_number: `+492512842937` (string, required) - Phone number
 + street: `Gildenstraße` (string, required) - Street name
 + house_number: `2 Q` (string, required) - House number
-+ addition: `` (string, nullable, otional) - Addition to house number, for example: `2nd level`
++ addition: `null` (string, nullable, optional) - Addition to house number, for example: `2nd level`
 + zip_code: `48157` (string, required) - ZIP-Code of the city
 + city: `Münster` (string, required) - City name
 + country: `GERMANY` (string, required) - Country name: `US`, `GERMANY`, `FRANCE`, `UK`, etc.
@@ -660,13 +680,13 @@ Request all public and private Sensors of a User with a Token
 
 
 
-## Nearby Emergency Stations [/sensors/{sensorId}/emergency_stations]
+## Nearby Emergency-Stations [/sensors/{sensorId}/emergency_stations]
 
 + Parameters
 
     + sensorId: `1` (required) - Id of a Sensor
 
-### LIST all nearby Emergency Stations [GET]
+### LIST all nearby Emergency-Stations [GET]
 
 + Request
 
@@ -715,12 +735,12 @@ Request all public and private Sensors of a User with a Token
         
 
 
-## Emergency Stations [/emergency_stations{?lng,lat}]
+## Emergency-Stations [/emergency_stations{?lng,lat}]
 
-### LIST all Emergency Stations [GET] 
+### LIST all Emergency-Stations [GET] 
 
-<li>Request a list with all Emergency Stations without a Longitude- and Latitude-value</li>
-<li>Request the <b>nearest Emergency Stations</b> with a Longitude- and Latitude-value. The result will be extended with and sorted by distance-value, for example: see <a href="#nearby-emergency-stations">LIST all nearby Emergency Stations</a></li>
+<li>Request a list with all Emergency-Stations without a Longitude- and Latitude-value</li>
+<li>Request the <b>nearest Emergency-Stations</b> with a Longitude- and Latitude-value. The result will be extended with and sorted by distance-value, for example: see <a href="#nearby-emergency-stations">LIST all nearby Emergency-Stations</a></li>
 
 + Parameters
 
@@ -763,7 +783,7 @@ Request all public and private Sensors of a User with a Token
         ]
 
 
-### CREATE a Emergency Station ADMIN [POST]
+### CREATE a Emergency-Station ADMIN [POST]
 
 + Request
 
@@ -794,13 +814,13 @@ Request all public and private Sensors of a User with a Token
         
 
 
-## Emergency Station [/emergency_stations/{emergencyStationId}]
+## Emergency-Station [/emergency_stations/{emergencyStationId}]
 
 + Parameters
 
-    + emergencyStationId: `1` (required) - Id of a Emergency Station
+    + emergencyStationId: `1` (required) - Id of a Emergency-Station
 
-### RETRIEVE a Emergency Station [GET]
+### RETRIEVE a Emergency-Station [GET]
 
 + Response 200 (application/json)
 
@@ -821,7 +841,7 @@ Request all public and private Sensors of a User with a Token
         }
 
 
-### EDIT a Emergency Station ADMIN [PUT]
+### EDIT a Emergency-Station ADMIN [PUT]
 
 + Request
 
@@ -851,7 +871,7 @@ Request all public and private Sensors of a User with a Token
         }
         
         
-### DELETE a Emergency Station ADMIN [DELETE]
+### DELETE a Emergency-Station ADMIN [DELETE]
 
 + Request
 
@@ -863,13 +883,13 @@ Request all public and private Sensors of a User with a Token
 
 
 
-## Nearby Service Stations [/sensors/{sensorId}/service_stations]
+## Nearby Service-Stations [/sensors/{sensorId}/service_stations]
 
 + Parameters
 
     + sensorId: `1` (required) - Id of a Sensor
 
-### LIST all nearby Service Stations [GET]
+### LIST all nearby Service-Stations [GET]
 
 + Request
 
@@ -918,12 +938,12 @@ Request all public and private Sensors of a User with a Token
 
 
 
-## Service Stations [/service_stations{?lng,lat}]
+## Service-Stations [/service_stations{?lng,lat}]
 
-### LIST all Service Stations [GET]
+### LIST all Service-Stations [GET]
 
-<li>Request a list with all Servcice Stations without a Longitude- and Latitude-value</li>
-<li>Request the <b>nearest Service Stations</b> with a Longitude- and Latitude-value. The result will be extended with and sorted by distance-value, for example: see <a href="#nearby-service-stations">LIST all nearby Service Stations</a></li>
+<li>Request a list with all Service-Stations without a Longitude- and Latitude-value</li>
+<li>Request the <b>nearest Service-Stations</b> with a Longitude- and Latitude-value. The result will be extended with and sorted by distance-value, for example: see <a href="#nearby-service-stations">LIST all nearby Service-Stations</a></li>
 
 + Parameters
 
@@ -966,7 +986,7 @@ Request all public and private Sensors of a User with a Token
         ]
 
 
-### CREATE a Service Station ADMIN [POST]
+### CREATE a Service-Station ADMIN [POST]
 
 + Request
 
@@ -997,13 +1017,13 @@ Request all public and private Sensors of a User with a Token
         
 
 
-## Service Station [/service_stations/{serviceStationId}]
+## Service-Station [/service_stations/{serviceStationId}]
 
 + Parameters
 
-    + serviceStationId: `1` (required) - Id of a Service Station
+    + serviceStationId: `1` (required) - Id of a Service-Station
 
-### RETRIEVE a Service Station [GET]
+### RETRIEVE a Service-Station [GET]
 
 + Response 200 (application/json)
 
@@ -1024,7 +1044,7 @@ Request all public and private Sensors of a User with a Token
         }
 
 
-### EDIT a Service Station ADMIN [PUT]
+### EDIT a Service-Station ADMIN [PUT]
 
 + Request
 
@@ -1054,7 +1074,135 @@ Request all public and private Sensors of a User with a Token
         }
         
         
-### DELETE a Service Station ADMIN [DELETE]
+### DELETE a Service-Station ADMIN [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
+
+## Water-Bodies [/water_bodies]
+
+### LIST all Water-Bodies [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "water_body_id": 1,
+                "created": "2016-06-02T17:56:52.852Z",
+                "updated": "2016-06-02T17:56:52.852Z",
+                "name": "Werse",
+                "category": "RIVER"
+            },
+            {
+                "water_body_id": 2,
+                "created": "2016-06-02T17:56:52.852Z",
+                "updated": "2016-06-02T17:56:52.852Z",
+                "name": "Ems",
+                "category": "RIVER"
+            },
+            {
+                "water_body_id": 3,
+                "created": "2016-06-02T17:56:52.852Z",
+                "updated": "2016-06-02T17:56:52.852Z",
+                "name": "Dortmund-Ems Kanal",
+                "category": "CHANNEL"
+            },
+            {
+                "water_body_id": 4,
+                "created": "2016-06-02T17:56:52.852Z",
+                "updated": "2016-06-02T17:56:52.852Z",
+                "name": "Schleusebecken (Schiffahrter Damm)",
+                "category": "POOL"
+            },
+            {
+                "water_body_id": 5,
+                "created": "2016-06-02T17:56:52.852Z",
+                "updated": "2016-06-02T17:56:52.852Z",
+                "name": "Aa",
+                "category": "STREAM"
+            },
+            {
+                "water_body_id": 6,
+                "created": "2016-06-02T17:56:52.852Z",
+                "updated": "2016-06-02T17:56:52.852Z",
+                "name": "Aasee",
+                "category": "LAKE"
+            }
+        ]
+
+
+### CREATE a Water-Body ADMIN [POST]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (WaterBody)
+
++ Response 201 (application/json)
+
+        {
+            "water_body_id": 1,
+            "created": "2016-06-02T17:56:52.852Z",
+            "updated": "2016-06-02T17:56:52.852Z",
+            "name": "Werse",
+            "category": "RIVER"
+        }
+        
+
+
+## Water-Body [/water_bodies/{waterBodyId}]
+
++ Parameters
+
+    + waterBodyId: `1` (required) - Id of a Water-Body
+
+### RETRIEVE a Water-Body [GET]
+
++ Response 200 (application/json)
+
+        {
+            "water_body_id": 1,
+            "created": "2016-06-02T17:56:52.852Z",
+            "updated": "2016-06-02T17:56:52.852Z",
+            "name": "Werse",
+            "category": "RIVER"
+        }
+
+
+### EDIT a Water-Body ADMIN [PUT]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (WaterBody)
+
++ Response 200 (application/json)
+
+        {
+            "water_body_id": 1,
+            "created": "2016-06-02T17:56:52.852Z",
+            "updated": "2016-06-02T17:56:52.852Z",
+            "name": "Werse",
+            "category": "RIVER"
+        }
+        
+        
+### DELETE a Water-Body ADMIN [DELETE]
 
 + Request
 
