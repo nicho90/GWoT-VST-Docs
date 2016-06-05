@@ -24,8 +24,9 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Sensor (object)
 + sensor_id: `1` (number, optional) - `null` (Default)
-+ device_id: `rpi-1` (string, required) - deviceId of a Sensor
++ device_id: `rpi-1` (string, required) - Fixed deviceId of a Sensor (unique), will be used for matching in MQTT-messages
 + description: `Raspberry Pi at Wersehause`(string, required) - description of the sensor
++ creator: `test-user` (string, optional) - Username of a User, only required when ADMIN
 + private: `false` (boolean, required) - public `true` or public `false` (Default) sensor
 + water_body_id: `1` (number, required) - Water-Body-Id of a river, lake, etc.
 + sensor_height: `300` (number, required) - Sensor height, measured in centimeters from Gauge-Zero to Sensor
@@ -39,7 +40,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Threshold (object)
 + threshold_id: `1` (number, optional) - `null` (Default)
-+ username: `test-user` (number, optional) - `null` (Default)
++ creator: `test-user` (string, optional) - Username of a User, only required when ADMIN
 + description: `VW Golf (2015)` (string, required) - Description of the Threshold
 + warning_threshold: `10`(number, required) - Threshold-value for warnings, for example: height of the wheel(s)
 + critical_threshold: `20` (number, required) - Critical threshold-value for alerts, for example: height of the door(s) or the engine
@@ -231,7 +232,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         {
             "created": "2016-05-08T11:43:31.397Z",
             "updated": "2016-05-08T15:03:05.637Z",
-            "username": "testuser",
+            "username": "test-user",
             "password": "abcdef",
             "email_address": "test.user@uni-muenster.de",
             "first_name": "Test",
@@ -270,7 +271,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "threshold_id": 1,
                 "created": "2016-06-02T17:57:39.757Z",
                 "updated": "2016-06-02T17:57:39.757Z",
-                "username": "nicho90",
+                "creator": "test-user",
                 "description": "VW Golf (2015)",
                 "warning_threshold": 10,
                 "critical_threshold": 20,
@@ -280,7 +281,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "threshold_id": 2,
                 "created": "2016-06-02T17:57:39.757Z",
                 "updated": "2016-06-02T17:57:39.757Z",
-                "username": "nicho90",
+                "creator": "test-user",
                 "description": "Myself",
                 "warning_threshold": 5,
                 "critical_threshold": 50,
@@ -290,7 +291,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "threshold_id": 3,
                 "created": "2016-06-02T17:57:39.757Z",
                 "updated": "2016-06-02T17:57:39.757Z",
-                "username": "nicho90",
+                "creator": "test-user",
                 "description": "Yamaha MT-03 (2015)",
                 "warning_threshold": 5,
                 "critical_threshold": 10,
@@ -314,7 +315,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "threshold_id": 1,
             "created": "2016-06-02T17:57:39.757Z",
             "updated": "2016-06-02T17:57:39.757Z",
-            "username": "nicho90",
+            "creator": "test-user",
             "description": "VW Golf (2015)",
             "warning_threshold": 10,
             "critical_threshold": 20,
@@ -322,13 +323,13 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         }
 
 
-## Threshold [/threshold/{thresholdId}]
+## Threshold [/thresholds/{thresholdId}]
 
 + Parameters
 
     + thresholdId: `1` (string, required) - Id of a Threshold
 
-### RETRIEVE a Thresholds ADMIN [GET]
+### RETRIEVE a Threshold ADMIN [GET]
 
 + Request
     
@@ -342,7 +343,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "threshold_id": 1,
             "created": "2016-06-02T17:57:39.757Z",
             "updated": "2016-06-02T17:57:39.757Z",
-            "username": "nicho90",
+            "creator": "test-user",
             "description": "VW Golf (2015)",
             "warning_threshold": 10,
             "critical_threshold": 20,
@@ -350,7 +351,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         }
 
 
-### EDIT a Thresholds ADMIN [PUT]
+### EDIT a Threshold ADMIN [PUT]
 
 + Request
     
@@ -366,7 +367,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "threshold_id": 1,
             "created": "2016-06-02T17:57:39.757Z",
             "updated": "2016-06-02T17:57:39.757Z",
-            "username": "nicho90",
+            "creator": "test-user",
             "description": "VW Golf (2015)",
             "warning_threshold": 10,
             "critical_threshold": 20,
@@ -374,7 +375,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         }
 
 
-### DELETE a Thresholds ADMIN [DELETE]
+### DELETE a Threshold ADMIN [DELETE]
 
 + Request
     
@@ -388,7 +389,11 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Thresholds of a User [/users/{username}/thresholds]
 
-### LIST all Thresholds ADMIN [GET]
++ Parameters
+
+    + username: `test-user` (string, required) - Username of a User
+
+### LIST all Thresholds of a User [GET]
 
 + Request
     
@@ -427,15 +432,98 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "category": "MOTORBIKE"
             }
         ]
-        
+
+### CREATE a Threshold of a User [POST]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            
++ Attributes (Threshold)
+
++ Response 200 (application/json)
+
+        {
+            "threshold_id": 1,
+            "created": "2016-06-02T17:57:39.757Z",
+            "updated": "2016-06-02T17:57:39.757Z",
+            "description": "VW Golf (2015)",
+            "warning_threshold": 10,
+            "critical_threshold": 20,
+            "category": "CAR"
+        }
+
+
+## Threshold of a User [/users/{username}/thresholds/{thresholdId}]
+
++ Parameters
+    
+    + username: `test-user` (string, required) - Username of a User
+    + thresholdId: `1` (string, required) - Id of a Threshold
+
+### RETRIEVE a Threshold of a User [GET]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+            "threshold_id": 1,
+            "created": "2016-06-02T17:57:39.757Z",
+            "updated": "2016-06-02T17:57:39.757Z",
+            "description": "VW Golf (2015)",
+            "warning_threshold": 10,
+            "critical_threshold": 20,
+            "category": "CAR"
+        }
+
+
+### EDIT a Threshold of a User [PUT]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Attributes (Threshold)
+
++ Response 200 (application/json)
+
+        {
+            "threshold_id": 1,
+            "created": "2016-06-02T17:57:39.757Z",
+            "updated": "2016-06-02T17:57:39.757Z",
+            "description": "VW Golf (2015)",
+            "warning_threshold": 10,
+            "critical_threshold": 20,
+            "category": "CAR"
+        }
+
+
+### DELETE a Threshold of a User [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204    
         
 
 ## Sensors [/sensors]
 
 ### LIST all public & private Sensors [GET]
 
-Request all public Sensors without a Token
-Request all public and private Sensors of a User with a Token
+<li>Request all public Sensors without a Authorization-Token</li>
+<li>Request all public & private Sensors of a User with a Authorization-Token</li>
 
 + Request
     
