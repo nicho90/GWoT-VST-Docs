@@ -362,7 +362,7 @@ Request all public and private Sensors of a User with a Token
 
 + Parameters
 
-    + sensorId: `1` (number, required) - id of a Sensor
+    + sensorId: `1` (number, required) - Id of a Sensor
 
 ### Retrieve a Sensor [GET]
 
@@ -544,6 +544,67 @@ Request all public and private Sensors of a User with a Token
             "critical_height": 10,
             "category": "SCOOTER"
         }
+
+
+
+## Vehilce [/vehicles/{vehicleId}]
+
++ Parameters
+
+    + vehicleId: `1` (required) - Id of a vehicle
+
+### Retrieve a Vehicle [GET]
+
++ Response 200 (application/json)
+
+        {
+            "vehicle_id": 1,
+            "created": "2016-06-02T17:58:21.431Z",
+            "updated": "2016-06-02T17:58:21.431Z",
+            "brand": "Yamaha",
+            "name": "Aerox R",
+            "year": 2015,
+            "warning_height": 5,
+            "critical_height": 10,
+            "category": "SCOOTER"
+        }
+
+
+### Edit a Vehicle ADMIN [PUT]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (Vehicle)
+
++ Response 200 (application/json)
+
+        {
+            "vehicle_id": 1,
+            "created": "2016-06-02T17:58:21.431Z",
+            "updated": "2016-06-02T17:58:21.431Z",
+            "brand": "Yamaha",
+            "name": "Aerox R",
+            "year": 2015,
+            "warning_height": 5,
+            "critical_height": 10,
+            "category": "SCOOTER"
+        }
+        
+        
+### Delete a Vehicle ADMIN [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
 
 
 
