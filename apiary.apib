@@ -39,6 +39,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Threshold (object)
 + threshold_id: `1` (number, optional) - `null` (Default)
++ username: `test-user` (number, optional) - `null` (Default)
 + description: `VW Golf (2015)` (string, required) - Description of the Threshold
 + warning_threshold: `10`(number, required) - Threshold-value for warnings, for example: height of the wheel(s)
 + critical_threshold: `20` (number, required) - Critical threshold-value for alerts, for example: height of the door(s) or the engine
@@ -260,7 +261,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
     
     + Headers
 
-                Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
 
 + Response 200 (application/json)
     
@@ -296,7 +297,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "category": "MOTORBIKE"
             }
         ]
-        
+
 ### CREATE a Threshold ADMIN [POST]
 
 + Request
@@ -348,7 +349,42 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "category": "CAR"
         }
 
-        
+
+### EDIT a Thresholds ADMIN [PUT]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Attributes (Threshold)
+
++ Response 200 (application/json)
+
+        {
+            "threshold_id": 1,
+            "created": "2016-06-02T17:57:39.757Z",
+            "updated": "2016-06-02T17:57:39.757Z",
+            "username": "nicho90",
+            "description": "VW Golf (2015)",
+            "warning_threshold": 10,
+            "critical_threshold": 20,
+            "category": "CAR"
+        }
+
+
+### DELETE a Thresholds ADMIN [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
 
 ## Thresholds of a User [/users/{username}/thresholds]
 
