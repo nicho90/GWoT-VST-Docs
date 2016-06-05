@@ -608,18 +608,48 @@ Request all public and private Sensors of a User with a Token
 
 
 
-## Emergency Stations [/emergency_stations{?category}]
+## Emergency Stations [/emergency_stations{?lng,lat}]
 
 ### List all Emergency Stations [GET] 
 
 + Parameters
 
-    + category: `car` (optional) - Category: `bike`, `wheelchair`, `scooter`, `motorbike`, `car`, `bus`, `truck`
+    + lng: `7.70013` (optional) - Longitude-value of a location
+    + lat: `51.973314` (optional) - Latitude-value of a location    
     
 + Response 200 (application/json)
 
         [
-            
+            {
+                "emergency_station_id": 1,
+                "created": "2016-06-02T17:58:31.512Z",
+                "updated": "2016-06-02T17:58:31.512Z",
+                "name": "Berufsfeuerwehr",
+                "phone_number": "+4925120250",
+                "street": "York-Ring",
+                "house_number": "25",
+                "addition": "",
+                "zip_code": "48159",
+                "city": "Münster",
+                "country": "GERMANY",
+                "lng": 7.611165,
+                "lat": 51.974492
+            },
+            {
+                "emergency_station_id": 2,
+                "created": "2016-06-02T17:58:31.512Z",
+                "updated": "2016-06-02T17:58:31.512Z",
+                "name": "Freiwillige Feuerwehr Telgte",
+                "phone_number": "+4925048806790",
+                "street": "Alverskirchener Straße",
+                "house_number": "27",
+                "addition": "",
+                "zip_code": "48291",
+                "city": "Telgte",
+                "country": "GERMANY",
+                "lng": 7.788771,
+                "lat": 51.975639
+            }
         ]
 
 
@@ -637,7 +667,19 @@ Request all public and private Sensors of a User with a Token
 + Response 201 (application/json)
 
         {
-            
+            "emergency_station_id": 1,
+            "created": "2016-06-02T17:58:31.512Z",
+            "updated": "2016-06-02T17:58:31.512Z",
+            "name": "Berufsfeuerwehr",
+            "phone_number": "+4925120250",
+            "street": "York-Ring",
+            "house_number": "25",
+            "addition": "",
+            "zip_code": "48159",
+            "city": "Münster",
+            "country": "GERMANY",
+            "lng": 7.611165,
+            "lat": 51.974492
         }
         
 
@@ -653,7 +695,19 @@ Request all public and private Sensors of a User with a Token
 + Response 200 (application/json)
 
         {
-            
+            "emergency_station_id": 1,
+            "created": "2016-06-02T17:58:31.512Z",
+            "updated": "2016-06-02T17:58:31.512Z",
+            "name": "Berufsfeuerwehr",
+            "phone_number": "+4925120250",
+            "street": "York-Ring",
+            "house_number": "25",
+            "addition": "",
+            "zip_code": "48159",
+            "city": "Münster",
+            "country": "GERMANY",
+            "lng": 7.611165,
+            "lat": 51.974492
         }
 
 
@@ -671,7 +725,19 @@ Request all public and private Sensors of a User with a Token
 + Response 200 (application/json)
 
         {
-            
+            "emergency_station_id": 1,
+            "created": "2016-06-02T17:58:31.512Z",
+            "updated": "2016-06-02T17:58:31.512Z",
+            "name": "Berufsfeuerwehr",
+            "phone_number": "+4925120250",
+            "street": "York-Ring",
+            "house_number": "25",
+            "addition": "",
+            "zip_code": "48159",
+            "city": "Münster",
+            "country": "GERMANY",
+            "lng": 7.611165,
+            "lat": 51.974492
         }
         
         
@@ -687,18 +753,48 @@ Request all public and private Sensors of a User with a Token
 
 
 
-## Service Stations [/service_stations{?category}]
+## Service Stations [/service_stations{?lng,lat}]
 
 ### List all Service Stations [GET] 
 
 + Parameters
 
-    + category: `car` (optional) - Category: `bike`, `wheelchair`, `scooter`, `motorbike`, `car`, `bus`, `truck`
+    + lng: `7.70013` (optional) - Longitude-value of a location
+    + lat: `51.973314` (optional) - Latitude-value of a location
     
 + Response 200 (application/json)
 
         [
-            
+            {
+                "service_station_id": 1,
+                "created": "2016-06-02T17:58:40.318Z",
+                "updated": "2016-06-02T17:58:40.318Z",
+                "name": "Autoservice Hermann Nientiedt",
+                "phone_number": "+492512842937",
+                "street": "Gildenstraße",
+                "house_number": "2 Q",
+                "addition": "",
+                "zip_code": "48157",
+                "city": "Münster",
+                "country": "GERMANY",
+                "lng": 7.704319,
+                "lat": 51.979838
+            },
+            {
+                "service_station_id": 2,
+                "created": "2016-06-02T17:58:40.318Z",
+                "updated": "2016-06-02T17:58:40.318Z",
+                "name": "Auto-Service Andres GmbH",
+                "phone_number": "+49251324201",
+                "street": "Virnkamp",
+                "house_number": "20",
+                "addition": "",
+                "zip_code": "48157",
+                "city": "Münster",
+                "country": "GERMANY",
+                "lng": 7.664011,
+                "lat": 51.992260
+            }
         ]
 
 
@@ -716,12 +812,24 @@ Request all public and private Sensors of a User with a Token
 + Response 201 (application/json)
 
         {
-            
+            "service_station_id": 1,
+            "created": "2016-06-02T17:58:40.318Z",
+            "updated": "2016-06-02T17:58:40.318Z",
+            "name": "Autoservice Hermann Nientiedt",
+            "phone_number": "+492512842937",
+            "street": "Gildenstraße",
+            "house_number": "2 Q",
+            "addition": "",
+            "zip_code": "48157",
+            "city": "Münster",
+            "country": "GERMANY",
+            "lng": 7.704319,
+            "lat": 51.979838
         }
         
 
 
-## Emergency Station [/service_stations/{serviceStationId}]
+## Service Station [/service_stations/{serviceStationId}]
 
 + Parameters
 
@@ -732,7 +840,19 @@ Request all public and private Sensors of a User with a Token
 + Response 200 (application/json)
 
         {
-            
+            "service_station_id": 1,
+            "created": "2016-06-02T17:58:40.318Z",
+            "updated": "2016-06-02T17:58:40.318Z",
+            "name": "Autoservice Hermann Nientiedt",
+            "phone_number": "+492512842937",
+            "street": "Gildenstraße",
+            "house_number": "2 Q",
+            "addition": "",
+            "zip_code": "48157",
+            "city": "Münster",
+            "country": "GERMANY",
+            "lng": 7.704319,
+            "lat": 51.979838
         }
 
 
@@ -750,7 +870,19 @@ Request all public and private Sensors of a User with a Token
 + Response 200 (application/json)
 
         {
-            
+            "service_station_id": 1,
+            "created": "2016-06-02T17:58:40.318Z",
+            "updated": "2016-06-02T17:58:40.318Z",
+            "name": "Autoservice Hermann Nientiedt",
+            "phone_number": "+492512842937",
+            "street": "Gildenstraße",
+            "house_number": "2 Q",
+            "addition": "",
+            "zip_code": "48157",
+            "city": "Münster",
+            "country": "GERMANY",
+            "lng": 7.704319,
+            "lat": 51.979838
         }
         
         
