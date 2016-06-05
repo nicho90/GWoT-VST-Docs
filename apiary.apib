@@ -113,7 +113,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Users [/users]
 
-### List all Users ADMIN [GET]
+### LIST all Users ADMIN [GET]
 
 + Request
     
@@ -137,7 +137,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         ]
 
 
-### Create a User - Sign up [POST]
+### CREATE a User - Sign up [POST]
 
 + Request
 
@@ -170,7 +170,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
     + username: `test-user` (string, required) - Username
 
 
-### Retrieve a User [GET]
+### RETRIEVE a User [GET]
 
 + Request
     
@@ -193,7 +193,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         }
 
 
-### Edit a User [PUT]
+### EDIT a User [PUT]
 
 + Request
 
@@ -219,7 +219,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         }
 
 
-### Delete a User [DELETE]
+### DELETE a User [DELETE]
 
 + Request
     
@@ -233,7 +233,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Sensors [/sensors]
 
-### List all public & private Sensors [GET]
+### LIST all public & private Sensors [GET]
 
 Request all public Sensors without a Token
 Request all public and private Sensors of a User with a Token
@@ -306,7 +306,7 @@ Request all public and private Sensors of a User with a Token
 
     + username: `test-user` (string, required) - Username of a User
 
-### List all private Sensors of a User [GET]
+### LIST all private Sensors of a User [GET]
 
 + Request
 
@@ -368,7 +368,7 @@ Request all public and private Sensors of a User with a Token
             }
         ]
 
-### Create a Sensor [POST]
+### CREATE a Sensor [POST]
 
 + Request
 
@@ -414,7 +414,7 @@ Request all public and private Sensors of a User with a Token
 
     + sensorId: `1` (number, required) - Id of a Sensor
 
-### Retrieve a Sensor [GET]
+### RETRIEVE a Sensor [GET]
 
 + Request
 
@@ -450,7 +450,7 @@ Request all public and private Sensors of a User with a Token
             }
 
     
-### Edit a Sensor [PUT]
+### EDIT a Sensor [PUT]
 
 + Request
 
@@ -489,7 +489,7 @@ Request all public and private Sensors of a User with a Token
             }
 
 
-### Delete a Sensor [DELETE]
+### DELETE a Sensor [DELETE]
 
 + Request
 
@@ -503,7 +503,7 @@ Request all public and private Sensors of a User with a Token
 
 ## Vehilces [/vehicles{?category}]
 
-### List all Vehicles [GET]
+### LIST all Vehicles [GET]
 
 + Parameters
 
@@ -570,7 +570,7 @@ Request all public and private Sensors of a User with a Token
         ]
 
 
-### Create a Vehicle ADMIN [POST]
+### CREATE a Vehicle ADMIN [POST]
 
 + Request
 
@@ -603,7 +603,7 @@ Request all public and private Sensors of a User with a Token
 
     + vehicleId: `1` (required) - Id of a Vehicle
 
-### Retrieve a Vehicle [GET]
+### RETRIEVE a Vehicle [GET]
 
 + Response 200 (application/json)
 
@@ -620,7 +620,7 @@ Request all public and private Sensors of a User with a Token
         }
 
 
-### Edit a Vehicle ADMIN [PUT]
+### EDIT a Vehicle ADMIN [PUT]
 
 + Request
 
@@ -646,7 +646,7 @@ Request all public and private Sensors of a User with a Token
         }
         
         
-### Delete a Vehicle ADMIN [DELETE]
+### DELETE a Vehicle ADMIN [DELETE]
 
 + Request
 
@@ -660,7 +660,7 @@ Request all public and private Sensors of a User with a Token
 
 ## Emergency Stations [/emergency_stations{?lng,lat}]
 
-### List all Emergency Stations [GET] 
+### LIST all Emergency Stations [GET] 
 
 + Parameters
 
@@ -703,7 +703,7 @@ Request all public and private Sensors of a User with a Token
         ]
 
 
-### Create a Emergency Station ADMIN [POST]
+### CREATE a Emergency Station ADMIN [POST]
 
 + Request
 
@@ -740,7 +740,7 @@ Request all public and private Sensors of a User with a Token
 
     + emergencyStationId: `1` (required) - Id of a Emergency Station
 
-### Retrieve a Emergency Station [GET]
+### RETRIEVE a Emergency Station [GET]
 
 + Response 200 (application/json)
 
@@ -761,7 +761,7 @@ Request all public and private Sensors of a User with a Token
         }
 
 
-### Edit a Emergency Station ADMIN [PUT]
+### EDIT a Emergency Station ADMIN [PUT]
 
 + Request
 
@@ -791,7 +791,7 @@ Request all public and private Sensors of a User with a Token
         }
         
         
-### Delete a Emergency Station ADMIN [DELETE]
+### DELETE a Emergency Station ADMIN [DELETE]
 
 + Request
 
@@ -805,7 +805,7 @@ Request all public and private Sensors of a User with a Token
 
 ## Service Stations [/service_stations{?lng,lat}]
 
-### List all Service Stations [GET] 
+### LIST all Service Stations [GET] 
 
 + Parameters
 
@@ -848,7 +848,7 @@ Request all public and private Sensors of a User with a Token
         ]
 
 
-### Create a Service Station ADMIN [POST]
+### CREATE a Service Station ADMIN [POST]
 
 + Request
 
@@ -885,7 +885,7 @@ Request all public and private Sensors of a User with a Token
 
     + serviceStationId: `1` (required) - Id of a Service Station
 
-### Retrieve a Service Station [GET]
+### RETRIEVE a Service Station [GET]
 
 + Response 200 (application/json)
 
@@ -906,7 +906,7 @@ Request all public and private Sensors of a User with a Token
         }
 
 
-### Edit a Service Station ADMIN [PUT]
+### EDIT a Service Station ADMIN [PUT]
 
 + Request
 
@@ -936,7 +936,7 @@ Request all public and private Sensors of a User with a Token
         }
         
         
-### Delete a Service Station ADMIN [DELETE]
+### DELETE a Service Station ADMIN [DELETE]
 
 + Request
 
@@ -957,7 +957,7 @@ Request all public and private Sensors of a User with a Token
     + lang: `en` (required) - Language for summaries: `en` (default), `de`
  
 
-### GET a Forecast [GET]
+### RETRIEVE a Forecast [GET]
 
 + Relation: forecast
    
