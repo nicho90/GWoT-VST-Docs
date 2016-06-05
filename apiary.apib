@@ -113,7 +113,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 ## Users [/users]
 
-### List all Users [GET]
+### List all Users ADMIN [GET]
 
 + Request
     
@@ -453,7 +453,7 @@ Request all public and private Sensors of a User with a Token
 
 ## Vehilces [/vehicles{?category}]
 
-### List all Vehicles [GET] 
+### List all Vehicles [GET]
 
 + Parameters
 
@@ -520,7 +520,7 @@ Request all public and private Sensors of a User with a Token
         ]
 
 
-### Create a vehicle ADMIN [POST]
+### Create a Vehicle ADMIN [POST]
 
 + Request
 
@@ -551,7 +551,7 @@ Request all public and private Sensors of a User with a Token
 
 + Parameters
 
-    + vehicleId: `1` (required) - Id of a vehicle
+    + vehicleId: `1` (required) - Id of a Vehicle
 
 ### Retrieve a Vehicle [GET]
 
@@ -597,6 +597,164 @@ Request all public and private Sensors of a User with a Token
         
         
 ### Delete a Vehicle ADMIN [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
+
+## Emergency Stations [/emergency_stations{?category}]
+
+### List all Emergency Stations [GET] 
+
++ Parameters
+
+    + category: `car` (optional) - Category: `bike`, `wheelchair`, `scooter`, `motorbike`, `car`, `bus`, `truck`
+    
++ Response 200 (application/json)
+
+        [
+            
+        ]
+
+
+### Create a Emergency Station ADMIN [POST]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (EmergencyStation)
+
++ Response 201 (application/json)
+
+        {
+            
+        }
+        
+
+
+## Emergency Station [/emergency_stations/{emergencyStationId}]
+
++ Parameters
+
+    + emergencyStationId: `1` (required) - Id of a Emergency Station
+
+### Retrieve a Emergency Station [GET]
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+
+
+### Edit a Emergency Station ADMIN [PUT]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (EmergencyStation)
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+        
+        
+### Delete a Emergency Station ADMIN [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
+
+## Service Stations [/service_stations{?category}]
+
+### List all Service Stations [GET] 
+
++ Parameters
+
+    + category: `car` (optional) - Category: `bike`, `wheelchair`, `scooter`, `motorbike`, `car`, `bus`, `truck`
+    
++ Response 200 (application/json)
+
+        [
+            
+        ]
+
+
+### Create a Service Station ADMIN [POST]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (ServiceStation)
+
++ Response 201 (application/json)
+
+        {
+            
+        }
+        
+
+
+## Emergency Station [/service_stations/{serviceStationId}]
+
++ Parameters
+
+    + serviceStationId: `1` (required) - Id of a Service Station
+
+### Retrieve a Service Station [GET]
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+
+
+### Edit a Service Station ADMIN [PUT]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            Content-Type : application/json
+
++ Attributes (ServiceStation)
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+        
+        
+### Delete a Service Station ADMIN [DELETE]
 
 + Request
 
