@@ -10,7 +10,7 @@ CREATE TABLE Subscriptions (
     updated TIMESTAMP WITH TIME ZONE,
 
     -- Attributes
-    username CHARACTER VARYING(255) NOT NULL REFERENCES Users (username) ON UPDATE CASCADE ON DELETE CASCADE,
+    creator CHARACTER VARYING(255) NOT NULL REFERENCES Users (username) ON UPDATE CASCADE ON DELETE CASCADE,
     sensor_id INTEGER NOT NULL REFERENCES Sensors (sensor_id) ON UPDATE CASCADE ON DELETE CASCADE,
     threshold_id INTEGER NOT NULL REFERENCES Thresholds (threshold_id) ON UPDATE CASCADE ON DELETE CASCADE,
     active BOOLEAN NOT NULL DEFAULT 'true'
@@ -18,12 +18,12 @@ CREATE TABLE Subscriptions (
 
 
 -- EXAMPLE-DATA
-INSERT INTO Subscriptions (created, updated, username, sensor_id, threshold_id, active)
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active)
 VALUES (now(), now(), 'nicho90', 1, 1, 'true');
 
-INSERT INTO Subscriptions (created, updated, username, sensor_id, threshold_id, active)
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active)
 VALUES (now(), now(), 'nicho90', 1, 2, 'true');
 
-INSERT INTO Subscriptions (created, updated, username, sensor_id, threshold_id, active)
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active)
 VALUES (now(), now(), 'nicho90', 1, 3, 'true');
 ```
