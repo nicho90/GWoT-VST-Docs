@@ -836,7 +836,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             {
                 "sensor_id": 3,
                 "device_id": "rpi-3",
-                "description": "3rd private Sensor",
+                "description": "3rd Sensor",
                 "private": false,
                 "online_status": false,
                 "water_body_id": 1,
@@ -1068,7 +1068,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
     + sensorId: `1` (required) - Id of a Sensor
 
-### LIST all nearby Emergency-Stations [GET]
+### LIST all nearby Sensors of the same Water-Body [GET]
 
 + Request
 
@@ -1108,7 +1108,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "distance": 110.170106942,
                 "distance_unit": "METER",
                 "device_id": "rpi-3",
-                "description": "3rd private Sensor",
+                "description": "3rd Sensor",
                 "private": false,
                 "online_status": false,
                 "water_body_id": 1,
@@ -1129,6 +1129,47 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             }
         ]
 
+
+## Statistics [/sensors/{sensorId}/statistics]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+
+### RETRIEVE Statistics of a Sensor [GET]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+            "sensor_id": 1,
+            "minimum": {
+                "timeserie_id": 1,
+                "created": "2016-06-06T13:07:26.121Z",+
+                "updated": "2016-06-06T13:07:26.121Z",
+                "water_level": 50,
+                "water_level_unit": "CENTIMETER",
+                "measurement_date": "2016-05-08T00:00:00.000Z"
+            },
+            "maximum": {
+                "timeserie_id": 10,
+                "created": "2016-06-06T13:07:26.121Z",+
+                "updated": "2016-06-06T13:07:26.121Z",
+                "water_level": 200,
+                "water_level_unit": "CENTIMETER",
+                "measurement_date": "2016-05-09T00:00:00.000Z"
+            },
+            "average": {
+                "water_level": 50,
+                "water_level_unit": "CENTIMETER"
+            }
+        }
+        
 
 
 ## Nearby Emergency-Stations [/sensors/{sensorId}/emergency_stations]
