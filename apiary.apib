@@ -68,6 +68,22 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + active: `true` (string, required) - Notifications enabled or turned off: `true` (Default), `false`
 
 
+## Measurement (object)
++ measurement_id: `1` (number, optional) - `null` (Default)
++ sensor_id: `1` (number, required) - Id of a Sensor
++ distance: `120` (number, required) - Measured distance from sensor to water surface
++ water_level: `130` (number, required) - Water level, will be measured from Gauge-Zero and can be calculated by the (sensorHeight - distance)
++ measurement_timestamp: `2016-05-08T09:43:01.010Z` (string, required) - Timestamp
+
+
+## Timestamp (object)
++ measurement_id: `1` (number, optional) - `null` (Default)
++ sensor_id: `1` (number, required) - Id of a Sensor
++ distance: `120` (number, required) - Measured distance from sensor to water surface
++ water_level: `130` (number, required) - Water level, will be measured from Gauge-Zero and can be calculated by the (sensorHeight - distance)
++ measurement_date: `2016-05-08` (string, required) - Date
+
+
 ## WaterBody (object)
 + water_body_id: `1` (number, optional) - `null` (Default)
 + name: `Werse` (string, required) - Name of the Water-Body, for example: a river
@@ -1169,7 +1185,124 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "water_level_unit": "CENTIMETER"
             }
         }
+
+
+
+## Measurements [/sensors/{sensorId}/measurements{?limit}]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+
+### LIST all Measurements of a Sensor [GET]
+
++ Parameters
+    + limit: `1000` (optional) - Limit entries for faster requests: `1000` (Default)
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        [
+            
+        ]
+
+
+### CREATE a Measurement for a Sensor [POST]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Attributes (Measurement)
+
++ Response 200 (application/json)
+
+        [
+            
+        ]
+
+
+
+## Measurement [/sensors/{sensorId}/measurements/{measurementId}]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+    + measurementId: `1` (required) - Id of a Measurement
+
+### RETRIEVE a Measurement of a Sensor [GET]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
         
+        }
+
+
+### EDIT a Measurement of a Sensor [PUT]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+        
+        }
+
+
+### DELETE a Measurement of a Sensor [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+
+
+## Latest Measurement [/sensors/{sensorId}/lastest/measurement]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+
+
+### RETRIEVE the latest Measurement of a Sensor [GET]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+        
+        }
+
 
 
 ## Nearby Emergency-Stations [/sensors/{sensorId}/emergency_stations]
