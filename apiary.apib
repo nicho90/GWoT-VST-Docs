@@ -76,7 +76,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + measurement_timestamp: `2016-05-08T09:43:01.010Z` (string, required) - Timestamp
 
 
-## Timestamp (object)
+## Timeserie (object)
 + measurement_id: `1` (number, optional) - `null` (Default)
 + sensor_id: `1` (number, required) - Id of a Sensor
 + distance: `120` (number, required) - Measured distance from sensor to water surface
@@ -926,7 +926,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "private": true,
                 "online_status": true,
                 "water_body_id": 1,
-                "water_body_name": "Weser",
+                "water_body_name": "Werse",
                 "sensor_height": 300,
                 "sensor_height_unit": "CENTIMETER",
                 "crossing_height": 220,
@@ -1104,7 +1104,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "private": true,
                 "online_status": true,
                 "water_body_id": 1,
-                "water_body_name": "Weser",
+                "water_body_name": "Werse",
                 "sensor_height": 300,
                 "sensor_height_unit": "CENTIMETER",
                 "crossing_height": 220,
@@ -1128,7 +1128,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "private": false,
                 "online_status": false,
                 "water_body_id": 1,
-                "water_body_name": "Weser",
+                "water_body_name": "Werse",
                 "sensor_height": 300,
                 "sensor_height_unit": "CENTIMETER",
                 "crossing_height": 0,
@@ -1144,6 +1144,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
                 "lat": 51.973934
             }
         ]
+
 
 
 ## Statistics [/sensors/{sensorId}/statistics]
@@ -1163,7 +1164,6 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + Response 200 (application/json)
 
         {
-            "sensor_id": 1,
             "minimum": {
                 "timeserie_id": 1,
                 "created": "2016-06-06T13:07:26.121Z",+
@@ -1208,7 +1208,36 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + Response 200 (application/json)
 
         [
-            
+            {
+                "measurement_id": 3,
+                "created": "2016-05-23T19:17:59.140Z",
+                "updated": "2016-05-23T19:17:59.140Z",
+                "distance": 119,
+                "distance_unit": "CENTIMETERS",
+                "water_level": 131,
+                "water_level_unit": "CENTIMETERS",
+                "measurement_timestamp": "2016-05-08T11:45:01.005Z"
+            },
+            {
+                "measurement_id": 2,
+                "created": "2016-05-23T19:17:59.140Z",
+                "updated": "2016-05-23T19:17:59.140Z",
+                "distance": 121,
+                "distance_unit": "CENTIMETERS",
+                "water_level": 129,
+                "water_level_unit": "CENTIMETERS",
+                "measurement_timestamp": "2016-05-08T10:44:01.123Z"
+            },
+            {
+                "measurement_id": 1,
+                "created": "2016-05-23T19:17:59.140Z",
+                "updated": "2016-05-23T19:17:59.140Z",
+                "distance": 120,
+                "distance_unit": "CENTIMETERS",
+                "water_level": 130,
+                "water_level_unit": "CENTIMETERS",
+                "measurement_timestamp": "2016-05-08T09:43:01.010Z"
+            }
         ]
 
 
@@ -1224,9 +1253,16 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
 + Response 200 (application/json)
 
-        [
-            
-        ]
+        {
+            "measurement_id": 1,
+            "created": "2016-05-23T19:17:59.140Z",
+            "updated": "2016-05-23T19:17:59.140Z",
+            "distance": 120,
+            "distance_unit": "CENTIMETERS",
+            "water_level": 130,
+            "water_level_unit": "CENTIMETERS",
+            "measurement_timestamp": "2016-05-08T09:43:01.010Z"
+        }
 
 
 
@@ -1248,7 +1284,14 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + Response 200 (application/json)
 
         {
-        
+            "measurement_id": 1,
+            "created": "2016-05-23T19:17:59.140Z",
+            "updated": "2016-05-23T19:17:59.140Z",
+            "distance": 120,
+            "distance_unit": "CENTIMETERS",
+            "water_level": 130,
+            "water_level_unit": "CENTIMETERS",
+            "measurement_timestamp": "2016-05-08T09:43:01.010Z"
         }
 
 
@@ -1260,10 +1303,19 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
             Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
 
++ Attributes (Measurement)
+
 + Response 200 (application/json)
 
         {
-        
+            "measurement_id": 1,
+            "created": "2016-05-23T19:17:59.140Z",
+            "updated": "2016-05-23T19:17:59.140Z",
+            "distance": 120,
+            "distance_unit": "CENTIMETERS",
+            "water_level": 130,
+            "water_level_unit": "CENTIMETERS",
+            "measurement_timestamp": "2016-05-08T09:43:01.010Z"
         }
 
 
@@ -1275,11 +1327,8 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
             Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
 
-+ Response 200 (application/json)
++ Response 204
 
-        {
-            
-        }
 
 
 ## Latest Measurement [/sensors/{sensorId}/lastest/measurement]
@@ -1300,8 +1349,116 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 + Response 200 (application/json)
 
         {
-        
+            "measurement_id": 3,
+            "created": "2016-05-23T19:17:59.140Z",
+            "updated": "2016-05-23T19:17:59.140Z",
+            "sensor_id": 1,
+            "distance": 119,
+            "distance_unit": "CENTIMETERS",
+            "water_level": 131,
+            "water_level_unit": "CENTIMETERS",
+            "measurement_timestamp": "2016-05-08T11:45:01.005Z"
         }
+
+
+
+## Timeseries [/sensors/{sensorId}/timeseries{?limit,minutes,hours,days,weeks,months,years}]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+
+### LIST all Timeseries of a Sensor [GET]
+
++ Parameters
+    + limit: `1000` (optional) - Limit entries for faster requests
+    + minutes: `30` (optional) - Get all entries of the last `30` minutes (value > 0), result will be based on the measurement-entries
+    + hours: `10` (optional) - Get all entries of the last `10` hours (value > 0), result will be based on the measurement-entries
+    + days: `5` (optional) - Get all entries of the last `5` days (value > 0), result will be based on the timeseries-entries
+    + weeks: `2` (optional) - Get all entries of the last `2` weeks (value > 0), result will be based on the timeseries-entries
+    + months: `6` (optional) - Get all entries of the last `6` months (value > 0), result will be based on the timeseries-entries
+    + years: `3` (optional) - Get all entries of the last `3` years (value > 0), result will be based on the timeseries-entries
+
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        [
+            
+        ]
+
+
+### CREATE a Timeserie for a Sensor [POST]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Attributes (Timeserie)
+
++ Response 200 (application/json)
+
+        {
+             
+        }
+
+
+
+## Timeserie [/sensors/{sensorId}/timeseries/{timeserieId}]
+
++ Parameters
+
+    + sensorId: `1` (required) - Id of a Sensor
+    + timeserieId: `1` (required) - Id of a Timeserie
+
+### RETRIEVE a Timeserie of a Sensor [GET]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+
+
+### EDIT a Timeserie of a Sensor [PUT]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Attributes (Timeserie)
+
++ Response 200 (application/json)
+
+        {
+            
+        }
+
+
+### DELETE a Timeserie of a Sensor [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
 
 
 
