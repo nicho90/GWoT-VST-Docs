@@ -329,6 +329,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             }
         ]
 
+
 ### CREATE a Threshold ADMIN [POST]
 
 + Request
@@ -351,6 +352,18 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "critical_threshold": 20,
             "category": "CAR"
         }
+
+
+### DELETE all Thresholds ADMIN [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
 
 
 ## Threshold [/thresholds/{thresholdId}]
@@ -463,6 +476,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             }
         ]
 
+
 ### CREATE a Threshold of a User [POST]
 
 + Request
@@ -484,6 +498,18 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "critical_threshold": 20,
             "category": "CAR"
         }
+
+
+### DELETE all Thresholds of a User [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
 
 
 ## Threshold of a User [/users/{username}/thresholds/{thresholdId}]
@@ -591,6 +617,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             }
         ]
 
+
 ### CREATE a Subscription ADMIN [POST]
 
 + Request
@@ -612,6 +639,18 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "threshold_id": 1,
             "active": true
         }
+
+
+### DELETE all Thresholds of a User [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
 
 
 ## Subscription [/subscriptions/{subscriptionId}]
@@ -722,6 +761,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             }
         ]
 
+
 ### CREATE a Subscription of a User [POST]
 
 + Request
@@ -743,6 +783,18 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "threshold_id": 1,
             "active": true
         }
+
+
+### DELETE all Thresholds of a User [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
 
 
 ## Subscription of a User [/users/{username}/subscriptions/{subscriptionId}]
@@ -945,6 +997,7 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             }
         ]
 
+
 ### CREATE a Sensor [POST]
 
 + Request
@@ -984,7 +1037,18 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             }
 
 
-        
+### DELETE all Sensors of a User [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
+
 ## Sensor & Sensor of a User [/sensors/{sensorId}]
 
 + Parameters
@@ -1264,6 +1328,17 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
             "measurement_timestamp": "2016-05-08T09:43:01.010Z"
         }
 
+    
+### DELETE all Measurements of a Sensor [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
 
 
 ## Measurement [/sensors/{sensorId}/measurements/{measurementId}]
@@ -1408,6 +1483,16 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
         {
              
         }
+
+### DELETE all Timeseries of a Sensor [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
 
 
 
