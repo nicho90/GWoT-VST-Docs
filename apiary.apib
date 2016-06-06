@@ -515,8 +515,268 @@ HOST: http://giv-gwot-vst.uni-muenster.de:3333/api
 
             Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
 
-+ Response 204    
-        
++ Response 204
+
+
+
+## Subscriptions [/subscriptions]
+
+### LIST all Subscriptions ADMIN [GET]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+    
+        [
+            {
+                "subscription_id": 1,
+                "created": "2016-06-02T17:57:49.001Z",
+                "updated": "2016-06-02T17:57:49.001Z",
+                "creator": "test-user",
+                "sensor_id": 1,
+                "threshold_id": 1,
+                "active": true
+            },
+            {
+                "subscription_id": 2,
+                "created": "2016-06-02T17:57:49.001Z",
+                "updated": "2016-06-02T17:57:49.001Z",
+                "creator": "test-user",
+                "sensor_id": 1,
+                "threshold_id": 2,
+                "active": true
+            },
+            {
+                "subscription_id": 3,
+                "created": "2016-06-02T17:57:49.001Z",
+                "updated": "2016-06-02T17:57:49.001Z",
+                "creator": "test-user",
+                "sensor_id": 1,
+                "threshold_id": 3,
+                "active": false
+            }
+        ]
+
+### CREATE a Subscription ADMIN [POST]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            
++ Attributes (Subscription)
+
++ Response 200 (application/json)
+
+        {
+            "subscription_id": 1,
+            "created": "2016-06-02T17:57:49.001Z",
+            "updated": "2016-06-02T17:57:49.001Z",
+            "creator": "test-user",
+            "sensor_id": 1,
+            "threshold_id": 1,
+            "active": true
+        }
+
+
+## Subscription [/subscriptions/{subscriptionId}]
+
++ Parameters
+
+    + subscriptionId: `1` (string, required) - Id of a Subscription
+
+### RETRIEVE a Subscription ADMIN [GET]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+            "subscription_id": 1,
+            "created": "2016-06-02T17:57:49.001Z",
+            "updated": "2016-06-02T17:57:49.001Z",
+            "creator": "test-user",
+            "sensor_id": 1,
+            "threshold_id": 1,
+            "active": true
+        }
+
+
+### EDIT a Subscription ADMIN [PUT]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Attributes (Subscription)
+
++ Response 200 (application/json)
+
+        {
+            "subscription_id": 1,
+            "created": "2016-06-02T17:57:49.001Z",
+            "updated": "2016-06-02T17:57:49.001Z",
+            "creator": "test-user",
+            "sensor_id": 1,
+            "threshold_id": 1,
+            "active": true
+        }
+
+
+### DELETE a Subscription ADMIN [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
+
+## Subscriptions of a User [/users/{username}/subscriptions]
+
++ Parameters
+
+    + username: `test-user` (string, required) - Username of a User
+
+### LIST all Subscriptions of a User [GET]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+    
+        [
+            {
+                "subscription_id": 1,
+                "created": "2016-06-02T17:57:49.001Z",
+                "updated": "2016-06-02T17:57:49.001Z",
+                "creator": "test-user",
+                "sensor_id": 1,
+                "threshold_id": 1,
+                "active": true
+            },
+            {
+                "subscription_id": 2,
+                "created": "2016-06-02T17:57:49.001Z",
+                "updated": "2016-06-02T17:57:49.001Z",
+                "creator": "test-user",
+                "sensor_id": 1,
+                "threshold_id": 2,
+                "active": true
+            },
+            {
+                "subscription_id": 3,
+                "created": "2016-06-02T17:57:49.001Z",
+                "updated": "2016-06-02T17:57:49.001Z",
+                "creator": "test-user",
+                "sensor_id": 1,
+                "threshold_id": 3,
+                "active": false
+            }
+        ]
+
+### CREATE a Subscription of a User [POST]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+            
++ Attributes (Subscription)
+
++ Response 200 (application/json)
+
+        {
+            "subscription_id": 1,
+            "created": "2016-06-02T17:57:49.001Z",
+            "updated": "2016-06-02T17:57:49.001Z",
+            "creator": "test-user",
+            "sensor_id": 1,
+            "threshold_id": 1,
+            "active": true
+        }
+
+
+## Subscription of a User [/users/{username}/subscriptions/{subscriptionId}]
+
++ Parameters
+    
+    + username: `test-user` (string, required) - Username of a User
+    + subscriptionId: `1` (string, required) - Id of a Subscription
+
+### RETRIEVE a Subscription of a User [GET]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 200 (application/json)
+
+        {
+            "subscription_id": 1,
+            "created": "2016-06-02T17:57:49.001Z",
+            "updated": "2016-06-02T17:57:49.001Z",
+            "creator": "test-user",
+            "sensor_id": 1,
+            "threshold_id": 1,
+            "active": true
+        }
+
+
+### EDIT a Subscription of a User [PUT]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Attributes (Subscription)
+
++ Response 200 (application/json)
+
+        {
+            "subscription_id": 1,
+            "created": "2016-06-02T17:57:49.001Z",
+            "updated": "2016-06-02T17:57:49.001Z",
+            "creator": "test-user",
+            "sensor_id": 1,
+            "threshold_id": 1,
+            "active": true
+        }
+
+
+### DELETE a Subscription of a User [DELETE]
+
++ Request
+    
+    + Headers
+
+            Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pY2hvOTAiLCJwYXNzd29yZCI6ImFiYyIsImlhdCI6MTQ2MjcxOTAwNCwiZXhwIjoxNDYyODA1NDA0fQ.tAhrym-KBJey4emArB7-zUUE1rYy5aYyg7CNh-qagD0
+
++ Response 204
+
+
 
 ## Sensors [/sensors]
 
