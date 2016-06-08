@@ -36,6 +36,9 @@ INSERT INTO Users (created, updated, username, password, email_address, first_na
 VALUES (now(), now(), 'vst-admin', '123456789', 'sitcomlab245@gmail.com', 'VST', 'ADMIN', 'en_US', 'admin');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
+VALUES (now(), now(), 'test-user', 'abcdef', 'test.user@uni-muenster.de', 'Test', 'User', 'en_US', 'user');
+
+INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
 VALUES (now(), now(), 'nicho90', 'abcdef', 'n.schiestel@uni-muenster.de', 'Nicho', 'S.', 'de_DE', 'user');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)

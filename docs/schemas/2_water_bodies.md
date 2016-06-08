@@ -23,7 +23,7 @@ CREATE TABLE Water_Bodies (
 
 -- EXAMPLE-DATA
 INSERT INTO Water_Bodies (created, updated, name, category)
-VALUES (now(), now(), 'Weser', 'RIVER');
+VALUES (now(), now(), 'Werse', 'RIVER');
 
 INSERT INTO Water_Bodies (created, updated, name, category)
 VALUES (now(), now(), 'Ems', 'RIVER');
