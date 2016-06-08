@@ -4,13 +4,12 @@ Overview of the WebClient-Views:
 
 | Endpoint | Function |
 |----------|----------|
-| `/` | Map with Sensors with real-time-data, when a user clicks on a sensor |
-| `/new/user` | Registration formular for new user |
-| `/users` | [onyl for admin] Overview of all registered users |
-| `/users/:username` | Profile of a User |
-| `/users/:username/edit` | Formular to change the profile of a User |
-| `/new/sensor` | Formular to change the profile of a User |
-| `/sensors` | Overview of all sensors |
-| `/sensors/:sensor_id` | Timeseries & Settings-Overview of a sensor & Map-View [& onyl for admins: overview of all subscribers] |
-| `/sensors/:sensor_id/subscribe` | user subscription for sensor [onyl for admins: overview of all subscribers] |
-| `/sensors/:sensor_id/edit` | [onyl for admin or creator] change sensor settings |
+| `/` | Map with Sensors |
+| `/new/user` | Sign up for application |
+| `/users/:username` | Profile of a User and show the Users sensors, thresholds and subscriptions |
+| `/users/:username/edit` | Change the profile and set settings of a User |
+| `/new/threshold` | Create a new Threshold |
+| `/new/sensor` | Create a new Sensor |
+| `/sensors` | List of all sensors |
+| `/sensors/:sensor_id` | Details of a Sensor, with its settings, current water level, weather conditions and Chart with timeseries, real-time-data and subscripted thresholds of a User |
+| `/sensors/:sensor_id/edit` | Change the settings of a sensor |
