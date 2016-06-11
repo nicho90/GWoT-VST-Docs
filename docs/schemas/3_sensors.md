@@ -40,7 +40,7 @@ INSERT INTO Sensors (
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
-    now(), now(), 'vst-admin', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
+    now(), now(), 'vst-test', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
     320, 200,
     120, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
@@ -66,7 +66,7 @@ INSERT INTO Sensors (
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
-    now(), now(), 'nicho90', 'rpi-3', '3rd private Sensor', 'false', 1,
+    now(), now(), 'nicho90', 'rpi-3', '3rd Raspberry Pi at Wersehause', 'false', 1,
     300, 0,
     120, 'false', 'false',
     6000000, 300000, -- 6000000 = 1h, 300000 = 5min
