@@ -40,7 +40,7 @@ INSERT INTO Sensors (
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
-    now(), now(), 'vst-test', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
+    now(), now(), 'test-user', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
     320, 200,
     120, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec

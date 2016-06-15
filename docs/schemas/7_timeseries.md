@@ -18,110 +18,110 @@ CREATE TABLE Timeseries (
 
 -- EXAMPLE-DATA
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 51, '2016-05-08', true);
+VALUES (now(), now(), 1, 51, '2016-05-08', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 50, '2016-05-09', true);
+VALUES (now(), now(), 1, 50, '2016-05-09', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 52, '2016-05-10', true);
+VALUES (now(), now(), 1, 52, '2016-05-10', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-11', true);
+VALUES (now(), now(), 1, 54, '2016-05-11', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 53, '2016-05-12', true);
+VALUES (now(), now(), 1, 53, '2016-05-12', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 55, '2016-05-13', true);
+VALUES (now(), now(), 1, 55, '2016-05-13', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 52, '2016-05-14', true);
+VALUES (now(), now(), 1, 52, '2016-05-14', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 51,'2016-05-15', true);
+VALUES (now(), now(), 1, 51,'2016-05-15', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 52,'2016-05-16', true);
+VALUES (now(), now(), 1, 52,'2016-05-16', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 50,'2016-05-17', true);
+VALUES (now(), now(), 1, 50,'2016-05-17', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 51,'2016-05-18', true);
+VALUES (now(), now(), 1, 51,'2016-05-18', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 52,'2016-05-19', true);
+VALUES (now(), now(), 1, 52,'2016-05-19', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54,'2016-05-20', true);
+VALUES (now(), now(), 1, 54,'2016-05-20', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 59,'2016-05-21', true);
+VALUES (now(), now(), 1, 59,'2016-05-21', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 58,'2016-05-22', true);
+VALUES (now(), now(), 1, 58,'2016-05-22', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 56, '2016-05-23', true);
+VALUES (now(), now(), 1, 56, '2016-05-23', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-24', true);
+VALUES (now(), now(), 1, 54, '2016-05-24', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-24', true);
+VALUES (now(), now(), 1, 54, '2016-05-24', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-25', true);
+VALUES (now(), now(), 1, 54, '2016-05-25', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-26', true);
+VALUES (now(), now(), 1, 54, '2016-05-26', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-27', true);
+VALUES (now(), now(), 1, 54, '2016-05-27', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-24', true);
+VALUES (now(), now(), 1, 54, '2016-05-24', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-28', true);
+VALUES (now(), now(), 1, 54, '2016-05-28', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-29', true);
+VALUES (now(), now(), 1, 54, '2016-05-29', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-05-30', true);
+VALUES (now(), now(), 1, 54, '2016-05-30', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-01', true);
+VALUES (now(), now(), 1, 54, '2016-06-01', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-02', true);
+VALUES (now(), now(), 1, 54, '2016-06-02', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-03', true);
+VALUES (now(), now(), 1, 54, '2016-06-03', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-04', true);
+VALUES (now(), now(), 1, 54, '2016-06-04', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-05', true);
+VALUES (now(), now(), 1, 54, '2016-06-05', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-06', true);
+VALUES (now(), now(), 1, 54, '2016-06-06', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-07', true);
+VALUES (now(), now(), 1, 54, '2016-06-07', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-08', true);
+VALUES (now(), now(), 1, 54, '2016-06-08', 'true');
 
 INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
-VALUES (now(), now(), 1, 54, '2016-06-09', true);
+VALUES (now(), now(), 1, 54, '2016-06-09', 'true');
 
--- INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
--- VALUES (now(), now(), 1, 54, '2016-06-10', true);
+INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
+VALUES (now(), now(), 1, 54, '2016-06-10', 'true');
 
--- INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
--- VALUES (now(), now(), 1, 54, '2016-06-11', true);
+INSERT INTO Timeseries (created, updated, sensor_id, water_level, measurement_date, valid_data)
+VALUES (now(), now(), 1, 54, '2016-06-11', 'true');
 ```

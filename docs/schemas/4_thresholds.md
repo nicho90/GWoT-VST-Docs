@@ -35,8 +35,8 @@ INSERT INTO Thresholds (created, updated, creator, category, description, warnin
 VALUES (now(), now(), 'nicho90', 'MOTORBIKE', 'Yamaha MT-03 (2015)', 5, 10);
 
 INSERT INTO Thresholds (created, updated, creator, category, description, warning_threshold, critical_threshold)
-VALUES (now(), now(), 'vst-test', 'CAR', 'Audi A1', 10, 15);
+VALUES (now(), now(), 'test-user', 'CAR', 'Audi A1', 10, 15);
 
 INSERT INTO Thresholds (created, updated, creator, category, description, warning_threshold, critical_threshold)
-VALUES (now(), now(), 'vst-test', 'CAR', 'Toyota Tundra (2016)', 20, 30);
+VALUES (now(), now(), 'test-user', 'CAR', 'Toyota Tundra (2016)', 20, 30);
 ```
