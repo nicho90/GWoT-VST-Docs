@@ -64,6 +64,7 @@
 | <span class="green">200</span> | `/api/sensors/:sensor_id` | **GET** | LPA, LUA, UT, AT | |
 | <span class="blue">501</span> | `/api/sensors/:sensor_id` | **PUT** | AT, AO | |
 | <span class="blue">501</span> | `/api/sensors/:sensor_id` | **DELETE** | AT, AO | |
+| <span class="green">200</span> | `/api/sensors/:sensor_id/subscriptions` | **GET** | UT, AT | |
 | <span class="green">200</span> | `/api/sensors/:sensor_id/related_sensors` | **GET** | LPA, LUA, UT, AT | |
 | <span class="green">200</span> | `/api/sensors/:sensor_id/measurements` | **GET** | LPA, LUA, UT, AT | `?limit=1000` **optional** |
 | <span class="green">201</span> | `/api/sensors/:sensor_id/measurements` | **POST** | LUA, UT, AT | |
