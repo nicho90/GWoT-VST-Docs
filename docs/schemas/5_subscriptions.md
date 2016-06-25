@@ -19,12 +19,12 @@ CREATE TABLE Subscriptions (
 
 
 -- EXAMPLE-DATA
-INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active)
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, notified)
 VALUES (now(), now(), 'nicho90', 1, 1, 'true', 'false');
 
-INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active)
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, notified)
 VALUES (now(), now(), 'nicho90', 1, 2, 'true', 'false');
 
-INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active)
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, notified)
 VALUES (now(), now(), 'nicho90', 1, 3, 'true', 'false');
 ```
