@@ -14,17 +14,18 @@ CREATE TABLE Subscriptions (
     sensor_id INTEGER NOT NULL REFERENCES Sensors (sensor_id) ON UPDATE CASCADE ON DELETE CASCADE,
     threshold_id INTEGER NOT NULL REFERENCES Thresholds (threshold_id) ON UPDATE CASCADE ON DELETE CASCADE,
     active BOOLEAN NOT NULL DEFAULT 'true',
-    notified BOOLEAN NOT NULL DEFAULT 'false'
+    warning_notified BOOLEAN NOT NULL DEFAULT 'false',
+    danger_notified BOOLEAN NOT NULL DEFAULT 'false'
 );
 
 
 -- EXAMPLE-DATA
-INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, notified)
-VALUES (now(), now(), 'nicho90', 1, 1, 'true', 'false');
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, warning_notified, danger_notified)
+VALUES (now(), now(), 'nicho90', 1, 1, 'true', 'false', 'false');
 
-INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, notified)
-VALUES (now(), now(), 'nicho90', 1, 2, 'true', 'false');
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, warning_notified, danger_notified)
+VALUES (now(), now(), 'nicho90', 1, 2, 'true', 'false', 'false');
 
-INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, notified)
-VALUES (now(), now(), 'nicho90', 1, 3, 'true', 'false');
+INSERT INTO Subscriptions (created, updated, creator, sensor_id, threshold_id, active, warning_notified, danger_notified)
+VALUES (now(), now(), 'nicho90', 1, 3, 'true', 'false', 'false');
 ```
