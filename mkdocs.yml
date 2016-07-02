@@ -30,6 +30,7 @@ pages:
     - MQTT-Topics: architecture/mqtt-topics.md
     - Websocket-Messages: architecture/websockets.md
 - Database-Schemas:
+    - Resetting: schemas/0_resetting.md
     - 1. Users: schemas/1_users.md
     - 2. Water Bodies: schemas/2_water_bodies.md
     - 3. Sensors: schemas/3_sensors.md

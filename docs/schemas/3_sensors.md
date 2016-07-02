@@ -1,9 +1,9 @@
 ```sql
-DROP TABLE IF EXISTS Measurements CASCADE;
-DROP TABLE IF EXISTS Timeseries CASCADE;
-DROP TABLE IF EXISTS Subscriptions CASCADE;
-DROP TABLE IF EXISTS Thresholds CASCADE;
 DROP TABLE IF EXISTS Sensors CASCADE;
+DROP TYPE IF EXISTS crossing_types CASCADE;
+
+-- ENUM
+CREATE TYPE crossing_types AS ENUM ('FLOODWAY', 'BRIDGE');
 
 -- SCHEMA
 CREATE TABLE Sensors (
@@ -27,6 +27,9 @@ CREATE TABLE Sensors (
     increased_frequency BOOLEAN NOT NULL DEFAULT 'false',
     online_status BOOLEAN NOT NULL DEFAULT 'false',
 
+    -- Crossing type
+    crossing_type crossing_types NOT NULL,
+
     -- Coordinates
     coordinates GEOGRAPHY(POINT) NOT NULL
 );
@@ -35,12 +38,14 @@ CREATE TABLE Sensors (
 -- EXAMPLE-DATA
 INSERT INTO Sensors (
     created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
+    'BRIDGE',
     320, 200,
     120, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
@@ -48,12 +53,14 @@ VALUES (
 
 INSERT INTO Sensors (
     created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'rpi-2', '2nd Raspberry Pi at Wersehause', 'true', 1,
+    'BRIDGE',
     300, 220,
     120, 'false', 'true',
     600000, 60000, -- 600000 = 10min, 60000 = 1min
@@ -61,12 +68,14 @@ VALUES (
 
 INSERT INTO Sensors (
     created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'rpi-3', '3rd Raspberry Pi at Wersehause', 'false', 1,
+    'BRIDGE',
     300, 0,
     120, 'false', 'false',
     6000000, 300000, -- 6000000 = 1h, 300000 = 5min

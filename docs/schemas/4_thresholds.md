@@ -1,5 +1,4 @@
 ```sql
-DROP TABLE IF EXISTS Subscriptions CASCADE;
 DROP TABLE IF EXISTS Thresholds CASCADE;
 DROP TYPE IF EXISTS thresholds_types CASCADE;
 
