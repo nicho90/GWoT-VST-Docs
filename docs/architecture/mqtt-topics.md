@@ -2,44 +2,44 @@
 
 | Direction | Topic | 
 |-----|-------|
-| **Server &rarr; Sensor** | `data/realtime` |
-| **Server &rarr; Sensor** | `settings` |
-| **Sensor &rarr; Server** | `sensor/realtime/measurement` |
-| **Sensor &rarr; Server** | `sensor/scheduled/measurement` |
+| **Server &rarr; Sensor** | `/data/realtime` |
+| **Server &rarr; Sensor** | `/settings` |
+| **Sensor &rarr; Server** | `/sensor/realtime/measurement` |
+| **Sensor &rarr; Server** | `/sensor/scheduled/measurement` |
 
 ## 1. Server &rarr; Sensor
 
 The following messages will be send from the **Server** to the **Sensor**. All sensors have to be subscribed to all of the following topics:
 
-### 1.1 data/realtime (Start)
+### 1.1 /data/realtime (Start)
 
-Request a sensor by its `id` to start realtime measuring and publish the results back to the server
+Request a sensor by its `device_id` to start realtime measuring and publish the results back to the server
 
 Topic: `data/realtime`<br>
 Message:
 
 ```javascript
 {
-    "id": "rpi-1",
+    "device_id": "rpi-1",
     "status" : true
 }
 ```
 
-### 1.2 data/realtime (Stop)
+### 1.2 /data/realtime (Stop)
 
-Request a sensor by its `id` to stop realtime measuring (this message will be send from the Server, when all Websocket-Connections are closed for this sensor)
+Request a sensor by its `device_id` to stop realtime measuring (this message will be send from the Server, when all Websocket-Connections are closed for this sensor)
 
 Topic: `data/realtime`<br>
 Message:
 
 ```javascript
 {
-    "id": "rpi-1",
+    "device_id": "rpi-1",
     "status" : false
 }
 ```
 
-### 1.3 settings
+### 1.3 /settings
 
 Publish new settings to a sensor by its `id` to change for example the measuring-frequency
 
@@ -58,7 +58,7 @@ Message:
 
 The following messages will be send from the **Sensor** to the **Server**. The server with its built-in MQTT-Broker, has to be subscribed to all of the following topics:
 
-### 2.1 sensor/realtime/measurement
+### 2.1 /sensor/realtime/measurement
 
 Publishes realtime data from the sensor to the server, which will be forwarded then to the WebClient
 
@@ -88,7 +88,7 @@ Message:
 }
 ```
 
-### 2.2 sensor/scheduled/measurement
+### 2.2 /sensor/scheduled/measurement
 
 Publishes default measurement form the sensor to the server, which will be saved in the Database for time-series
 

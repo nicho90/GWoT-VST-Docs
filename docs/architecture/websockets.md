@@ -2,8 +2,7 @@
 
 | Direction | Topic | 
 |-----|-------|
-| **WebClient &rarr; Server** | `startRealtime` |
-| **WebClient &rarr; Server** | `stopRealtime` |
+| **WebClient &rarr; Server** | `/data/realtime` |
 | **Server &rarr; WebClient** | `measurements` |
 | **Server &rarr; WebClient** | `notification` |
 
@@ -11,31 +10,31 @@
 
 The following messages will be send from the **WebClient** to the **Server**
 
-### 1.1 Realtime (Start)
+### 1.1 /data/realtime (Start)
 
-Request realtime data from a sensor by its `id`
+Request realtime data from a sensor by its `device_id`
 
 Topic: `startRealtime`<br>
 Message:
 
 ```javascript
 {
-    "sensor_id": 1,
-    "device_id": "rpi-1"
+    "device_id": "rpi-1",
+    "status" : true
 }
 ```
 
-### 1.2 Realtime (Stop)
+### 1.2 /data/realtime (Stop)
 
-Close realtime data connection from a sensor by its `id`, for example the user switches the view.
+Close realtime data connection from a sensor by its `device_id`, for example the user switches the view.
 
 Topic: `stopRealtime`<br>
 Message:
 
 ```javascript
 {
-    "sensor_id": 1,
-    "device_id": "rpi-1"
+    "device_id": "rpi-1",
+    "status" : false
 }
 ```
 
@@ -53,10 +52,24 @@ Message:
 
 ```javascript
 {
-    "sensor_id": 1,
-    "device_id": "rpi-1",
-    "distance": 42,
-    "timestamp": "2016-05-05T12:35:03.644Z"
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type":" Point",
+                "coordinates": [
+                    7.0,
+                    51.0
+                ]
+            },
+            "properties": {
+                "id": "rpi-1",
+                "timestamp": "2016-05-05T12:35:03.644Z",
+                "distance": 42
+            }
+        }
+    ]
 }
 ```
 
@@ -68,11 +81,14 @@ Topic: `notification`<br>
 Message:
 
 ```javascript
-{   
-    "username": "vst-admin"
-    "sensor_id": 1,
-    "device_id": "rpi-1",
-    "distance": 21,
-    "timestamp": "2016-05-05T12:36:22.112Z"
+{ 
+    "subscription_id": 6,
+    "threshold_id": 3,
+    "creator": "nicho90",
+    "description": "Yamaha MT-03 (2015)",
+    "category": "MOTORBIKE",
+    "level": "danger",
+    "device_id": "rpi-3",
+    "height": 412
 }
 ```
