@@ -11,8 +11,8 @@ CREATE TABLE Timeseries (
     -- Attributes
     sensor_id INTEGER NOT NULL REFERENCES Sensors (sensor_id) ON UPDATE CASCADE ON DELETE CASCADE,
     water_level DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (water_level >= 0),
-    sd_water_level DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (sd_water_level >= 0),
-    num_measurements INTEGER NOT NULL CONSTRAINT positive_value_ CHECK (num_measurements >= 0),
+    sd_water_level DECIMAL NOT NULL CONSTRAINT positive_value_sd CHECK (sd_water_level >= 0),
+    num_measurements INTEGER NOT NULL CONSTRAINT positive_value_num CHECK (num_measurements >= 0),
     measurement_date DATE NOT NULL,
     valid_data BOOLEAN NOT NULL
 );
