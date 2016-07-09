@@ -15,7 +15,7 @@ pages:
 - Installation guides:
     - First-Setup: installations/first-setup.md
     - Nodejs: installations/nodejs.md
-    - Running Nodejs: installations/running.md
+    - Cronjob: installations/cron.md
     - Bower: installations/bower.md
     - MkDocs: installations/mkdocs.md
     - Redis: installations/redis.md
