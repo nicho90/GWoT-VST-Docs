@@ -70,11 +70,15 @@
 | <span class="green">201</span> | `/api/sensors/:sensor_id/measurements` | **POST** | LUA, UT, AT | |
 | <span class="green">204</span> | `/api/sensors/:sensor_id/measurements` | **DELETE** (all) | LUA, UT, AT | |
 | <span class="green">200</span> | `/api/sensors/:sensor_id/measurements/:measurement_id` | **GET** | LUA, UT, AT | |
-| <span class="green">200</span> | `/api/sensors/:sensor_id/measurements/:measurement_id` | **PUT** | LUA, UT, AT | |
-| <span class="green">204</span> | `/api/sensors/:sensor_id/measurements/:measurement_id` | **DELETE** | LUA, UT, AT | |
+| <span class="blue">501</span> | `/api/sensors/:sensor_id/measurements/:measurement_id` | **PUT** | LUA, UT, AT | |
+| <span class="blue">501</span> | `/api/sensors/:sensor_id/measurements/:measurement_id` | **DELETE** | LUA, UT, AT | |
+| <span class="green">200</span> | `/api/sensors/:sensor_id/latest/measurement` | **GET** | LUA, UT, AT | |
 | <span class="green">200</span> | `/api/sensors/:sensor_id/timeseries` | **GET** | LPA, LUA, UT, AT | `?minutes=1`, <br> `?minutes=30`, <br> `?hours=1`, <br> `?hours=24`, <br> `?days=1`, <br> `?days=24`, <br>`?weeks=1`, <br>`?weeks=3`, <br> `?months=1`, <br> `?months=3`, <br> `?months=12`, <br> `?years=1`, <br> `?years=3` **optional** |
-| <span class="green">201</span> | `/api/sensors/:sensor_id/timeseries` | **POST** | LUA, UT, AT | |
+| <span class="blue">501</span> | `/api/sensors/:sensor_id/timeseries` | **POST** | LUA, UT, AT | |
 | <span class="green">204</span> | `/api/sensors/:sensor_id/timeseries` | **DELETE** (all) | LUA, UT, AT, AO | |
+| <span class="blue">501</span> | `/api/sensors/:sensor_id/timeseries/:timeserie_id` | **GET** | LUA, UT, AT, AO | |
+| <span class="blue">501</span> | `/api/sensors/:sensor_id/timeseries/:timeserie_id` | **PUT** | LUA, UT, AT, AO | |
+| <span class="blue">501</span> | `/api/sensors/:sensor_id/timeseries/:timeserie_id` | **DELETE** | LUA, UT, AT, AO | |
 | <span class="green">200</span> | `/api/sensors/:sensor_id/statistics` | **GET** | LPA, LUA, UT, AT | |
 | <span class="green">200</span> | `/api/sensors/:sensor_id/service_stations` | **GET** | LPA, LUA, UT, AT | |
 | <span class="green">200</span> | `/api/sensors/:sensor_id/emergency_stations` | **GET** | LPA, LUA, UT, AT | |

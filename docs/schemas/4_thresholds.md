@@ -1,5 +1,4 @@
 ```sql
-DROP TABLE IF EXISTS Subscriptions CASCADE;
 DROP TABLE IF EXISTS Thresholds CASCADE;
 DROP TYPE IF EXISTS thresholds_types CASCADE;
 
@@ -16,8 +15,8 @@ CREATE TABLE Thresholds (
     -- Attributes
     creator CHARACTER VARYING(255) NOT NULL REFERENCES Users (username) ON UPDATE CASCADE ON DELETE CASCADE,
     description CHARACTER VARYING(255) NOT NULL,
-    warning_threshold DECIMAL NOT NULL CONSTRAINT positive_value CHECK (warning_threshold > 0),
-    critical_threshold DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (warning_threshold > 0 AND critical_threshold > warning_threshold),
+    warning_threshold DECIMAL NOT NULL CONSTRAINT positive_value CHECK (warning_threshold >= 0),
+    critical_threshold DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (critical_threshold >= 0),
 
     -- Category
     category thresholds_types NOT NULL

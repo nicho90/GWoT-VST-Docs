@@ -14,22 +14,22 @@ sudo apt-get update
 sudo apt-get install -y postgresql postgresql-contrib
 ```
 
-* Create a new user (`n_schi16`) with the following command:
+* Create a new user (`vst`) with the following command:
 
 ```bash
-sudo -u postgres createuser -P n_schi16
+sudo -u postgres createuser -P vst
 ```
 
-* Create a new database (`vst`) and give the user (`n_schi16`) grant-access to it with the following command:
+* Create a new database (`vst`) and give the user (`vst`) grant-access to it with the following command:
 
 ```bash
-sudo -u postgres createdb -O n_schi16 vst
+sudo -u postgres createdb -O vst vst
 ```
 
 * Test connecting with the following command:
 
 ```bash
-psql -h localhost -U n_schi16 vst
+psql -h localhost -U vst vst
 ```
 
 * Close the PSQL-interface with the command
