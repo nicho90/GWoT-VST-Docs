@@ -191,4 +191,59 @@ VALUES (
     'POINT(7.698433 51.924358)'
 );
 
+
+-- Australian example entries
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-255910281', 'Reedbeds Rd', 'false', 7,
+    'FLOODWAY',
+    300, 0,
+    10, 'false', 'false',
+    6000000, 600000, -- 1h, 10 min
+    11, 4, 5, 10, -- Wet season November - April, Dry season May - October
+    'POINT(130.979248 -12.780740)'
+);
+
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-255910282', 'Old Bynoe Rd', 'false', 7,
+    'FLOODWAY',
+    300, 0,
+    10, 'false', 'false',
+    6000000, 600000, -- 1h, 10 min
+    11, 4, 5, 10, -- Wet season November - April, Dry season May - October
+    'POINT(130.983581 -12.770264)'
+);
+
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-255910283', 'Cox Peninsula Rd', 'false', 7,
+    'BRIDGE',
+    300, 0,
+    10, 'false', 'false',
+    6000000, 600000, -- 1h, 10 min
+    11, 4, 5, 10, -- Wet season November - April, Dry season May - October
+    'POINT(130.965638 -12.742289)'
+);
 ```
