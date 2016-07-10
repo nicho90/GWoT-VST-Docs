@@ -26,6 +26,10 @@ CREATE TABLE Sensors (
     danger_frequency INTEGER NOT NULL CONSTRAINT valid_frequency_ CHECK (danger_frequency >= 5000), -- see default_frequency
     increased_frequency BOOLEAN NOT NULL DEFAULT 'false',
     online_status BOOLEAN NOT NULL DEFAULT 'false',
+    wet_season_begin SMALLINT,
+    wet_season_end SMALLINT,
+    dry_season_begin SMALLINT,
+    dry_season_end SMALLINT,
 
     -- Crossing type
     crossing_type crossing_types NOT NULL,
@@ -42,14 +46,18 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
-    now(), now(), 'test-user', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
+    now(), now(), 'nicho90', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
     'BRIDGE',
-    320, 200,
-    120, 'false', 'true',
+    600, 400,
+    200, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
-    'POINT(7.700130 51.973314)');
+    NULL, NULL, NULL, NULL,
+    'POINT(7.700130 51.973314)'
+);
+
 
 INSERT INTO Sensors (
     created, updated, creator, device_id, description, private, water_body_id,
@@ -57,14 +65,18 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
-    now(), now(), 'nicho90', 'rpi-2', '2nd Raspberry Pi at Wersehause', 'true', 1,
+    now(), now(), 'test-user', 'sensor-104781701', 'Südmühlenstraße', 'false', 1,
     'BRIDGE',
-    300, 220,
-    120, 'false', 'true',
-    600000, 60000, -- 600000 = 10min, 60000 = 1min
-    'POINT(7.699556 51.973544)');
+    600, 400,
+    200, 'false', 'false',
+    60000, 5000, -- 60000 = 1min, 5000 = 5sec
+    NULL, NULL, NULL, NULL,
+    'POINT(7.696494 51.989063)'
+);
+
 
 INSERT INTO Sensors (
     created, updated, creator, device_id, description, private, water_body_id,
@@ -72,12 +84,111 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
-    now(), now(), 'nicho90', 'rpi-3', '3rd Raspberry Pi at Wersehause', 'false', 1,
+    now(), now(), 'test-user', 'sensor-104781702', 'Warendorfer Straße', 'false', 1,
+    'BRIDGE',
+    600, 400,
+    200, 'false', 'false',
+    60000, 5000, -- 60000 = 1min, 5000 = 5sec
+    NULL, NULL, NULL, NULL,
+    'POINT(7.699013 51.974153)'
+);
+
+
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-104781703', 'Wersetimpen', 'true', 1,
+    'BRIDGE',
+    600, 400,
+    200, 'false', 'false',
+    60000, 5000, -- 60000 = 1min, 5000 = 5sec
+    NULL, NULL, NULL, NULL,
+    'POINT(7.703576 51.970164)'
+);
+
+
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-104781704', 'Pleistermühlenweg 1', 'false', 1,
     'BRIDGE',
     300, 0,
     120, 'false', 'false',
     6000000, 300000, -- 6000000 = 1h, 300000 = 5min
-    'POINT(7.698880 51.973934)');
+    NULL, NULL, NULL, NULL,
+    'POINT(7.702965 51.962995)'
+);
+
+
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-104781705', 'Pleistermühlenweg 2', 'false', 1,
+    'BRIDGE',
+    300, 220,
+    120, 'false', 'false',
+    600000, 60000, -- 600000 = 10min, 60000 = 1min
+    NULL, NULL, NULL, NULL,
+    'POINT(7.702048 51.963458)'
+);
+
+
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-104781706', 'Wolbecker Straße', 'false', 1,
+    'BRIDGE',
+    300, 0,
+    120, 'false', 'false',
+    6000000, 300000,
+    NULL, NULL, NULL, NULL,
+    'POINT(7.687832 51.946644)'
+);
+
+
+INSERT INTO Sensors (
+    created, updated, creator, device_id, description, private, water_body_id,
+    crossing_type,
+    sensor_height, crossing_height,
+    threshold_value, increased_frequency, online_status,
+    default_frequency, danger_frequency,
+    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    coordinates)
+VALUES (
+    now(), now(), 'test-user', 'sensor-104781707', 'Angelmoder Weg', 'false', 1,
+    'BRIDGE',
+    300, 0,
+    120, 'false', 'false',
+    6000000, 300000,
+    NULL, NULL, NULL, NULL,
+    'POINT(7.698433 51.924358)'
+);
+
 ```
