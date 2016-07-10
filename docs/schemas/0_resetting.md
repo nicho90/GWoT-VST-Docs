@@ -1,5 +1,4 @@
 ```sql
-
 -- Delete all schemas
 DROP TABLE IF EXISTS Water_Bodies CASCADE;
 DROP TABLE IF EXISTS Timeseries CASCADE;

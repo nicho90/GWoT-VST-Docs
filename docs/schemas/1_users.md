@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS Users CASCADE;
 DROP TYPE IF EXISTS roles CASCADE;
 
 -- ENUM
-CREATE TYPE roles AS ENUM ('admin', 'user');
+CREATE TYPE roles AS ENUM ('ADMIN', 'USER');
 
 -- SCHEMA
 CREATE TABLE Users (
@@ -27,20 +27,20 @@ CREATE TABLE Users (
 
 -- EXAMPLE-DATA
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'vst-admin', '123456789', 'sitcomlab245@gmail.com', 'VST', 'ADMIN', 'en_US', 'admin');
+VALUES (now(), now(), 'vst-admin', '123456789', 'sitcomlab245@gmail.com', 'VST', 'ADMIN', 'en_US', 'ADMIN');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'test-user', 'abcdef', 'test.user@uni-muenster.de', 'Test', 'User', 'en_US', 'user');
+VALUES (now(), now(), 'test-user', 'abcdef', 'test.user@uni-muenster.de', 'Test', 'User', 'en_US', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'nicho90', 'abcdef', 'n.schiestel@uni-muenster.de', 'Nicho', 'S.', 'de_DE', 'user');
+VALUES (now(), now(), 'nicho90', 'abcdef', 'n.schiestel@uni-muenster.de', 'Nicho', 'S.', 'de_DE', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'heinrichloewen', 'abcdef', 'loewen.heinrich@uni-muenster.de', 'Heinrich', 'L.', 'de_DE', 'user');
+VALUES (now(), now(), 'heinrichloewen', 'abcdef', 'loewen.heinrich@uni-muenster.de', 'Heinrich', 'L.', 'de_DE', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'rehans516', 'abcdef', 'r_chau02@uni-muenster.de', 'Rehan', 'C.', 'en_US', 'user');
+VALUES (now(), now(), 'rehans516', 'abcdef', 'r_chau02@uni-muenster.de', 'Rehan', 'C.', 'en_US', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'Timmimim', 'abcdef', 't_kueh06@uni-muenster.de', 'Timm', 'K.', 'de_DE', 'user');
+VALUES (now(), now(), 'Timmimim', 'abcdef', 't_kueh06@uni-muenster.de', 'Timm', 'K.', 'de_DE', 'USER');
 ```

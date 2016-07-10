@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS Timeseries CASCADE;
 
 -- SCHEMA
 CREATE TABLE Timeseries (
+
     -- General
     timeserie_id SERIAL PRIMARY KEY,
     created TIMESTAMP WITH TIME ZONE NOT NULL,

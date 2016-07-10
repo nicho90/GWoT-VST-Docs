@@ -17,8 +17,8 @@ CREATE TABLE Vehicles (
     brand CHARACTER VARYING(255) NOT NULL,
     name CHARACTER VARYING(255) NOT NULL,
     year INTEGER CONSTRAINT positive_value_with_zero CHECK (year >= 0),
-    warning_height DECIMAL NOT NULL CONSTRAINT positive_value CHECK (warning_height > 0), -- example: wheel height
-    critical_height DECIMAL NOT NULL CONSTRAINT positive_value_ CHECK (critical_height > 0 AND critical_height > warning_height), -- example: door height
+    warning_height DECIMAL NOT NULL CONSTRAINT positive_value_with_zero_ CHECK (warning_height >= 0), -- example: wheel height
+    critical_height DECIMAL NOT NULL CONSTRAINT positive_value_with_zero__ CHECK (critical_height >= 0), -- example: door height
 
     -- Category
     category vehicle_types
