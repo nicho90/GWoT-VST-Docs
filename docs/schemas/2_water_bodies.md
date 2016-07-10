@@ -39,4 +39,8 @@ VALUES (now(), now(), 'Aa', 'STREAM');
 
 INSERT INTO Water_Bodies (created, updated, name, category)
 VALUES (now(), now(), 'Aasee', 'LAKE');
+
+-- Australian example entries
+INSERT INTO Water_Bodies (created, updated, name, category)
+VALUES (now(), now(), 'Darwin River', 'RIVER');
 ```
