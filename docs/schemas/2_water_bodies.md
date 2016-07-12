@@ -16,31 +16,31 @@ CREATE TABLE Water_Bodies (
     -- Attributes
     name CHARACTER VARYING(255) NOT NULL,
 
-    -- Category
-    category water_body_types NOT NULL
+    -- Type
+    water_body_type water_body_types NOT NULL
 );
 
 
 -- EXAMPLE-DATA
-INSERT INTO Water_Bodies (created, updated, name, category)
+INSERT INTO Water_Bodies (created, updated, name, water_body_type)
 VALUES (now(), now(), 'Werse', 'RIVER');
 
-INSERT INTO Water_Bodies (created, updated, name, category)
+INSERT INTO Water_Bodies (created, updated, name, water_body_type)
 VALUES (now(), now(), 'Ems', 'RIVER');
 
-INSERT INTO Water_Bodies (created, updated, name, category)
+INSERT INTO Water_Bodies (created, updated, name, water_body_type)
 VALUES (now(), now(), 'Dortmund-Ems Kanal', 'CHANNEL');
 
-INSERT INTO Water_Bodies (created, updated, name, category)
+INSERT INTO Water_Bodies (created, updated, name, water_body_type)
 VALUES (now(), now(), 'Schleusebecken (Schiffahrter Damm)', 'POOL');
 
-INSERT INTO Water_Bodies (created, updated, name, category)
+INSERT INTO Water_Bodies (created, updated, name, water_body_type)
 VALUES (now(), now(), 'Aa', 'STREAM');
 
-INSERT INTO Water_Bodies (created, updated, name, category)
+INSERT INTO Water_Bodies (created, updated, name, water_body_type)
 VALUES (now(), now(), 'Aasee', 'LAKE');
 
 -- Australian example entries
-INSERT INTO Water_Bodies (created, updated, name, category)
+INSERT INTO Water_Bodies (created, updated, name, water_body_type)
 VALUES (now(), now(), 'Darwin River', 'RIVER');
 ```
