@@ -66,7 +66,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-104781701', 'Südmühlenstraße', 'false', 1,
@@ -85,7 +85,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-104781702', 'Warendorfer Straße', 'false', 1,
@@ -104,7 +104,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-104781703', 'Wersetimpen', 'true', 1,
@@ -123,7 +123,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-104781704', 'Pleistermühlenweg 1', 'false', 1,
@@ -142,7 +142,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-104781705', 'Pleistermühlenweg 2', 'false', 1,
@@ -161,7 +161,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-104781706', 'Wolbecker Straße', 'false', 1,
@@ -180,7 +180,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-104781707', 'Angelmoder Weg', 'false', 1,
@@ -200,7 +200,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-255910281', 'Reedbeds Rd', 'false', 7,
@@ -218,7 +218,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-255910282', 'Old Bynoe Rd', 'false', 7,
@@ -236,7 +236,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'test-user', 'sensor-255910283', 'Cox Peninsula Rd', 'false', 7,
