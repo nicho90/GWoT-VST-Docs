@@ -26,6 +26,7 @@ CREATE TABLE Sensors (
     danger_frequency INTEGER NOT NULL CONSTRAINT valid_frequency_ CHECK (danger_frequency >= 5000), -- see default_frequency
     increased_frequency BOOLEAN NOT NULL DEFAULT 'false',
     online_status BOOLEAN NOT NULL DEFAULT 'false',
+    seasonal BOOLEAN NOT NULL,
     wet_season_begin SMALLINT,
     wet_season_end SMALLINT,
     dry_season_begin SMALLINT,
@@ -46,7 +47,7 @@ INSERT INTO Sensors (
     sensor_height, crossing_height,
     threshold_value, increased_frequency, online_status,
     default_frequency, danger_frequency,
-    wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
+    seasonal, wet_season_begin, wet_season_end, dry_season_begin, dry_season_end,
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
@@ -54,7 +55,7 @@ VALUES (
     600, 400,
     200, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.700130 51.973314)'
 );
 
@@ -73,7 +74,7 @@ VALUES (
     600, 400,
     200, 'false', 'false',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.696494 51.989063)'
 );
 
@@ -92,7 +93,7 @@ VALUES (
     600, 400,
     200, 'false', 'false',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.699013 51.974153)'
 );
 
@@ -111,7 +112,7 @@ VALUES (
     600, 400,
     200, 'false', 'false',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.703576 51.970164)'
 );
 
@@ -130,7 +131,7 @@ VALUES (
     300, 0,
     120, 'false', 'false',
     6000000, 300000, -- 6000000 = 1h, 300000 = 5min
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.702965 51.962995)'
 );
 
@@ -149,7 +150,7 @@ VALUES (
     300, 220,
     120, 'false', 'false',
     600000, 60000, -- 600000 = 10min, 60000 = 1min
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.702048 51.963458)'
 );
 
@@ -168,7 +169,7 @@ VALUES (
     300, 0,
     120, 'false', 'false',
     6000000, 300000,
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.687832 51.946644)'
 );
 
@@ -187,7 +188,7 @@ VALUES (
     300, 0,
     120, 'false', 'false',
     6000000, 300000,
-    NULL, NULL, NULL, NULL,
+    'false', NULL, NULL, NULL, NULL,
     'POINT(7.698433 51.924358)'
 );
 
@@ -207,7 +208,7 @@ VALUES (
     300, 0,
     10, 'false', 'false',
     6000000, 600000, -- 1h, 10 min
-    11, 4, 5, 10, -- Wet season November - April, Dry season May - October
+    'true', 11, 4, 5, 10, -- Wet season November - April, Dry season May - October
     'POINT(130.979248 -12.780740)'
 );
 
@@ -225,7 +226,7 @@ VALUES (
     300, 0,
     10, 'false', 'false',
     6000000, 600000, -- 1h, 10 min
-    11, 4, 5, 10, -- Wet season November - April, Dry season May - October
+    'true', 11, 4, 5, 10, -- Wet season November - April, Dry season May - October
     'POINT(130.983581 -12.770264)'
 );
 
@@ -243,7 +244,7 @@ VALUES (
     300, 0,
     10, 'false', 'false',
     6000000, 600000, -- 1h, 10 min
-    11, 4, 5, 10, -- Wet season November - April, Dry season May - October
+    'true', 11, 4, 5, 10, -- Wet season November - April, Dry season May - October
     'POINT(130.965638 -12.742289)'
 );
 ```
