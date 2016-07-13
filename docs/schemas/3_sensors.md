@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS Sensors CASCADE;
 DROP TYPE IF EXISTS crossing_types CASCADE;
 
 -- ENUM
-CREATE TYPE crossing_types AS ENUM ('FLOODWAY', 'BRIDGE');
+CREATE TYPE crossing_types AS ENUM ('FLOODWAY', 'BRIDGE', 'OTHER');
 
 -- SCHEMA
 CREATE TABLE Sensors (
@@ -51,7 +51,7 @@ INSERT INTO Sensors (
     coordinates)
 VALUES (
     now(), now(), 'nicho90', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
-    'BRIDGE',
+    'OTHER',
     600, 400,
     200, 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
