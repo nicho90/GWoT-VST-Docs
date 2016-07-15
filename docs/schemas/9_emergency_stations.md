@@ -32,6 +32,17 @@ VALUES (now(), now(), 'Berufsfeuerwehr', '+4925120250', 'York-Ring', '25', '', '
 INSERT INTO Emergency_Stations (created, updated, name, phone_number, street, house_number, addition, zip_code, city, state, country, coordinates)
 VALUES (now(), now(), 'Freiwillige Feuerwehr Telgte', '+4925048806790', 'Alverskirchener Straße', '27', '', '48291', 'Telgte', 'NRW', 'GERMANY', 'POINT(7.788771 51.975639)');
 
+INSERT INTO Emergency_Stations (created, updated, name, phone_number, street, house_number, addition, zip_code, city, state, country, coordinates)
+VALUES (now(), now(), 'Stadt Münster Freiwillige Feuerwehr Feuerwehren', '', 'Rudolf-Diesel-Straße', '51', '', '48157', 'Munster', 'NRW', 'GERMANY', 'POINT(7.666192 51.989147)');
+
+INSERT INTO Emergency_Stations (created, updated, name, phone_number, street, house_number, addition, zip_code, city, state, country, coordinates)
+VALUES (now(), now(), 'Feuerwache II', '', 'Theodor-Scheiwe-Straße', '1', '', '48155', 'Munster', 'NRW', 'GERMANY', 'POINT(7.645146 51.946133)');
+
+INSERT INTO Emergency_Stations (created, updated, name, phone_number, street, house_number, addition, zip_code, city, state, country, coordinates)
+VALUES (now(), now(), 'Wasserschutzpolizeiinspektion', '', 'Wilhelmshavenufer', '20', '', '48155', 'Munster', 'NRW', 'GERMANY', 'POINT(7.664706 51.970424)');
+
+
+
 
 -- Australian example entries
 INSERT INTO Emergency_Stations (created, updated, name, phone_number, street, house_number, addition, zip_code, city, state, country, coordinates)
