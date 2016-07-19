@@ -44,3 +44,9 @@ More details can be found here: [https://wiki.ubuntuusers.de/Cron/](https://wiki
 ```bash
 node server.js >> /home/n_schi16/log.txt
 ```
+
+* Create an entry for the weather-service, which will be executed every **30 minutes**:
+
+```bash
+*/30 * * * *   root    cd /home/n_schi16/GWoT-VST/server && node weather-service.js --postgres_user vst --postgres_password cloud >> /home/n_schi16/log_weather_service.txt
+```
