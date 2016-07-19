@@ -1,5 +1,9 @@
 ## Overview
 
+The complete **Geospatial Web of Things - Virtual Smart Things API** can be found here: [/api](/api).
+This REST-API was developed on [Apiary.io](https://apiary.io), because of its simple API-Blueprint-Format and its built-in Mockup-Server, which allows testing the RESR-API in development as well as in production. The Apiary-Project can be found here: [http://docs.gwotvst.apiary.io](http://docs.gwotvst.apiary.io).
+Below is a list about all REST-API-Endpoints for getting a quick overview about the implemented and restricted endpoints. For the restricted endpoints an Access-Token is required. Some of the endpoints (for example: `/api/sensors`) are also accessible without an Access-Token, but contain only public available information. In the mentioned example the endpoint would offer only public sensors. With an Access-Token, the public sensors and the private sensors of the authenticated user would be offered.
+
 ##### Status-Codes
 
 | Code | Meaning |
@@ -101,3 +105,5 @@
 | <span class="blue">501</span> | `/api/vehicles/:vehicle_id` | **PUT** | AT, AO | |
 | <span class="blue">501</span> | `/api/vehicles/:vehicle_id` | **DELETE** | AT, AO | |
 | <span class="green">200</span> | `/api/forecast` | **GET** | PA | `?lat=0.0` <br> `&lng=0.0` <br> `&lang=en` **required** |
+| <span class="green">200</span> | `/api/verifications/user` | **GET** | PA | `?username=vst-user` **required** |
+| <span class="green">200</span> | `/api/verifications/device` | **GET** | PA | `?device_id=rpi-1` **required** |
