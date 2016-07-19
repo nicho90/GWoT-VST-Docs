@@ -55,7 +55,7 @@ VALUES (
     now(), now(), 'nicho90', 'rpi-1', 'Raspberry Pi at Wersehause', 'false', 1,
     'OTHER',
     600, 400,
-    200, 'false', 'true',
+    200, 'false', 'false', 'false', 'true',
     60000, 5000, -- 60000 = 1min, 5000 = 5sec
     'false', NULL, NULL, NULL, NULL,
     'POINT(7.700130 51.973314)'
