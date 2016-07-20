@@ -130,8 +130,8 @@ INSERT INTO Sensors (
 VALUES (
     now(), now(), 'test-user', 'sensor-104781704', 'Pleistermühlenweg 1', 'false', 1,
     'BRIDGE',
-    300, 0,
-    120, 'false', 'false', 'false', 'false',
+    600, 400,
+    200, 'false', 'false', 'false', 'false',
     6000000, 300000, -- 6000000 = 1h, 300000 = 5min
     'false', NULL, NULL, NULL, NULL,
     'POINT(7.702965 51.962995)'
@@ -149,8 +149,8 @@ INSERT INTO Sensors (
 VALUES (
     now(), now(), 'test-user', 'sensor-104781705', 'Pleistermühlenweg 2', 'false', 1,
     'BRIDGE',
-    300, 220,
-    120, 'false', 'false', 'false', 'false',
+    600, 400,
+    200, 'false', 'false', 'false', 'false',
     600000, 60000, -- 600000 = 10min, 60000 = 1min
     'false', NULL, NULL, NULL, NULL,
     'POINT(7.702048 51.963458)'
@@ -168,8 +168,8 @@ INSERT INTO Sensors (
 VALUES (
     now(), now(), 'test-user', 'sensor-104781706', 'Wolbecker Straße', 'false', 1,
     'BRIDGE',
-    300, 0,
-    120, 'false', 'false', 'false', 'false',
+    600, 400,
+    200, 'false', 'false', 'false', 'false',
     6000000, 300000,
     'false', NULL, NULL, NULL, NULL,
     'POINT(7.687832 51.946644)'
@@ -187,8 +187,8 @@ INSERT INTO Sensors (
 VALUES (
     now(), now(), 'test-user', 'sensor-104781707', 'Angelmoder Weg', 'false', 1,
     'BRIDGE',
-    300, 0,
-    120, 'false', 'false', 'false', 'false',
+    600, 400,
+    200, 'false', 'false', 'false', 'false',
     6000000, 300000,
     'false', NULL, NULL, NULL, NULL,
     'POINT(7.698433 51.924358)'
