@@ -1,11 +1,11 @@
 ## Overview
 
-| Direction | Topic | 
-|-----|-------|
-| **Server &rarr; Sensor** | `/data/realtime` |
-| **Server &rarr; Sensor** | `/settings` |
-| **Sensor &rarr; Server** | `/sensor/realtime/measurement` |
-| **Sensor &rarr; Server** | `/sensor/scheduled/measurement` |
+| Direction | Topic |
+|-----------|-------|
+| **Server &rarr; Sensor** | `/data/realtime` |
+| **Server &rarr; Sensor** | `/settings` |
+| **Sensor &rarr; Server** | `/sensor/realtime/measurement` |
+| **Sensor &rarr; Server** | `/sensor/scheduled/measurement` |
 
 ## 1. Server &rarr; Sensor
 
