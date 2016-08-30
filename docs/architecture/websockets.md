@@ -1,10 +1,10 @@
 ## Overview
 
-| Direction | Topic | 
-|-----|-------|
-| **WebClient &rarr; Server** | `/data/realtime` |
-| **Server &rarr; WebClient** | `measurements` |
-| **Server &rarr; WebClient** | `notification` |
+| Direction | Topic | 
+|-----------|-------|
+| **WebClient &rarr; Server** | `/data/realtime` |
+| **Server &rarr; WebClient** | `measurements` |
+| **Server &rarr; WebClient** | `notification` |
 
 ## 1. WebClient &rarr; Server
 
