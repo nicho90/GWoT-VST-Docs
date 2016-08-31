@@ -33,14 +33,14 @@ INSERT INTO Users (created, updated, username, password, email_address, first_na
 VALUES (now(), now(), 'test-user', 'abcdef', 'test.user@uni-muenster.de', 'Test', 'User', 'en_US', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'nicho90', 'abcdef', 'n.schiestel@uni-muenster.de', 'Nicho', 'S.', 'de_DE', 'USER');
+VALUES (now(), now(), 'nicho90', 'abcdef', 'nicho90@example.org', 'Nicho', 'S.', 'de_DE', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'heinrichloewen', 'abcdef', 'loewen.heinrich@uni-muenster.de', 'Heinrich', 'L.', 'de_DE', 'USER');
+VALUES (now(), now(), 'heinrichloewen', 'abcdef', 'heinrichloewen@example.org', 'Heinrich', 'L.', 'de_DE', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'rehans516', 'abcdef', 'r_chau02@uni-muenster.de', 'Rehan', 'C.', 'en_US', 'USER');
+VALUES (now(), now(), 'rehans516', 'abcdef', 'rehans516@example.org', 'Rehan', 'C.', 'en_US', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'Timmimim', 'abcdef', 't_kueh06@uni-muenster.de', 'Timm', 'K.', 'de_DE', 'USER');
+VALUES (now(), now(), 'Timmimim', 'abcdef', 'timmimim@example.org', 'Timm', 'K.', 'de_DE', 'USER');
 ```
