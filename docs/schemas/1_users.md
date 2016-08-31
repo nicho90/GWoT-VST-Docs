@@ -27,10 +27,10 @@ CREATE TABLE Users (
 
 -- EXAMPLE-DATA
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'vst-admin', '123456789', 'sitcomlab245@gmail.com', 'VST', 'ADMIN', 'en_US', 'ADMIN');
+VALUES (now(), now(), 'vst-admin', '123456789', 'admin@example.org', 'VST', 'ADMIN', 'en_US', 'ADMIN');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
-VALUES (now(), now(), 'test-user', 'abcdef', 'test.user@uni-muenster.de', 'Test', 'User', 'en_US', 'USER');
+VALUES (now(), now(), 'test-user', 'abcdef', 'test-user@example.org', 'Test', 'User', 'en_US', 'USER');
 
 INSERT INTO Users (created, updated, username, password, email_address, first_name, last_name, language, role)
 VALUES (now(), now(), 'nicho90', 'abcdef', 'nicho90@example.org', 'Nicho', 'S.', 'de_DE', 'USER');
